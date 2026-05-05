@@ -1,7 +1,13 @@
-// Root redirect — middleware handles locale detection and redirects to /[locale]/
-// This page is only rendered if middleware is bypassed (e.g., direct static export).
-import { redirect } from "next/navigation";
+"use client";
 
+import { useEffect } from "react";
+
+// Static export fallback — middleware doesn't run.
+// Netlify _redirects handles / → /en/ at the CDN level.
+// This client-side fallback covers direct static serving.
 export default function RootPage() {
-  redirect("/en");
+  useEffect(() => {
+    window.location.replace("/en/");
+  }, []);
+  return null;
 }

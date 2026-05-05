@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { I18nProvider } from "@/utils/i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/utils/locales";
@@ -21,21 +20,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
   if (!SUPPORTED.includes(locale)) return {};
 
-  // Build hreflang alternates using the request pathname (injected by middleware)
-  const headersList = headers();
-  const pathname = headersList.get("x-pathname") ?? `/${locale}`;
-  const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "") || "/";
-
+  // Static export: hreflang points to /{locale}/ root for each locale.
+  // Page-level metadata (with full path) can be added per-page when needed.
   const languages: Record<string, string> = {};
   for (const l of SUPPORTED_LOCALES) {
-    languages[l] = `${BASE_URL}/${l}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
+    languages[l] = `${BASE_URL}/${l}/`;
   }
-  // x-default points to English
-  languages["x-default"] = `${BASE_URL}/en${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
+  languages["x-default"] = `${BASE_URL}/en/`;
 
   return {
     alternates: {
-      canonical: `${BASE_URL}/${locale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`,
+      canonical: `${BASE_URL}/${locale}/`,
       languages,
     },
   };
