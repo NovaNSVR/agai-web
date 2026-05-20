@@ -13,7 +13,7 @@
     "label": "Język"
   },
   "footer": {
-    "tagline": "Platforma wellness, gdzie transformacja spotyka się z inteligencją.",
+    "tagline": "Platforma gospodarki twórców, która cię zna.",
     "copyright": "© {year} AlphaGlow AI. Wszelkie prawa zastrzeżone.",
     "platform": "Platforma",
     "legal": "Informacje prawne",
@@ -33,12 +33,12 @@
   },
   "home": {
     "badge": "Napędzane przez NSVX",
-    "heroHeading": "Platforma wellness,\nktóra cię zna.",
-    "heroBody": "AlphaGlow łączy światowej klasy twórców wellness ze słuchaczami gotowymi na transformację — zasilana przez Nova, twojego towarzysza AI, oraz NSVX, gospodarkę tokenową nagradzającą prawdziwy postęp.",
+    "heroHeading": "Gdzie twórcy budują\npowiązania napędzane przez AI.",
+    "heroBody": "AlphaGlow to platforma gospodarki twórców, gdzie twórcy wellness publikują sesje z AI, budują Cyfrowego Bliźniaka z Nową i zarabiają NSVX w miarę wzrostu swojej publiczności.",
     "heroCtaApp": "Otwórz aplikację",
     "heroCtaCreators": "Dla twórców",
-    "archetypesHeading": "Każda dyscyplina wellness. Jedna platforma.",
-    "archetypesBody": "Od pracy z oddechem po biohacking — AlphaGlow łączy wyspecjalizowanych twórców ze słuchaczami, którzy ich potrzebują.",
+    "archetypesHeading": "Kazdy typ twórcy. Jedna platforma.",
+    "archetypesBody": "Od ćwiczeń oddechowych po biohacking, AlphaGlow daje twórcom narzędzia do tworzenia sesji, podróży i Cyfrowego Bliźniaka, który pracuje dla ich publiczności przez całą dobę.",
     "movementCategory": "Ruch",
     "movementTitle": "Trener ruchu",
     "movementDesc": "Codzienne programy mobilności, pracy z oddechem i regeneracji prowadzone twoim głosem.",

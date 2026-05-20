@@ -2,24 +2,10 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { SUPPORTED_LOCALES, type Locale, LOCALE_NAMES } from "./locales";
+import { flatten, type FlatMessages } from "./flattenDict";
 
 export { SUPPORTED_LOCALES, type Locale, LOCALE_NAMES };
-
-type FlatMessages = Record<string, string>;
-
-function flatten(obj: Record<string, unknown>, prefix = ""): FlatMessages {
-  const result: FlatMessages = {};
-  for (const key in obj) {
-    const path = prefix ? `${prefix}.${key}` : key;
-    const val = obj[key];
-    if (val !== null && typeof val === "object" && !Array.isArray(val)) {
-      Object.assign(result, flatten(val as Record<string, unknown>, path));
-    } else {
-      result[path] = String(val);
-    }
-  }
-  return result;
-}
+export type { FlatMessages };
 
 const messageCache: Partial<Record<Locale, FlatMessages>> = {};
 
@@ -50,20 +36,30 @@ const I18nContext = createContext<I18nContextValue>({
   ready: false,
 });
 
-// Adapted provider: locale comes from URL param (not auto-detected).
-// setLocale sets cookie + navigates to same path in new locale.
+// initialMessages: SSG-time pre-loaded translations passed from server component.
+// This eliminates the raw-key flash on first render — the static HTML will have
+// actual text instead of key strings.
 export function I18nProvider({
   children,
   locale: initialLocale,
+  initialMessages = {},
 }: {
   children: ReactNode;
   locale: Locale;
+  initialMessages?: FlatMessages;
 }) {
-  const [messages, setMessages] = useState<FlatMessages>({});
+  const hasInitial = Object.keys(initialMessages).length > 0;
+
+  const [messages, setMessages] = useState<FlatMessages>(initialMessages);
   const [fallback, setFallback] = useState<FlatMessages>({});
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(hasInitial);
 
   useEffect(() => {
+    // Seed the cache with SSG-provided messages so the dynamic import is a cache hit.
+    if (hasInitial && !messageCache[initialLocale]) {
+      messageCache[initialLocale] = initialMessages;
+    }
+
     let cancelled = false;
     (async () => {
       const [msgs, fb] = await Promise.all([
@@ -76,12 +72,10 @@ export function I18nProvider({
       setReady(true);
     })();
     return () => { cancelled = true; };
-  }, [initialLocale]);
+  }, [initialLocale]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setLocale = (l: Locale) => {
-    // Persist to cookie (1 year)
     document.cookie = `ag-locale=${l}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
-    // Navigate to same path in new locale
     const segments = window.location.pathname.split("/").filter(Boolean);
     if (segments.length > 0 && SUPPORTED_LOCALES.includes(segments[0] as Locale)) {
       segments[0] = l;

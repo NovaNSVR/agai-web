@@ -13,7 +13,7 @@
     "label": "Jazyk"
   },
   "footer": {
-    "tagline": "Wellness platforma, kde se transformace setkává s inteligencí.",
+    "tagline": "Platforma kreativni ekonomiky, ktera vas zna.",
     "copyright": "© {year} AlphaGlow AI. Všechna práva vyhrazena.",
     "platform": "Platforma",
     "legal": "Právní informace",
@@ -33,12 +33,12 @@
   },
   "home": {
     "badge": "Poháněno NSVX",
-    "heroHeading": "Wellness platforma,\nkterá tě zná.",
-    "heroBody": "AlphaGlow propojuje špičkové wellness tvůrce s posluchači připravenými na změnu — poháněno Nova, tvým AI společníkem, a NSVX, tokenovou ekonomikou, která odměňuje skutečný pokrok.",
+    "heroHeading": "Kde tvurci budují\npropojení pohánena AI.",
+    "heroBody": "AlphaGlow je platforma kreativni ekonomiky, kde wellness tvurci publikují relace s AI, budují Digitálního Dvojníka s Novou a získávají NSVX, kdyz jejich publikum roste.",
     "heroCtaApp": "Otevřít aplikaci",
     "heroCtaCreators": "Pro tvůrce",
-    "archetypesHeading": "Každá wellness disciplína. Jedna platforma.",
-    "archetypesBody": "Od dechových cvičení po biohacking — AlphaGlow propojuje specializované tvůrce s posluchači, kteří je nejvíce potřebují.",
+    "archetypesHeading": "Kazdy typ tvurce. Jedna platforma.",
+    "archetypesBody": "Od dechovych cvicení po biohacking, AlphaGlow dává tvurcum nastroje k budovaní relací, cest a Digitálního Dvojníka, ktery pracuje pro jejich publikum nonstop.",
     "movementCategory": "Pohyb",
     "movementTitle": "Kouč pohybu",
     "movementDesc": "Každodenní programy pro mobilitu, dechová cvičení a regeneraci vedené tvým hlasem.",

@@ -13,7 +13,7 @@
     "label": "Langue"
   },
   "footer": {
-    "tagline": "La plateforme bien-être où la transformation rencontre l'intelligence.",
+    "tagline": "La plateforme d'économie créative qui vous connaît.",
     "copyright": "© {year} AlphaGlow AI. Tous droits réservés.",
     "platform": "Plateforme",
     "legal": "Mentions légales",
@@ -33,12 +33,12 @@
   },
   "home": {
     "badge": "Propulsé par NSVX",
-    "heroHeading": "La plateforme bien-être\nqui te connaît vraiment.",
-    "heroBody": "AlphaGlow connecte des créateurs bien-être de premier plan avec des auditeurs prêts à se transformer — porté par Nova, ta compagne IA, et NSVX, une économie de tokens qui récompense les vrais progrès.",
+    "heroHeading": "Là où les créateurs tissent\ndes connexions propulsées par l'IA.",
+    "heroBody": "AlphaGlow est la plateforme d'économie créative où les créateurs wellness publient des sessions IA, construisent un Jumeau Numérique avec Nova et gagnent des NSVX au fil de la croissance de leur audience.",
     "heroCtaApp": "Ouvrir l'application",
     "heroCtaCreators": "Pour les créateurs",
-    "archetypesHeading": "Toutes les disciplines du bien-être. Une seule plateforme.",
-    "archetypesBody": "Du travail respiratoire au biohacking, AlphaGlow connecte des créateurs spécialisés avec les auditeurs qui en ont le plus besoin.",
+    "archetypesHeading": "Chaque type de créateur. Une seule plateforme.",
+    "archetypesBody": "Du breathwork au biohacking, AlphaGlow donne aux créateurs les outils pour créer des sessions, des parcours et un Jumeau Numérique qui travaille pour leur audience en permanence.",
     "movementCategory": "Mouvement",
     "movementTitle": "Le Coach Mouvement",
     "movementDesc": "Programmes de mobilité quotidienne, de respiration et de récupération guidés par ta voix.",

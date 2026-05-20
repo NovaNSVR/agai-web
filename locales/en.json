@@ -13,7 +13,7 @@
     "label": "Language"
   },
   "footer": {
-    "tagline": "The wellness platform where transformation meets intelligence.",
+    "tagline": "The creator economy platform that knows you.",
     "copyright": "© {year} AlphaGlow AI. All rights reserved.",
     "platform": "Platform",
     "legal": "Legal",
@@ -33,12 +33,12 @@
   },
   "home": {
     "badge": "Powered by NSVX",
-    "heroHeading": "The wellness platform\nthat knows you.",
-    "heroBody": "AlphaGlow connects world-class wellness creators with listeners ready to transform — powered by Nova, your AI companion, and NSVX, a token economy that rewards real progress.",
+    "heroHeading": "Where creators build\nAI-powered connections.",
+    "heroBody": "AlphaGlow is the creator economy platform where wellness creators publish AI-powered sessions, build a Digital Twin with Nova, and earn NSVX when their audience grows.",
     "heroCtaApp": "Open the app",
     "heroCtaCreators": "For creators",
-    "archetypesHeading": "Every wellness discipline. One platform.",
-    "archetypesBody": "From breathwork to biohacking, AlphaGlow connects specialized creators with the listeners who need them most.",
+    "archetypesHeading": "Every creator type. One platform.",
+    "archetypesBody": "From breathwork to biohacking, AlphaGlow gives creators the tools to build sessions, journeys, and a Digital Twin that works for their audience around the clock.",
     "movementCategory": "Movement",
     "movementTitle": "The Movement Coach",
     "movementDesc": "Daily mobility, breathwork, and recovery programs guided by your voice.",

@@ -17,11 +17,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://alphaglowai.com"),
   title: {
-    default: "AlphaGlow AI — The Wellness Platform That Knows You",
+    default: "AlphaGlow AI — The Creator Economy Platform",
     template: "%s | AlphaGlow AI",
   },
   description:
-    "AlphaGlow AI is the premium wellness platform powered by NSVX — connecting creators, listeners, and Nova, your AI wellness companion.",
+    "AlphaGlow AI is the creator economy platform where creators publish AI-powered sessions, build a Digital Twin with Nova, and earn NSVX when their audience grows.",
   robots: { index: true, follow: true },
 };
 
