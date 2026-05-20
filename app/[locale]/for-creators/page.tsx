@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useI18n } from "@/utils/i18n";
 
-const BENEFIT_IDS = ["nova", "economy", "dt", "data", "discovery", "sound"] as const;
+const BENEFIT_IDS = ["nova", "dt", "data", "discovery", "sound"] as const;
 const STEP_IDS = [1, 2, 3, 4] as const;
 
 export default function ForCreatorsPage() {
@@ -12,6 +12,7 @@ export default function ForCreatorsPage() {
 
   return (
     <>
+      {/* Hero */}
       <section className="container-pad" style={{ paddingTop: "clamp(5rem,10vw,8rem)", paddingBottom: "clamp(4rem,8vw,7rem)", borderBottom: "1px solid var(--divider)" }}>
         <div className="max-w-content mx-auto">
           <p className="font-sans text-terracotta uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>{t("forCreators.badge")}</p>
@@ -27,7 +28,42 @@ export default function ForCreatorsPage() {
         </div>
       </section>
 
+      {/* 85% payout — highlighted */}
+      <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)", background: "var(--surface)" }}>
+        <div className="max-w-content mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="font-serif text-ink mb-5" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forCreators.payoutHeading")}</h2>
+              <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.75 }}>{t("forCreators.payoutBody")}</p>
+            </div>
+            <div className="border border-divider rounded bg-bg" style={{ padding: "2rem", textAlign: "center" }}>
+              <span className="font-serif text-ink" style={{ fontSize: "4rem", fontWeight: 400, lineHeight: 1 }}>85%</span>
+              <p className="font-sans text-muted mt-3" style={{ fontSize: "0.875rem", lineHeight: 1.65 }}>{t("forCreators.payoutStat")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Digital Twin for creators */}
       <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)" }}>
+        <div className="max-w-content mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="font-sans text-terracotta uppercase mb-3" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>{t("forCreators.dtCreatorBadge")}</p>
+              <h2 className="font-serif text-ink mb-5" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forCreators.dtCreatorHeading")}</h2>
+              <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.75 }}>{t("forCreators.dtCreatorBody")}</p>
+            </div>
+            <div>
+              <p className="font-sans text-terracotta uppercase mb-3" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>{t("forCreators.novaStudioBadge")}</p>
+              <h2 className="font-serif text-ink mb-5" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forCreators.novaStudioHeading")}</h2>
+              <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.75 }}>{t("forCreators.novaStudioBody")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What you get */}
+      <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)", background: "var(--surface)" }}>
         <div className="max-w-content mx-auto">
           <h2 className="font-serif text-ink mb-12" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forCreators.benefitsHeading")}</h2>
           <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", background: "var(--divider)", border: "1px solid var(--divider)" }}>
@@ -41,6 +77,7 @@ export default function ForCreatorsPage() {
         </div>
       </section>
 
+      {/* How it works */}
       <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)" }}>
         <div className="max-w-content mx-auto">
           <h2 className="font-serif text-ink mb-12" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forCreators.stepsHeading")}</h2>
@@ -56,6 +93,7 @@ export default function ForCreatorsPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="container-pad section-pad">
         <div className="max-w-content mx-auto">
           <div className="bg-surface border border-divider rounded" style={{ padding: "clamp(2.5rem,5vw,4rem)", maxWidth: 640 }}>

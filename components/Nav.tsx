@@ -12,21 +12,21 @@ export default function Nav() {
   const l = (path: string) => `/${locale}${path}`;
 
   const NAV_LINKS = [
+    { href: l("/for-users"), label: t("nav.forUsers") },
     { href: l("/for-creators"), label: t("nav.forCreators") },
-    { href: l("/for-listeners"), label: t("nav.forListeners") },
-    { href: l("/how-nsvx-works"), label: t("nav.howNsvxWorks") },
+    { href: l("/advertisers"), label: t("nav.advertisers") },
+    { href: l("/nova"), label: t("nav.nova") },
+    { href: l("/nsvx"), label: t("nav.nsvx") },
     { href: l("/pricing"), label: t("nav.pricing") },
   ];
 
   return (
-    <header
-      className="sticky top-0 z-50 bg-bg border-b border-divider"
-    >
+    <header className="sticky top-0 z-50 bg-bg border-b border-divider">
       <div
         className="max-w-content mx-auto container-pad flex items-center justify-between"
         style={{ height: 60 }}
       >
-        {/* Wordmark — brand term, intentionally untranslated */}
+        {/* Wordmark */}
         <Link
           href={l("/")}
           className="font-serif text-ink no-underline"
@@ -36,7 +36,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -49,8 +49,8 @@ export default function Nav() {
           ))}
         </nav>
 
-        {/* Desktop CTAs + language switcher */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Desktop CTAs */}
+        <div className="hidden lg:flex items-center gap-4">
           <LanguageSwitcher />
           <Link
             href="https://alphaglowai.app/sign-in"
@@ -75,7 +75,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
+          className="lg:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
         >
@@ -93,7 +93,7 @@ export default function Nav() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden bg-bg border-t border-divider container-pad py-6 flex flex-col gap-5">
+        <div className="lg:hidden bg-bg border-t border-divider container-pad py-6 flex flex-col gap-5">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
