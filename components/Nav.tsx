@@ -74,22 +74,25 @@ export default function Nav() {
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="lg:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
-        >
-          <span
-            className="block w-5 h-px bg-ink transition-transform origin-center"
-            style={{ transform: open ? "translateY(4px) rotate(45deg)" : undefined }}
-          />
-          <span className="block w-5 h-px bg-ink" style={{ opacity: open ? 0 : 1 }} />
-          <span
-            className="block w-5 h-px bg-ink transition-transform origin-center"
-            style={{ transform: open ? "translateY(-4px) rotate(-45deg)" : undefined }}
-          />
-        </button>
+        {/* Mobile: language switcher always visible + hamburger */}
+        <div className="lg:hidden flex items-center gap-2 -mr-2">
+          <LanguageSwitcher />
+          <button
+            className="flex flex-col justify-center gap-1.5 p-2"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
+          >
+            <span
+              className="block w-5 h-px bg-ink transition-transform origin-center"
+              style={{ transform: open ? "translateY(4px) rotate(45deg)" : undefined }}
+            />
+            <span className="block w-5 h-px bg-ink" style={{ opacity: open ? 0 : 1 }} />
+            <span
+              className="block w-5 h-px bg-ink transition-transform origin-center"
+              style={{ transform: open ? "translateY(-4px) rotate(-45deg)" : undefined }}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile drawer */}
@@ -107,7 +110,6 @@ export default function Nav() {
             </Link>
           ))}
           <div className="border-t border-divider pt-5 flex flex-col gap-4">
-            <LanguageSwitcher />
             <Link
               href={app("/sign-in")}
               onClick={() => setOpen(false)}
