@@ -10,6 +10,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   const l = (path: string) => `/${locale}${path}`;
+  const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 
   const NAV_LINKS = [
     { href: l("/for-users"), label: t("nav.forUsers") },
@@ -53,14 +54,14 @@ export default function Nav() {
         <div className="hidden lg:flex items-center gap-4">
           <LanguageSwitcher />
           <Link
-            href="https://alphaglowai.app/sign-in"
+            href={app("/sign-in")}
             className="font-sans text-muted no-underline hover:text-ink transition-colors"
             style={{ fontSize: "0.875rem" }}
           >
             {t("nav.signIn")}
           </Link>
           <Link
-            href="https://alphaglowai.app"
+            href={app()}
             className="font-sans no-underline text-surface rounded"
             style={{
               backgroundColor: "var(--terracotta)",
@@ -108,7 +109,7 @@ export default function Nav() {
           <div className="border-t border-divider pt-5 flex flex-col gap-4">
             <LanguageSwitcher />
             <Link
-              href="https://alphaglowai.app/sign-in"
+              href={app("/sign-in")}
               onClick={() => setOpen(false)}
               className="font-sans text-muted no-underline"
               style={{ fontSize: "0.875rem" }}
@@ -116,7 +117,7 @@ export default function Nav() {
               {t("nav.signIn")}
             </Link>
             <Link
-              href="https://alphaglowai.app"
+              href={app()}
               onClick={() => setOpen(false)}
               className="font-sans no-underline text-surface rounded text-center"
               style={{

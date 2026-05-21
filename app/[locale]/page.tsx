@@ -13,6 +13,7 @@ const COMPARISON_LABELS = { patreon: "Patreon", substack: "Substack", insightTim
 export default function HomePage() {
   const { t, locale } = useI18n();
   const l = (path: string) => `/${locale}${path}`;
+  const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 
   return (
     <>
@@ -30,7 +31,7 @@ export default function HomePage() {
               {t("home.heroBody")}
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="https://alphaglowai.app" className="font-sans no-underline text-surface rounded" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
+              <Link href={app()} className="font-sans no-underline text-surface rounded" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
                 {t("home.heroCtaApp")}
               </Link>
               <Link href={l("/for-creators")} className="font-sans no-underline text-ink rounded border border-divider" style={{ fontSize: "0.9375rem", padding: "14px 28px" }}>
@@ -144,7 +145,7 @@ export default function HomePage() {
           <p className="font-sans text-muted mb-8" style={{ fontSize: "1.0625rem", lineHeight: 1.7 }}>
             {t("home.ctaBody")}
           </p>
-          <Link href="https://alphaglowai.app" className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
+          <Link href={app()} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
             {t("home.ctaButton")}
           </Link>
         </div>

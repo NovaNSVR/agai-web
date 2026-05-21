@@ -10,33 +10,34 @@ const CREATOR_FEATURES = ["F1", "F2", "F3", "F4", "F5", "F6"] as const;
 export default function PricingPage() {
   const { t, locale } = useI18n();
   const l = (path: string) => `/${locale}${path}`;
+  const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 
   const tiers = [
     {
-      prefix: "starter",
+      prefix: "starter" as const,
       price: "Free",
       period: t("pricing.periodForever"),
       features: STARTER_FEATURES,
-      href: "https://alphaglowai.app",
+      href: app(),
       highlight: false,
     },
     {
-      prefix: "core",
+      prefix: "core" as const,
       price: "$9",
       period: t("pricing.periodPerMonth"),
       features: CORE_FEATURES,
-      href: "https://alphaglowai.app",
+      href: app(),
       highlight: true,
     },
     {
-      prefix: "creator",
+      prefix: "creator" as const,
       price: "Free",
       period: t("pricing.periodToApply"),
       features: CREATOR_FEATURES,
-      href: "https://alphaglowai.app/creator-onboarding",
+      href: app("/creator-onboarding"),
       highlight: false,
     },
-  ] as const;
+  ];
 
   return (
     <>

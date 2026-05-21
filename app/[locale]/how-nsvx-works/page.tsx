@@ -10,6 +10,7 @@ const FAQ_IDS = [1, 2, 3, 4, 5] as const;
 export default function HowNsvxWorksPage() {
   const { t, locale } = useI18n();
   const l = (path: string) => `/${locale}${path}`;
+  const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 
   return (
     <>
@@ -22,7 +23,7 @@ export default function HowNsvxWorksPage() {
           <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 520, marginBottom: "2.5rem" }}>
             {t("howNsvx.heroBody")}
           </p>
-          <Link href="https://alphaglowai.app" className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
+          <Link href={app()} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
             {t("howNsvx.heroCta")}
           </Link>
         </div>

@@ -6,6 +6,7 @@ import { useI18n } from "@/utils/i18n";
 export default function Footer() {
   const { t, locale } = useI18n();
   const l = (path: string) => `/${locale}${path}`;
+  const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
   const year = new Date().getFullYear();
 
   return (
@@ -83,14 +84,14 @@ export default function Footer() {
               {t("footer.getStarted")}
             </span>
             <Link
-              href="https://alphaglowai.app"
+              href={app()}
               className="font-sans no-underline text-surface rounded text-center"
               style={{ backgroundColor: "var(--terracotta)", fontSize: "0.8125rem", fontWeight: 500, padding: "10px 20px" }}
             >
               {t("footer.openApp")}
             </Link>
             <Link
-              href="https://alphaglowai.app/sign-in"
+              href={app("/sign-in")}
               className="font-sans text-muted no-underline hover:text-ink transition-colors text-center"
               style={{ fontSize: "0.8125rem" }}
             >

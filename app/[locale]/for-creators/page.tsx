@@ -9,6 +9,7 @@ const STEP_IDS = [1, 2, 3, 4] as const;
 export default function ForCreatorsPage() {
   const { t, locale } = useI18n();
   const l = (path: string) => `/${locale}${path}`;
+  const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 
   return (
     <>
@@ -22,7 +23,7 @@ export default function ForCreatorsPage() {
           <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 540, marginBottom: "2.5rem" }}>
             {t("forCreators.heroBody")}
           </p>
-          <Link href="https://alphaglowai.app/creator-onboarding" className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
+          <Link href={app("/creator-onboarding")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
             {t("forCreators.heroCta")}
           </Link>
         </div>
@@ -100,7 +101,7 @@ export default function ForCreatorsPage() {
             <h2 className="font-serif text-ink mb-3" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forCreators.ctaHeading")}</h2>
             <p className="font-sans text-muted mb-8" style={{ fontSize: "0.9375rem", lineHeight: 1.7 }}>{t("forCreators.ctaBody")}</p>
             <div className="flex flex-wrap gap-3">
-              <Link href="https://alphaglowai.app/creator-onboarding" className="font-sans no-underline text-surface rounded" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "12px 24px" }}>
+              <Link href={app("/creator-onboarding")} className="font-sans no-underline text-surface rounded" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "12px 24px" }}>
                 {t("forCreators.ctaApply")}
               </Link>
               <Link href={l("/legal/creator-agreement")} className="font-sans no-underline text-muted border border-divider rounded hover:text-ink transition-colors" style={{ fontSize: "0.9375rem", padding: "12px 24px" }}>
