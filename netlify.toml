@@ -4,3 +4,11 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Production — deploys to alphaglowai.com
+[context.production]
+  command = "npm run build"
+
+# Staging branch — deploys to staging--agai-web.netlify.app
+[context.staging]
+  command = "npm run build"
