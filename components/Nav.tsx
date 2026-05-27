@@ -61,7 +61,7 @@ export default function Nav() {
             {t("nav.signIn")}
           </Link>
           <Link
-            href={app()}
+            href={l("/signup")}
             className="font-sans no-underline text-surface rounded"
             style={{
               backgroundColor: "var(--terracotta)",
@@ -70,7 +70,7 @@ export default function Nav() {
               padding: "8px 18px",
             }}
           >
-            {t("nav.openApp")}
+            {t("nav.signUp")}
           </Link>
         </div>
 
@@ -119,7 +119,7 @@ export default function Nav() {
               {t("nav.signIn")}
             </Link>
             <Link
-              href={app()}
+              href={l("/signup")}
               onClick={() => setOpen(false)}
               className="font-sans no-underline text-surface rounded text-center"
               style={{
@@ -129,7 +129,7 @@ export default function Nav() {
                 padding: "12px 20px",
               }}
             >
-              {t("nav.openApp")}
+              {t("nav.signUp")}
             </Link>
           </div>
         </div>

@@ -91,6 +91,22 @@ async function storeWalletAddress(userId, walletAddress) {
   });
 }
 
+/**
+ * Sign in to get a Supabase session (access_token + refresh_token).
+ * Uses the password grant flow — runs server-side so keys stay secret.
+ */
+async function signInForSession(email, password) {
+  const res = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+    method: 'POST',
+    headers: {
+      apikey: SUPABASE_SERVICE_KEY,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+  return res.json();
+}
+
 exports.handler = async (event) => {
   // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
@@ -180,9 +196,26 @@ exports.handler = async (event) => {
     console.error('[signup] Crossmint error:', err.message);
   }
 
+  // 6. Sign in to get session tokens for the cross-domain redirect
+  // The app's /auth/callback will consume these to create a Supabase session.
+  let access_token = null;
+  let refresh_token = null;
+  try {
+    const session = await signInForSession(email, password);
+    access_token = session.access_token || null;
+    refresh_token = session.refresh_token || null;
+    if (access_token) {
+      console.log(`[signup] Session tokens obtained for redirect`);
+    } else {
+      console.warn('[signup] signIn returned no access_token:', JSON.stringify(session));
+    }
+  } catch (err) {
+    console.error('[signup] signIn error:', err.message);
+  }
+
   return {
     statusCode: 200,
     headers: CORS_HEADERS,
-    body: JSON.stringify({ success: true, userId }),
+    body: JSON.stringify({ success: true, userId, access_token, refresh_token }),
   };
 };

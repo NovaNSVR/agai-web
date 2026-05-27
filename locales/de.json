@@ -11,7 +11,8 @@
     "forUsers": "Für Nutzer",
     "advertisers": "Werbetreibende",
     "nova": "Nova",
-    "nsvx": "NSVX"
+    "nsvx": "NSVX",
+    "signUp": "Registrieren"
   },
   "languageSwitcher": {
     "label": "Sprache"
@@ -27,7 +28,8 @@
     "company": "Unternehmen",
     "investors": "Investoren",
     "press": "Presse",
-    "blog": "Journal"
+    "blog": "Journal",
+    "signUp": "Registrieren"
   },
   "legalHub": {
     "navTitle": "Rechtsdokumente",

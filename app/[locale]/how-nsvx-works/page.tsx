@@ -23,7 +23,7 @@ export default function HowNsvxWorksPage() {
           <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 520, marginBottom: "2.5rem" }}>
             {t("howNsvx.heroBody")}
           </p>
-          <Link href={app()} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
+          <Link href={l("/signup")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
             {t("howNsvx.heroCta")}
           </Link>
         </div>

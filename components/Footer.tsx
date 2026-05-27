@@ -84,11 +84,11 @@ export default function Footer() {
               {t("footer.getStarted")}
             </span>
             <Link
-              href={app()}
+              href={l("/signup")}
               className="font-sans no-underline text-surface rounded text-center"
               style={{ backgroundColor: "var(--terracotta)", fontSize: "0.8125rem", fontWeight: 500, padding: "10px 20px" }}
             >
-              {t("footer.openApp")}
+              {t("footer.signUp")}
             </Link>
             <Link
               href={app("/sign-in")}

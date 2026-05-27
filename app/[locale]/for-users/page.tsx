@@ -29,7 +29,7 @@ export default function ForUsersPage() {
           <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 540, marginBottom: "2.5rem" }}>
             {t("forUsers.heroBody")}
           </p>
-          <Link href={app()} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
+          <Link href={l("/signup")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
             {t("forUsers.heroCta")}
           </Link>
         </div>
@@ -140,7 +140,7 @@ export default function ForUsersPage() {
         <div className="max-w-content mx-auto text-center" style={{ maxWidth: 560 }}>
           <h2 className="font-serif text-ink mb-4" style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)" }}>{t("forUsers.ctaHeading")}</h2>
           <p className="font-sans text-muted mb-8" style={{ fontSize: "1.0625rem", lineHeight: 1.7 }}>{t("forUsers.ctaBody")}</p>
-          <Link href={app()} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
+          <Link href={l("/signup")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
             {t("forUsers.ctaButton")}
           </Link>
         </div>

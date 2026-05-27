@@ -54,6 +54,18 @@ export default function SignupPage() {
           return;
         }
 
+        // Redirect to the app with session tokens so the user lands authenticated.
+        // The app's /auth/callback route consumes the tokens and sets the session.
+        if (data.access_token && data.refresh_token) {
+          const params = new URLSearchParams({
+            token: data.access_token,
+            refresh: data.refresh_token,
+          });
+          window.location.href = `https://alphaglowai.app/auth/callback?${params.toString()}`;
+          return;
+        }
+
+        // Fallback: tokens unavailable — show success state with download links
         setState("success");
       } catch {
         setErrorMsg("Network error. Please check your connection and try again.");
@@ -112,7 +124,7 @@ export default function SignupPage() {
             <p className="font-sans text-muted mt-6" style={{ fontSize: "0.875rem" }}>
               Already have the app?{" "}
               <a
-                href="https://alphaglowai.app"
+                href="https://alphaglowai.app/login"
                 className="text-terracotta no-underline hover:underline"
                 style={{ textUnderlineOffset: "3px" }}
               >
@@ -299,7 +311,7 @@ export default function SignupPage() {
         <p className="font-sans text-muted mt-6" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
           Already have an account?{" "}
           <a
-            href="https://alphaglowai.app"
+            href="https://alphaglowai.app/login"
             className="text-terracotta no-underline hover:underline"
             style={{ textUnderlineOffset: "3px" }}
           >
