@@ -1,4 +1,4 @@
-﻿{
+{
   "nav": {
     "forCreators": "For Creators",
     "forListeners": "For Users",
@@ -11,7 +11,8 @@
     "forUsers": "For Users",
     "advertisers": "Advertisers",
     "nova": "Nova",
-    "nsvx": "NSVX"
+    "nsvx": "NSVX",
+    "signUp": "Sign up"
   },
   "languageSwitcher": {
     "label": "Language"
@@ -27,7 +28,8 @@
     "company": "Company",
     "investors": "Investors",
     "press": "Press",
-    "blog": "Journal"
+    "blog": "Journal",
+    "signUp": "Sign up"
   },
   "legalHub": {
     "navTitle": "Legal Documents",

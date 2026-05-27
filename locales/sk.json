@@ -11,7 +11,8 @@
     "forUsers": "Pre používateľov",
     "advertisers": "Inzerenti",
     "nova": "Nova",
-    "nsvx": "NSVX"
+    "nsvx": "NSVX",
+    "signUp": "Zaregistrovať sa"
   },
   "languageSwitcher": {
     "label": "Jazyk"
@@ -27,7 +28,8 @@
     "company": "Spoločnosť",
     "investors": "Investori",
     "press": "Tlač",
-    "blog": "Žurnál"
+    "blog": "Žurnál",
+    "signUp": "Zaregistrovať sa"
   },
   "legalHub": {
     "navTitle": "Právne dokumenty",

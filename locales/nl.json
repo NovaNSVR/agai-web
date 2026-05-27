@@ -1,4 +1,4 @@
-﻿{
+{
   "nav": {
     "forCreators": "Voor creators",
     "forListeners": "Voor gebruikers",
@@ -11,7 +11,8 @@
     "forUsers": "Voor gebruikers",
     "advertisers": "Adverteerders",
     "nova": "Nova",
-    "nsvx": "NSVX"
+    "nsvx": "NSVX",
+    "signUp": "Registreren"
   },
   "languageSwitcher": {
     "label": "Taal"
@@ -27,7 +28,8 @@
     "company": "Bedrijf",
     "investors": "Investeerders",
     "press": "Pers",
-    "blog": "Journal"
+    "blog": "Journal",
+    "signUp": "Registreren"
   },
   "legalHub": {
     "navTitle": "Juridische documenten",
