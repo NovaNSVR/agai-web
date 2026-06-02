@@ -91,6 +91,7 @@ npm run lint         # TypeScript + lint check
 | `/[locale]/how-nsvx-works/` | `app/[locale]/how-nsvx-works/page.tsx` | Legacy (kept) |
 | `/[locale]/for-listeners/` | `app/[locale]/for-listeners/page.tsx` | Legacy (kept) |
 | `/[locale]/legal/...` | `app/[locale]/legal/` | Live |
+| `/[locale]/privacy/` | `app/[locale]/privacy/page.tsx` | Live (2026-06-01) — standalone dark-theme privacy page |
 
 ## Components
 
@@ -164,6 +165,19 @@ All web-site-specific namespaces in `locales/en.json`:
 - Root layout (`app/layout.tsx`): global title template + meta description
 - Locale layout (`app/[locale]/layout.tsx`): hreflang alternates for all 10 locales
 - Per-page metadata: add `generateMetadata` to each page TSX as needed
+
+## Incident Log
+
+### 2026-06-01 — Netlify GitHub Connection Lost and Restored
+- **What happened:** Netlify lost GitHub SSH access to NovaNSVR/agai-web. All branch-triggered deploys failed with `Host key verification failed`. Build settings showed `installation_id: null` and `deploy_key_id: null`.
+- **Resolution:** Petr reconnected the GitHub integration via the Netlify dashboard (Site settings → Build & deploy → Link repository). Production deployed successfully at 20:45 local time.
+- **Staging deploy workflow:** Confirmed working post-reconnection. Staging branch auto-deploys via GitHub webhook. URL: `https://staging--agai-web.netlify.app`
+
+### 2026-06-01 — Privacy Policy Page Live
+- **URL:** `https://alphaglowai.com/en/privacy` (also accessible at `/privacy` via middleware locale redirect)
+- **Covers 12 sections:** Introduction (NeuroScope Technologies LLC, 4055 Westminster Dr, Sarasota FL 34241), Data Collected (name, email, device info, usage data, NSVX wallet address), How We Use It (platform ops, Nova AI personalization, NSVX token rewards, creator analytics), Nova AI Data, Third-Party Services (Supabase, Crossmint, ElevenLabs, Moonpay, Solana blockchain, Anthropic), Data Retention, User Rights (access/correction/deletion, contact: admin@alphaglowai.com), Cookies & Analytics, Children Under 13 (prohibited), Push Notifications, Policy Changes, Contact.
+- **App Store compliance:** Page covers all required privacy disclosures for iOS App Store submission.
+- **Contact:** admin@alphaglowai.com | NeuroScope Technologies LLC
 
 ## Git / Deploy Flow
 1. Make changes in `C:\ai-tools\agai-web`
