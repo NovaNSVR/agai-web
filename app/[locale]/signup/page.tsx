@@ -97,8 +97,8 @@ export default function SignupPage() {
               style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "2rem" }}
             >
               Your account and Solana wallet are ready. Open the AlphaGlow app
-              to start earning NSVX tokens, explore creator sessions, and build
-              your wellness practice.
+              to start earning NSVX tokens, explore creator sessions, and connect
+              with your AI companion Nova.
             </p>
             <div className="flex flex-col gap-3">
               <a

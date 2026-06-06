@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   const sections = [
     {
       title: "1. Introduction",
-      content: "AlphaGlow AI (\"we,\" \"our,\" or \"us\") is a creator economy wellness platform operated by NeuroScope Technologies LLC, located at 4055 Westminster Dr, Sarasota, Florida 34241. We are committed to protecting your privacy. This Privacy Policy explains what personal information we collect, how we use it, who we share it with, and your rights regarding that information.",
+      content: "AlphaGlow AI (\"we,\" \"our,\" or \"us\") is a creator economy platform operated by NeuroScope Technologies LLC, located at 4055 Westminster Dr, Sarasota, Florida 34241. We are committed to protecting your privacy. This Privacy Policy explains what personal information we collect, how we use it, who we share it with, and your rights regarding that information.",
     },
     {
       title: "2. Information We Collect",
@@ -17,8 +17,8 @@ export default function PrivacyPage() {
       intro1: "We collect information you provide directly:",
       list1: [
         "Account registration data: name and email address",
-        "Profile information: language preference, wellness goals, and Nova AI companion settings",
-        "Wellness and session activity: completion records, streaks, and check-in responses",
+        "Profile information: language preference, personal goals, and Nova AI companion settings",
+        "Session activity: completion records, streaks, and check-in responses",
         "Nova AI conversation history, used to personalize your experience",
         "Solana wallet address associated with your NSVX token account, provisioned via Crossmint",
       ],
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         "To power Nova AI personalization, including memory continuity and coaching responses",
         "To calculate and distribute NSVX token rewards for session completions and community activity",
         "To provide creator analytics, including session performance and audience engagement data",
-        "To send session reminders and wellness notifications (only with your explicit consent)",
+        "To send session reminders and notifications (only with your explicit consent)",
         "To process payments, creator revenue distributions, and NSVX token purchases",
         "To comply with applicable legal obligations and enforce our Terms of Service",
       ],
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
     },
     {
       title: "10. Push Notifications",
-      content: "Push notifications are entirely opt-in. Your device push token is stored solely for the purpose of delivering wellness reminders you have requested. You can revoke push notification permission at any time through your device settings.",
+      content: "Push notifications are entirely opt-in. Your device push token is stored solely for the purpose of delivering session reminders you have requested. You can revoke push notification permission at any time through your device settings.",
     },
     {
       title: "11. Changes to This Policy",
