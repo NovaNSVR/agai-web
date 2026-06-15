@@ -1,12 +1,14 @@
-"use client";
-
 import LegalLayout from "@/components/LegalLayout";
-import { useI18n } from "@/utils/i18n";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
-export default function TermsPage() {
-  const { t } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function TermsPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   return (
-    <LegalLayout title={t("terms.title")} lastUpdated={t("terms.date")} currentSuffix="/legal/terms">
+    <LegalLayout title={t("terms.title")} lastUpdated={t("terms.date")} currentSuffix="/legal/terms" locale={locale} tFn={t}>
+
       <h2>{t("terms.s1h")}</h2><p>{t("terms.s1p")}</p>
       <h2>{t("terms.s2h")}</h2><p>{t("terms.s2p")}</p>
       <h2>{t("terms.s3h")}</h2><p>{t("terms.s3p")}</p>
@@ -23,6 +25,6 @@ export default function TermsPage() {
       <h2>{t("terms.s12h")}</h2><p>{t("terms.s12p")}</p>
       <h2>{t("terms.s13h")}</h2><p>{t("terms.s13p")}</p>
       <h2>{t("terms.s14h")}</h2><p>{t("terms.s14p")}</p>
-    </LegalLayout>
+        </LegalLayout>
   );
 }

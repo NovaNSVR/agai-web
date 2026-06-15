@@ -1,10 +1,10 @@
-"use client";
-
-import { useI18n } from "@/utils/i18n";
 import Link from "next/link";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
-export default function PrivacyPage() {
-  const { locale } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function PrivacyPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
 
   const sections = [
     {

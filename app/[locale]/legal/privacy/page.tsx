@@ -1,12 +1,14 @@
-"use client";
-
 import LegalLayout from "@/components/LegalLayout";
-import { useI18n } from "@/utils/i18n";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
-export default function PrivacyPage() {
-  const { t } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function PrivacyPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   return (
-    <LegalLayout title={t("privacy.title")} lastUpdated={t("privacy.date")} currentSuffix="/legal/privacy">
+    <LegalLayout title={t("privacy.title")} lastUpdated={t("privacy.date")} currentSuffix="/legal/privacy" locale={locale} tFn={t}>
+
       <h2>{t("privacy.s1h")}</h2><p>{t("privacy.s1p")}</p>
       <h2>{t("privacy.s2h")}</h2>
       <p>{t("privacy.s2intro1")}</p>
@@ -39,6 +41,6 @@ export default function PrivacyPage() {
       <h2>{t("privacy.s11h")}</h2><p>{t("privacy.s11p")}</p>
 
       <h2>{t("privacy.s12h")}</h2><p>{t("privacy.s12p")}</p>
-    </LegalLayout>
+        </LegalLayout>
   );
 }

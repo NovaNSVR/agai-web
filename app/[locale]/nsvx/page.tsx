@@ -1,19 +1,18 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
-import { useI18n } from "@/utils/i18n";
 import FAQ from "@/components/FAQ";
+import { getServerT, LOCALES } from "@/utils/serverT";
+import BuyNotifyForm from "@/components/BuyNotifyForm";
 
 const EARN_ITEMS = [1, 2, 3, 4, 5, 6] as const;
 const SPEND_ITEMS = [1, 2, 3] as const;
 
-export default function NsvxPage() {
-  const { t, locale } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function NsvxPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   const l = (path: string) => `/${locale}${path}`;
   const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
-  const [email, setEmail] = useState("");
-  const [notified, setNotified] = useState(false);
 
   const faqItems = [1, 2, 3, 4, 5].map((n) => ({
     q: t(`nsvxPage.faq${n}Q`),
@@ -77,31 +76,11 @@ export default function NsvxPage() {
             style={{ maxWidth: 460, padding: "2.5rem 2rem", background: "var(--bg)", textAlign: "center" }}
           >
             <p className="font-sans text-muted mb-6" style={{ fontSize: "0.9375rem", lineHeight: 1.7 }}>{t("nsvxPage.buyNote")}</p>
-            {notified ? (
-              <p className="font-sans text-moss" style={{ fontSize: "0.875rem" }}>{t("nsvxPage.buyNotifySuccess")}</p>
-            ) : (
-              <form
-                onSubmit={(e) => { e.preventDefault(); setNotified(true); }}
-                className="flex gap-3 flex-wrap"
-              >
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t("nsvxPage.buyNotifyLabel")}
-                  className="font-sans text-ink border border-divider rounded bg-surface flex-1"
-                  style={{ padding: "10px 12px", fontSize: "0.875rem", minWidth: 200 }}
-                />
-                <button
-                  type="submit"
-                  className="font-sans text-surface rounded"
-                  style={{ backgroundColor: "var(--amber)", color: "#1A1A1A", fontSize: "0.875rem", fontWeight: 600, padding: "10px 20px", border: "none", cursor: "pointer" }}
-                >
-                  {t("nsvxPage.buyNotifyCta")}
-                </button>
-              </form>
-            )}
+            <BuyNotifyForm
+              notifyLabel={t("nsvxPage.buyNotifyLabel")}
+              notifyCta={t("nsvxPage.buyNotifyCta")}
+              notifySuccess={t("nsvxPage.buyNotifySuccess")}
+            />
           </div>
         </div>
       </section>

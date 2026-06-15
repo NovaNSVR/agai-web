@@ -1,14 +1,15 @@
-"use client";
-
 import Link from "next/link";
-import { useI18n } from "@/utils/i18n";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
 const EARN_IDS = ["CompleteSession", "Streak7", "Streak30", "FinishProgram", "ReferListener", "FirstCheckin"] as const;
 const SPEND_IDS = ["PremiumProgram", "DigitalTwin", "Soundscape", "NovaTier"] as const;
 const FAQ_IDS = [1, 2, 3, 4, 5] as const;
 
-export default function HowNsvxWorksPage() {
-  const { t, locale } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function HowNsvxWorksPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   const l = (path: string) => `/${locale}${path}`;
   const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 

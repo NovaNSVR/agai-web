@@ -1,14 +1,15 @@
-"use client";
-
 import Link from "next/link";
-import { useI18n } from "@/utils/i18n";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
 const HOW_ITEMS = [1, 2, 3] as const;
 const LEARNS_ITEMS = [1, 2, 3, 4, 5] as const;
 const PRIVACY_ITEMS = [1, 2, 3, 4] as const;
 
-export default function NovaPage() {
-  const { t, locale } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function NovaPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   const l = (path: string) => `/${locale}${path}`;
   const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 

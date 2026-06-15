@@ -1,14 +1,15 @@
-"use client";
-
 import Link from "next/link";
-import { useI18n } from "@/utils/i18n";
 import FAQ from "@/components/FAQ";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
 const FEATURES = ["memory", "programs", "nsvxFeature", "noNoise", "modalities", "offline"] as const;
 const EARN_ITEMS = [1, 2, 3] as const;
 
-export default function ForUsersPage() {
-  const { t, locale } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function ForUsersPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   const l = (path: string) => `/${locale}${path}`;
   const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
 

@@ -1,12 +1,14 @@
-"use client";
-
 import LegalLayout from "@/components/LegalLayout";
-import { useI18n } from "@/utils/i18n";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
-export default function AiDisclaimerPage() {
-  const { t } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function AiDisclaimerPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   return (
-    <LegalLayout title={t("aiDisc.title")} lastUpdated={t("aiDisc.date")} currentSuffix="/legal/ai-disclaimer">
+    <LegalLayout title={t("aiDisc.title")} lastUpdated={t("aiDisc.date")} currentSuffix="/legal/ai-disclaimer" locale={locale} tFn={t}>
+
       <h2>{t("aiDisc.s1h")}</h2><p>{t("aiDisc.s1p1")}</p><p>{t("aiDisc.s1p2")}</p>
       <h2>{t("aiDisc.s2h")}</h2><p>{t("aiDisc.s2p1")}</p><p>{t("aiDisc.s2p2")}</p>
       <h2>{t("aiDisc.s3h")}</h2><p>{t("aiDisc.s3p")}</p>
@@ -15,6 +17,6 @@ export default function AiDisclaimerPage() {
       <h2>{t("aiDisc.s6h")}</h2><p>{t("aiDisc.s6p")}</p>
       <h2>{t("aiDisc.s7h")}</h2><p>{t("aiDisc.s7p")}</p>
       <h2>{t("aiDisc.s8h")}</h2><p>{t("aiDisc.s8p")}</p>
-    </LegalLayout>
+        </LegalLayout>
   );
 }

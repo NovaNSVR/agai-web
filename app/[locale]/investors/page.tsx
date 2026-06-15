@@ -1,14 +1,15 @@
-"use client";
-
-import { useI18n } from "@/utils/i18n";
 import ContactForm from "@/components/ContactForm";
 import type { FormField } from "@/components/ContactForm";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
 const ROADMAP_ITEMS = [1, 2, 3, 4] as const;
 const ALLOC_ITEMS = [1, 2, 3, 4] as const;
 
-export default function InvestorsPage() {
-  const { t } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function InvestorsPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
 
   const contactFields: FormField[] = [
     { name: "name", label: t("investors.formName"), type: "text", required: true },

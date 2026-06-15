@@ -1,12 +1,14 @@
-"use client";
-
 import LegalLayout from "@/components/LegalLayout";
-import { useI18n } from "@/utils/i18n";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
-export default function NsvxDisclaimerPage() {
-  const { t } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function NsvxDisclaimerPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   return (
-    <LegalLayout title={t("nsvxDisc.title")} lastUpdated={t("nsvxDisc.date")} currentSuffix="/legal/nsvx-disclaimer">
+    <LegalLayout title={t("nsvxDisc.title")} lastUpdated={t("nsvxDisc.date")} currentSuffix="/legal/nsvx-disclaimer" locale={locale} tFn={t}>
+
       <h2>{t("nsvxDisc.s1h")}</h2><p>{t("nsvxDisc.s1p")}</p>
       <h2>{t("nsvxDisc.s2h")}</h2>
       <p>{t("nsvxDisc.s2intro")}</p>
@@ -19,6 +21,6 @@ export default function NsvxDisclaimerPage() {
       <h2>{t("nsvxDisc.s8h")}</h2><p>{t("nsvxDisc.s8p")}</p>
       <h2>{t("nsvxDisc.s9h")}</h2><p>{t("nsvxDisc.s9p")}</p>
       <h2>{t("nsvxDisc.s10h")}</h2><p>{t("nsvxDisc.s10p")}</p>
-    </LegalLayout>
+        </LegalLayout>
   );
 }

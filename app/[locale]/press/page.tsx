@@ -1,9 +1,10 @@
-"use client";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
-import { useI18n } from "@/utils/i18n";
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
-export default function PressPage() {
-  const { t } = useI18n();
+export default async function PressPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
 
   return (
     <>

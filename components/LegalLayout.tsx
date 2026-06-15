@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { useI18n } from "@/utils/i18n";
+import type { TFn } from "@/utils/serverT";
 
 const LEGAL_KEYS = [
   { path: "/legal/terms", key: "legalHub.terms" },
@@ -16,11 +14,13 @@ interface LegalLayoutProps {
   title: string;
   lastUpdated: string;
   children: React.ReactNode;
-  currentSuffix: string; // e.g. "/legal/terms"
+  currentSuffix: string;
+  locale: string;
+  tFn: TFn;
 }
 
-export default function LegalLayout({ title, lastUpdated, children, currentSuffix }: LegalLayoutProps) {
-  const { t, locale } = useI18n();
+export default function LegalLayout({ title, lastUpdated, children, currentSuffix, locale, tFn }: LegalLayoutProps) {
+  const t = tFn;
   const l = (path: string) => `/${locale}${path}`;
 
   return (

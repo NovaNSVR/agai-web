@@ -1,16 +1,17 @@
-"use client";
-
 import Link from "next/link";
-import { useI18n } from "@/utils/i18n";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import type { FormField } from "@/components/ContactForm";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
 const AD_CLASSES = ["preSess", "whisper", "pulse"] as const;
 const PRICING_TIERS = ["selfServe", "managed", "enterprise"] as const;
 
-export default function AdvertisersPage() {
-  const { t } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function AdvertisersPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
 
   const faqItems = [1, 2, 3].map((n) => ({
     q: t(`advertisers.faq${n}Q`),

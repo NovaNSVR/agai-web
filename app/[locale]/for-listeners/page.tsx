@@ -1,13 +1,14 @@
-"use client";
-
 import Link from "next/link";
-import { useI18n } from "@/utils/i18n";
+import { getServerT, LOCALES } from "@/utils/serverT";
 
 const FEATURE_IDS = ["memory", "experts", "nsvx", "noNoise", "modalities", "offline"] as const;
 const STEP_IDS = [1, 2, 3, 4] as const;
 
-export default function ForListenersPage() {
-  const { t, locale } = useI18n();
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export default async function ForListenersPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  const { t } = await getServerT(locale);
   const app = (path = "") => `https://alphaglowai.app${path}?lang=${locale}`;
   const l = (path: string) => `/${locale}${path}`;
 

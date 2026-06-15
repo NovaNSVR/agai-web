@@ -1,12 +1,8 @@
-"use client";
+import { redirect } from "next/navigation";
+import { LOCALES } from "@/utils/serverT";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useI18n } from "@/utils/i18n";
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
-export default function LegalIndexPage() {
-  const { locale } = useI18n();
-  const router = useRouter();
-  useEffect(() => { router.replace(`/${locale}/legal/terms`); }, [locale, router]);
-  return null;
+export default function LegalIndexPage({ params }: { params: { locale: string } }) {
+  redirect(`/${params.locale}/legal/terms`);
 }

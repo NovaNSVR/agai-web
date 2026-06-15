@@ -1,6 +1,7 @@
-"use client";
+import { getServerT, LOCALES } from "@/utils/serverT";
+export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
-export default function PricingPage() {
+export default async function PricingPage({ params }: { params: { locale: string } }) {
   return (
     <section
       className="container-pad"
