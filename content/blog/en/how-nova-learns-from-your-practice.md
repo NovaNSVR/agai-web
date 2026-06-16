@@ -1,7 +1,7 @@
 ---
 title: "How Nova learns from your practice"
 date: "2026-05-20"
-excerpt: "Nova is not a recommendation engine. She is something more specific — a companion built to understand your patterns over time, and to get better at serving you the longer you work with her."
+excerpt: "Nova is not a recommendation engine. She is something more specific — an AI guide built to understand your patterns over time, and to get better at serving you the longer you work with her."
 category: "nova-insights"
 author: "AlphaGlow"
 ---
@@ -30,4 +30,4 @@ This is why completion rates on AlphaGlow run significantly higher than on open 
 
 Everything Nova knows about you is visible in your account dashboard. You can see her signals, edit them, and delete them. She works *with* your consent, not around it.
 
-The goal is a companion who genuinely knows you — and earns that knowledge by being useful every day.
+The goal is an AI guide that genuinely knows you — and earns that knowledge by being useful every day.

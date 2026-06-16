@@ -1,5 +1,5 @@
 ---
-title: "Building a wellness studio on AlphaGlow"
+title: "Building a creator studio on AlphaGlow"
 date: "2026-05-10"
 excerpt: "What does it actually look like to set up your creator program on AlphaGlow? We walked through the full process — from application to first session published."
 category: "creator-spotlights"

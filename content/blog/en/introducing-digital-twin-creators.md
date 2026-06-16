@@ -32,4 +32,4 @@ This is the model: build your expertise once, have it available to your audience
 
 ## The first cohort
 
-The first Digital Twin creators are now live on the platform. We are onboarding new creators weekly. If you are a wellness professional ready to build your Digital Twin, applications are open.
+The first Digital Twin creators are now live on the platform. We are onboarding new creators weekly. If you are a creator ready to build your Digital Twin, applications are open.
