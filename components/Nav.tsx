@@ -30,10 +30,12 @@ export default function Nav() {
         {/* Wordmark */}
         <Link
           href={l("/")}
-          className="font-serif text-ink no-underline"
-          style={{ fontSize: "1.1rem", letterSpacing: "0.02em" }}
+          className="font-serif text-ink no-underline flex items-center"
+          style={{ fontSize: "1.1rem", letterSpacing: "0.02em", gap: "0.45rem" }}
         >
-          AlphaGlow
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icons/icon-512.png" alt="" aria-hidden="true" style={{ height: 22, width: 22, objectFit: "contain", flexShrink: 0 }} />
+          AlphaGlow AI
         </Link>
 
         {/* Desktop nav */}
