@@ -148,7 +148,7 @@ export default function PreviewCreatorsC({ params }: { params: { locale: string 
             Any creator is welcome
           </h2>
           <p className="font-sans text-muted" style={{ fontSize: "1rem", lineHeight: 1.8 }}>
-            There is no approved list of topics, no follower minimum to qualify, and no review process to pass. If you have something worth teaching, performing, or discussing — you can publish it here, set your price, and let your Digital Twin work on your behalf while you sleep.
+            Whatever your expertise, there is a category for it — and if one does not exist yet, the platform builds one around you — no follower minimum to qualify, and no review process to pass. If you have something worth teaching, performing, or discussing — you can publish it here, set your price, and let your Digital Twin work on your behalf while you sleep.
           </p>
         </div>
       </section>

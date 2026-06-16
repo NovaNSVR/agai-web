@@ -136,7 +136,19 @@
     "dtCreatorBody": "Vytvořte svůj Digital Twin na LiveAvatar (liveavatar.com), poté ho propojte se svým AlphaGlow AI studiem vložením Avatar ID a Access Token do nastavení studia. Od toho okamžiku váš Digital Twin streamuje živě každému návštěvníkovi vašeho studia, pohání relace s AI narací a spouští plně autonomní relace ve vaší podobě a klonovaném hlase — dostupné vašemu publiku nepřetržitě.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova rozvíjí vaší studio",
-    "novaStudioBody": "Nova se učí cíle, vzorce a reakce každého uživatele. Doporučuje váš program uživatelům, kterým by z něj nejpravděpodobněji prospěl — a plánuje vaše relace na chvíle, kdy jsou nejpravděpodobněji aktivní. Program vytvoříte jednou. Nova provádí doručení, načasování a přiřazení."
+    "novaStudioBody": "Nova se učí cíle, vzorce a reakce každého uživatele. Doporučuje váš program uživatelům, kterým by z něj nejpravděpodobněji prospěl — a plánuje vaše relace na chvíle, kdy jsou nejpravděpodobněji aktivní. Program vytvoříte jednou. Nova provádí doručení, načasování a přiřazení.",
+    "examplesLabel": "Pár příkladů",
+    "example1Label": "Hudebník",
+    "example1Headline": "Kytarista, který učí jazzovou teorii",
+    "example1Body": "Zveřejňuje technické lekce a programy pro trénink sluchu. Fanoušci odemykají celé kurzy pomocí NSVX; jeho Digital Twin odpovídá na otázky z teorie živě.",
+    "example2Label": "Kouč",
+    "example2Headline": "Výkonný kouč s vlastní metodikou",
+    "example2Body": "Svou metodiku zabalila do 12týdenní cesty. Klienti procházejí moduly vlastním tempem; její Digital Twin je drží zodpovědné mezi živými hovory.",
+    "example3Label": "Podcastér",
+    "example3Headline": "Moderátor true crime podcastu budující placený archiv",
+    "example3Body": "Odemykatelné epizody, bonusové hloubkové rozbory a Digital Twin, který diskutuje o důkazech případů se superfanoušky — k dispozici dlouho po vydání epizody.",
+    "openInviteHeading": "Každý tvůrce je vítán",
+    "openInviteBody": "Ať je vaše odbornost jakákoli, existuje pro ni kategorie — a pokud ještě neexistuje, platforma ji vytvoří kolem vás — žádné minimální počty sledujících pro kvalifikaci, žádný schvalovací proces. Máte-li co učit, předvádět nebo o čem diskutovat — zveřejněte to zde, nastavte svou cenu a nechte svého Digital Twin pracovat za vás, i když spíte."
   },
   "forListeners": {
     "badge": "Pro uživatele",

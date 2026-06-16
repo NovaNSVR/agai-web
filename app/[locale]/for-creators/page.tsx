@@ -3,6 +3,7 @@ import { getServerT, LOCALES } from "@/utils/serverT";
 
 const BENEFIT_IDS = ["nova", "dt", "data", "discovery", "sound"] as const;
 const STEP_IDS = [1, 2, 3, 4] as const;
+const EXAMPLE_IDS = [1, 2, 3] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
@@ -60,6 +61,28 @@ export default async function ForCreatorsPage({ params }: { params: { locale: st
               <h2 className="font-serif text-ink mb-5" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forCreators.novaStudioHeading")}</h2>
               <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.75 }}>{t("forCreators.novaStudioBody")}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Creator examples + open invitation */}
+      <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)" }}>
+        <div className="max-w-content mx-auto">
+          <p className="font-sans text-muted uppercase mb-10" style={{ fontSize: "0.7rem", letterSpacing: "0.16em", fontWeight: 600 }}>{t("forCreators.examplesLabel")}</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem", marginBottom: "4rem" }}>
+            {EXAMPLE_IDS.map((n, i) => (
+              <div key={n} style={{ display: "grid", gridTemplateColumns: "140px 1fr", gap: "2.5rem", alignItems: "start", paddingBottom: "2.5rem", borderBottom: i < EXAMPLE_IDS.length - 1 ? "1px solid var(--divider)" : undefined }}>
+                <p className="font-sans text-terracotta" style={{ fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", paddingTop: "0.2rem" }}>{t(`forCreators.example${n}Label`)}</p>
+                <div>
+                  <h3 className="font-serif text-ink mb-2" style={{ fontSize: "1.25rem", lineHeight: 1.25, letterSpacing: "-0.01em", fontWeight: 400 }}>{t(`forCreators.example${n}Headline`)}</h3>
+                  <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.7 }}>{t(`forCreators.example${n}Body`)}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div style={{ maxWidth: 620 }}>
+            <h2 className="font-serif text-ink mb-4" style={{ fontSize: "clamp(1.5rem,3vw,2rem)", lineHeight: 1.2, letterSpacing: "-0.012em" }}>{t("forCreators.openInviteHeading")}</h2>
+            <p className="font-sans text-muted" style={{ fontSize: "1rem", lineHeight: 1.8 }}>{t("forCreators.openInviteBody")}</p>
           </div>
         </div>
       </section>

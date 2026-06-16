@@ -136,7 +136,19 @@
     "dtCreatorBody": "Créez votre Digital Twin sur LiveAvatar (liveavatar.com), puis connectez-le à votre studio AlphaGlow AI en collant votre Avatar ID et votre Access Token dans les paramètres du studio. À partir de ce moment, votre Digital Twin diffuse en direct à chaque visiteur de votre studio, alimente des sessions narrées par IA et exécute des sessions entièrement autonomes à votre image et avec votre voix clonée — disponible pour votre audience en permanence.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova fait grandir votre studio",
-    "novaStudioBody": "Nova apprend les objectifs, habitudes et réactions de chaque utilisateur. Elle recommande votre programme aux utilisateurs qui en bénéficieront le plus — et planifie vos sessions aux moments où ils sont les plus susceptibles de s'engager. Vous créez le programme une fois. Nova gère la diffusion, le timing et l'appariement."
+    "novaStudioBody": "Nova apprend les objectifs, habitudes et réactions de chaque utilisateur. Elle recommande votre programme aux utilisateurs qui en bénéficieront le plus — et planifie vos sessions aux moments où ils sont les plus susceptibles de s'engager. Vous créez le programme une fois. Nova gère la diffusion, le timing et l'appariement.",
+    "examplesLabel": "Quelques exemples",
+    "example1Label": "Musicien",
+    "example1Headline": "Un guitariste qui enseigne la théorie du jazz",
+    "example1Body": "Publie des sessions de technique et des programmes d'entraînement de l'oreille. Les fans débloquent des cours complets avec des NSVX ; son Digital Twin répond aux questions de théorie en direct.",
+    "example2Label": "Coach",
+    "example2Headline": "Une coach exécutive avec une méthodologie propriétaire",
+    "example2Body": "Elle a packagé sa méthodologie en un parcours de 12 semaines. Les clients avancent dans les modules à leur propre rythme ; son Digital Twin les tient responsables entre les appels en direct.",
+    "example3Label": "Podcasteur",
+    "example3Headline": "Un animateur de true crime qui construit une archive payante",
+    "example3Body": "Des épisodes déverrouillables, des analyses approfondies en bonus et un Digital Twin qui discute des preuves des affaires avec les superfans — disponible bien après la sortie de l'épisode.",
+    "openInviteHeading": "Tout créateur est le bienvenu",
+    "openInviteBody": "Quelle que soit votre expertise, il existe une catégorie pour elle — et si elle n'existe pas encore, la plateforme en crée une autour de vous — aucun minimum d'abonnés pour se qualifier, aucun processus d'approbation. Si vous avez quelque chose à enseigner, à montrer ou à discuter — publiez-le ici, fixez votre prix et laissez votre Digital Twin travailler pour vous pendant que vous dormez."
   },
   "forListeners": {
     "badge": "Pour les utilisateurs",

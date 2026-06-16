@@ -136,7 +136,19 @@
     "dtCreatorBody": "Stwórz swojego Digital Twina na LiveAvatar (liveavatar.com), a następnie połącz go ze swoim studiem AlphaGlow AI, wklejając swój Avatar ID i Access Token w ustawieniach studia. Od tej chwili Twój Digital Twin streamuje na żywo do każdego odwiedzającego Twoje studio, zasila sesje z narracją AI i prowadzi w pełni autonomiczne sesje w Twoim wizerunku i sklonowanym głosie — dostępny dla Twojej publiczności przez całą dobę.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova rozwija Twoje studio",
-    "novaStudioBody": "Nova poznaje cele, wzorce i reakcje każdego użytkownika. Poleca Twój program użytkownikom, którzy mogą z niego najbardziej skorzystać — i planuje Twoje sesje na momenty, kiedy są oni najbardziej skłonni do zaangażowania. Budujesz program raz. Nova zajmuje się dostarczeniem, czasowaniem i dopasowaniem."
+    "novaStudioBody": "Nova poznaje cele, wzorce i reakcje każdego użytkownika. Poleca Twój program użytkownikom, którzy mogą z niego najbardziej skorzystać — i planuje Twoje sesje na momenty, kiedy są oni najbardziej skłonni do zaangażowania. Budujesz program raz. Nova zajmuje się dostarczeniem, czasowaniem i dopasowaniem.",
+    "examplesLabel": "Kilka przykładów",
+    "example1Label": "Muzyk",
+    "example1Headline": "Gitarzysta uczący teorii jazzu",
+    "example1Body": "Publikuje sesje techniczne i programy treningu słuchu. Fani odblokowują pełne kursy za pomocą NSVX; jego Digital Twin odpowiada na pytania z teorii na żywo.",
+    "example2Label": "Coach",
+    "example2Headline": "Coach wykonawczy z własną metodologią",
+    "example2Body": "Zapakowała swoją metodologię w 12-tygodniową podróż. Klienci przechodzą przez moduły we własnym tempie; jej Digital Twin utrzymuje ich odpowiedzialnymi między sesjami na żywo.",
+    "example3Label": "Podcaster",
+    "example3Headline": "Prowadzący true crime budujący płatne archiwum",
+    "example3Body": "Odblokowane odcinki, dogłębne analizy bonusowe i Digital Twin omawiający dowody spraw z superfanami — dostępny długo po premierze odcinka.",
+    "openInviteHeading": "Każdy twórca jest mile widziany",
+    "openInviteBody": "Cokolwiek jest twoją specjalnością, istnieje dla niej kategoria — a jeśli jeszcze nie istnieje, platforma tworzy ją wokół ciebie — żadnego minimalnego progu obserwujących, żadnego procesu zatwierdzania. Jeśli masz coś do nauczania, pokazania lub omówienia — opublikuj to tutaj, ustal swoją cenę i pozwól swojemu Digital Twinowi pracować w twoim imieniu, gdy śpisz."
   },
   "forListeners": {
     "badge": "Dla użytkowników",

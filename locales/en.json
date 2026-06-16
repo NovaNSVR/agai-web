@@ -136,7 +136,19 @@
     "dtCreatorBody": "Create your Digital Twin on LiveAvatar (liveavatar.com), then connect it to your AlphaGlow AI studio by pasting your Avatar ID and Access Token into your Studio settings. From that moment, your Digital Twin streams live to every visitor in your studio, powers AI-narrated sessions, and runs fully autonomous sessions in your likeness and cloned voice — available to your audience around the clock.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova grows your studio",
-    "novaStudioBody": "Nova learns each user's goals, patterns, and responses. She recommends your program to the users most likely to benefit — and schedules your sessions for the moments when they are most likely to engage. You build the program once. Nova does the delivery, the timing, and the matching."
+    "novaStudioBody": "Nova learns each user's goals, patterns, and responses. She recommends your program to the users most likely to benefit — and schedules your sessions for the moments when they are most likely to engage. You build the program once. Nova does the delivery, the timing, and the matching.",
+    "examplesLabel": "A few examples",
+    "example1Label": "Musician",
+    "example1Headline": "A guitarist who teaches jazz theory",
+    "example1Body": "Publishes technique sessions and ear-training programmes. Fans unlock full courses with NSVX; his Digital Twin answers theory questions live.",
+    "example2Label": "Coach",
+    "example2Headline": "An executive coach with a proprietary framework",
+    "example2Body": "Packages her methodology into a 12-week journey. Clients work through modules at their own pace; her Digital Twin holds them accountable between live calls.",
+    "example3Label": "Podcaster",
+    "example3Headline": "A true-crime host building a paid archive",
+    "example3Body": "Unlockable episodes, bonus deep-dives, and a Digital Twin that discusses case evidence with superfans — available long after the episode drops.",
+    "openInviteHeading": "Any creator is welcome",
+    "openInviteBody": "Whatever your expertise, there is a category for it — and if one does not exist yet, the platform builds one around you — no follower minimum to qualify, and no review process to pass. If you have something worth teaching, performing, or discussing — you can publish it here, set your price, and let your Digital Twin work on your behalf while you sleep."
   },
   "forListeners": {
     "badge": "For Users",

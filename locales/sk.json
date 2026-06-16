@@ -136,7 +136,19 @@
     "dtCreatorBody": "Vytvorte si Digital Twin na LiveAvatar (liveavatar.com), potom ho prepojte so svojím AlphaGlow AI štúdiom vložením Avatar ID a Access Token do nastavení štúdia. Od tohto momentu váš Digital Twin streamuje naživo každému návštevníkovi vášho štúdia, poháňa relácie s AI naráciou a spúšťa plne autonómne relácie vo vašej podobe a klonovanom hlase — dostupné vášmu publiku nepretržite.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova rozvíja vašu stanicu",
-    "novaStudioBody": "Nova sa učí ciele, vzory a reakcie každého používateľa. Odporúča vášmu programu používateľom, ktorí z neho budú najviac profitovať — a plánuje vaše sedenia na chvíle, keď sa s nimi budete s najväčšou pravdepodobnosťou aktívne zapojiť. Program vytvoríte raz. Nova sa postará o dodávku, časovanie a zlaďovanie."
+    "novaStudioBody": "Nova sa učí ciele, vzory a reakcie každého používateľa. Odporúča vášmu programu používateľom, ktorí z neho budú najviac profitovať — a plánuje vaše sedenia na chvíle, keď sa s nimi budete s najväčšou pravdepodobnosťou aktívne zapojiť. Program vytvoríte raz. Nova sa postará o dodávku, časovanie a zlaďovanie.",
+    "examplesLabel": "Niekoľko príkladov",
+    "example1Label": "Hudobník",
+    "example1Headline": "Gitarista, ktorý učí jazzovú teóriu",
+    "example1Body": "Zverejňuje technické lekcie a programy na tréning sluchu. Fanúšikovia odomykajú celé kurzy pomocou NSVX; jeho Digital Twin odpovedá na otázky z teórie naživo.",
+    "example2Label": "Kouč",
+    "example2Headline": "Manažérsky kouč s vlastnou metodikou",
+    "example2Body": "Svoju metodiku zabalila do 12-týždňovej cesty. Klienti prechádzajú modulmi vlastným tempom; jej Digital Twin ich drží zodpovednými medzi živými hovormi.",
+    "example3Label": "Podcastér",
+    "example3Headline": "Moderátor true crime podcastu budujúci platený archív",
+    "example3Body": "Odomykateľné epizódy, bonusové hĺbkové rozbory a Digital Twin, ktorý diskutuje o dôkazoch prípadov so superfanúšikmi — k dispozícii dlho po vydaní epizódy.",
+    "openInviteHeading": "Každý tvorca je vítaný",
+    "openInviteBody": "Nech je vaša odbornosť akákoľvek, existuje pre ňu kategória — a ak ešte neexistuje, platforma ju vytvorí okolo vás — žiadne minimálne počty sledovateľov na kvalifikáciu, žiadny schvaľovací proces. Ak máte čo učiť, predvádzať alebo o čom diskutovať — zverejnite to tu, nastavte svoju cenu a nechajte svojho Digital Twina pracovať za vás, aj keď spíte."
   },
   "forListeners": {
     "badge": "Pre používateľov",
