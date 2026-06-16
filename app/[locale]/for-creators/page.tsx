@@ -3,7 +3,7 @@ import { getServerT, LOCALES } from "@/utils/serverT";
 
 const BENEFIT_IDS = ["nova", "dt", "data", "discovery", "sound"] as const;
 const STEP_IDS = [1, 2, 3, 4] as const;
-const EXAMPLE_IDS = [1, 2, 3] as const;
+const EXAMPLE_IDS = [1, 2, 3, 4, 5, 6] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
