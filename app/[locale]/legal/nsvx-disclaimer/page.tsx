@@ -12,7 +12,7 @@ export default async function NsvxDisclaimerPage({ params }: { params: { locale:
       <h2>{t("nsvxDisc.s1h")}</h2><p>{t("nsvxDisc.s1p")}</p>
       <h2>{t("nsvxDisc.s2h")}</h2>
       <p>{t("nsvxDisc.s2intro")}</p>
-      <ul>{([1,2,3,4,5] as const).map(n => <li key={n}>{t(`nsvxDisc.s2i${n}`)}</li>)}</ul>
+      <ul>{([1,2,3,4] as const).map(n => <li key={n}>{t(`nsvxDisc.s2i${n}`)}</li>)}</ul>
       <h2>{t("nsvxDisc.s3h")}</h2><p>{t("nsvxDisc.s3p")}</p>
       <h2>{t("nsvxDisc.s4h")}</h2><p>{t("nsvxDisc.s4p")}</p>
       <h2>{t("nsvxDisc.s5h")}</h2><p>{t("nsvxDisc.s5p")}</p>

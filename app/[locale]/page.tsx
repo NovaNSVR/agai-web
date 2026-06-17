@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
 
 const ARCHETYPE_IDS = [
-  "movement", "meditation", "nutrition", "sleep", "resilience", "sound",
+  "musician", "podcaster", "yogaTeacher",
 ] as const;
 
 const COMPARISON_IDS = ["patreon", "substack", "insightTimer"] as const;
@@ -68,6 +68,11 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 </p>
               </div>
             ))}
+          </div>
+          <div className="mt-8">
+            <Link href={l("/for-creators")} className="font-sans text-terracotta no-underline hover:underline" style={{ fontSize: "0.9375rem", textUnderlineOffset: "3px" }}>
+              {t("home.archetypesSeeAll")}
+            </Link>
           </div>
         </div>
       </section>

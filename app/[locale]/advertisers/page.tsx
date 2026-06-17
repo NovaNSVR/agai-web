@@ -125,7 +125,8 @@ export default async function AdvertisersPage({ params }: { params: { locale: st
       <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)", background: "var(--surface)" }}>
         <div className="max-w-content mx-auto">
           <h2 className="font-serif text-ink mb-4" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("advertisers.pricingHeading")}</h2>
-          <p className="font-sans text-muted mb-12" style={{ fontSize: "0.9375rem", lineHeight: 1.7, maxWidth: 560 }}>{t("advertisers.pricingBody")}</p>
+          <p className="font-sans text-muted mb-6" style={{ fontSize: "0.9375rem", lineHeight: 1.7, maxWidth: 560 }}>{t("advertisers.pricingBody")}</p>
+          <p className="font-sans text-muted mb-12" style={{ fontSize: "0.8125rem", lineHeight: 1.65, maxWidth: 560, opacity: 0.75 }}>{t("advertisers.statsDisclaimer")}</p>
           <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", background: "var(--divider)", border: "1px solid var(--divider)" }}>
             {PRICING_TIERS.map((id) => (
               <div key={id} className="bg-surface" style={{ padding: "2rem 1.75rem" }}>
