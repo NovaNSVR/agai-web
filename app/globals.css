@@ -126,6 +126,50 @@ body {
   font-style: italic;
 }
 
+/* Home v2 — kinetic hero */
+.hero-v2 {
+  background-color: var(--dark-bg);
+  color: var(--dark-ink);
+}
+
+.hero-v2-underline {
+  display: block;
+  height: 2px;
+  background: var(--gold);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.05s linear;
+  border-radius: 1px;
+  max-width: 100%;
+}
+
+.hero-v2-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-v2-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(201, 168, 76, 0.25);
+}
+
+.hero-v2-card-link {
+  color: var(--gold);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  transition: opacity 0.15s;
+}
+
+.hero-v2-card-link:hover { opacity: 0.75; }
+
 @layer utilities {
 
   .section-pad {
