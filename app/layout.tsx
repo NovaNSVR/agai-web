@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Lora, Inter, Cormorant_Garamond } from "next/font/google";
+import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 
 const lora = Lora({
   subsets: ["latin", "latin-ext"],
   variable: "--font-lora",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -35,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html suppressHydrationWarning className={`${lora.variable} ${inter.variable} ${cormorant.variable}`}>
+    <html suppressHydrationWarning className={`${lora.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-bg text-ink">{children}</body>
     </html>
   );
