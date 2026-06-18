@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
 
 const ARCHETYPE_IDS = [
-  "movement", "meditation", "nutrition", "sleep", "resilience", "sound",
+  "yoga", "trainer", "musician", "podcaster", "nutritionist", "meditationGuide",
 ] as const;
 
 const COMPARISON_IDS = ["patreon", "substack", "insightTimer"] as const;
@@ -58,13 +58,13 @@ export default async function HomePage({ params }: { params: { locale: string } 
             {ARCHETYPE_IDS.map((id) => (
               <div key={id} className="bg-surface" style={{ padding: "2rem 1.75rem" }}>
                 <span className="font-sans text-terracotta uppercase block mb-3" style={{ fontSize: "0.6875rem", letterSpacing: "0.1em", fontWeight: 500 }}>
-                  {t(`home.${id}Category`)}
+                  {t(`forCreators.${id}Category`)}
                 </span>
                 <h3 className="font-serif text-ink mb-2" style={{ fontSize: "1.125rem", fontWeight: 400 }}>
-                  {t(`home.${id}Title`)}
+                  {t(`forCreators.${id}Title`)}
                 </h3>
                 <p className="font-sans text-muted" style={{ fontSize: "0.875rem", lineHeight: 1.65 }}>
-                  {t(`home.${id}Desc`)}
+                  {t(`forCreators.${id}Desc`)}
                 </p>
               </div>
             ))}
