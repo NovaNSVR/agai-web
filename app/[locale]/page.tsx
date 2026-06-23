@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
 
 const ARCHETYPE_IDS = [
-  "musician", "podcaster", "yogaTeacher",
+  "yoga", "trainer", "musician", "podcaster", "nutritionist", "meditationGuide",
 ] as const;
 
 const COMPARISON_IDS = ["patreon", "substack", "insightTimer"] as const;
@@ -32,9 +32,9 @@ export default async function HomePage({ params }: { params: { locale: string } 
               {t("home.heroBody")}
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href={l("/signup")} className="font-sans no-underline text-surface rounded" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
+              <a href={app()} className="font-sans no-underline text-surface rounded" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
                 {t("home.heroCtaApp")}
-              </Link>
+              </a>
               <Link href={l("/for-creators")} className="font-sans no-underline text-ink rounded border border-divider" style={{ fontSize: "0.9375rem", padding: "14px 28px" }}>
                 {t("home.heroCtaCreators")}
               </Link>
@@ -58,21 +58,16 @@ export default async function HomePage({ params }: { params: { locale: string } 
             {ARCHETYPE_IDS.map((id) => (
               <div key={id} className="bg-surface" style={{ padding: "2rem 1.75rem" }}>
                 <span className="font-sans text-terracotta uppercase block mb-3" style={{ fontSize: "0.6875rem", letterSpacing: "0.1em", fontWeight: 500 }}>
-                  {t(`home.${id}Category`)}
+                  {t(`forCreators.${id}Category`)}
                 </span>
                 <h3 className="font-serif text-ink mb-2" style={{ fontSize: "1.125rem", fontWeight: 400 }}>
-                  {t(`home.${id}Title`)}
+                  {t(`forCreators.${id}Title`)}
                 </h3>
                 <p className="font-sans text-muted" style={{ fontSize: "0.875rem", lineHeight: 1.65 }}>
-                  {t(`home.${id}Desc`)}
+                  {t(`forCreators.${id}Desc`)}
                 </p>
               </div>
             ))}
-          </div>
-          <div className="mt-8">
-            <Link href={l("/for-creators")} className="font-sans text-terracotta no-underline hover:underline" style={{ fontSize: "0.9375rem", textUnderlineOffset: "3px" }}>
-              {t("home.archetypesSeeAll")}
-            </Link>
           </div>
         </div>
       </section>
@@ -89,7 +84,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
             </p>
           </div>
           <div className="grid gap-10 md:grid-cols-3">
-            {([1, 2, 3] as const).map((n) => (
+            {(["1", "2", "3"] as const).map((n) => (
               <div key={n}>
                 <span className="font-sans text-muted font-tabular block mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.1em" }}>
                   {t(`home.nsvxStep${n}Num`)}
@@ -151,9 +146,9 @@ export default async function HomePage({ params }: { params: { locale: string } 
           <p className="font-sans text-muted mb-8" style={{ fontSize: "1.0625rem", lineHeight: 1.7 }}>
             {t("home.ctaBody")}
           </p>
-          <Link href={l("/signup")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
+          <a href={app()} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
             {t("home.ctaButton")}
-          </Link>
+          </a>
         </div>
       </section>
     </>
