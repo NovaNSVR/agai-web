@@ -82,7 +82,10 @@ export default async function ForCreatorsPage({ params }: { params: { locale: st
           </div>
           <div style={{ maxWidth: 620 }}>
             <h2 className="font-serif text-ink mb-4" style={{ fontSize: "clamp(1.5rem,3vw,2rem)", lineHeight: 1.2, letterSpacing: "-0.012em" }}>{t("forCreators.openInviteHeading")}</h2>
-            <p className="font-sans text-muted" style={{ fontSize: "1rem", lineHeight: 1.8 }}>{t("forCreators.openInviteBody")}</p>
+            <p className="font-sans text-muted mb-8" style={{ fontSize: "1rem", lineHeight: 1.8 }}>{t("forCreators.openInviteBody")}</p>
+            <Link href={app("/creator-onboarding")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}>
+              {t("forCreators.ctaApply")}
+            </Link>
           </div>
         </div>
       </section>
