@@ -127,6 +127,15 @@ export default async function InvestorsPage({ params }: { params: { locale: stri
         </div>
       </section>
 
+      {/* Referrals */}
+      <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)", background: "var(--surface)" }}>
+        <div className="max-w-content mx-auto">
+          <p className="font-sans uppercase mb-3" style={{ color: "var(--terracotta)", fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>{t("investors.referralsBadge")}</p>
+          <h2 className="font-serif text-ink mb-4" style={{ fontSize: "clamp(1.25rem,2.5vw,1.75rem)", maxWidth: 680, lineHeight: 1.3 }}>{t("investors.referralsHeading")}</h2>
+          <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.75, maxWidth: 620 }}>{t("investors.referralsBody")}</p>
+        </div>
+      </section>
+
       {/* Contact form */}
       <section className="container-pad section-pad">
         <div className="max-w-content mx-auto">

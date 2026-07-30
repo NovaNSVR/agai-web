@@ -646,7 +646,10 @@
     "formFund": "Fundo ou empresa",
     "formMessage": "Mensagem",
     "formSubmit": "Enviar",
-    "formSuccess": "Obrigado. Responderemos a consultas sérias em até 48 horas."
+    "formSuccess": "Obrigado. Responderemos a consultas sérias em até 48 horas.",
+    "referralsBadge": "Indicações",
+    "referralsHeading": "Estamos construindo algo que vale a pena fazer parte, e isso inclui as pessoas que nos ajudam a crescer.",
+    "referralsBody": "Conhece um investidor ou parceiro estratégico que se entusiasmaria com a AlphaGlow? Envie-o até nós. Reparamos nas pessoas que nos abrem portas e somos gratos a elas."
   },
   "novaPage": {
     "badge": "Nova",

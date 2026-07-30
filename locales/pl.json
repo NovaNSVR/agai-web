@@ -646,7 +646,10 @@
     "formFund": "Fundusz lub firma",
     "formMessage": "Wiadomość",
     "formSubmit": "Wyślij",
-    "formSuccess": "Dziękujemy. Odpowiemy na poważne zapytania w ciągu 48 godzin."
+    "formSuccess": "Dziękujemy. Odpowiemy na poważne zapytania w ciągu 48 godzin.",
+    "referralsBadge": "Polecenia",
+    "referralsHeading": "Budujemy coś, co warto współtworzyć, a to dotyczy również ludzi, którzy pomagają nam się rozwijać.",
+    "referralsBody": "Znasz inwestora lub partnera strategicznego, którego zachwyciłby AlphaGlow? Prześlij nam kontakt. Zauważamy i doceniamy ludzi, którzy otwierają nam drzwi."
   },
   "novaPage": {
     "badge": "Nova",
