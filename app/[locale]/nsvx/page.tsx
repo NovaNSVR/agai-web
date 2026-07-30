@@ -3,8 +3,8 @@ import FAQ from "@/components/FAQ";
 import { getServerT, LOCALES } from "@/utils/serverT";
 import BuyNotifyForm from "@/components/BuyNotifyForm";
 
-const EARN_ITEMS = [1, 2, 3, 4, 5, 6] as const;
-const SPEND_ITEMS = [1, 2, 3] as const;
+const EARN_ITEMS = [6] as const;
+const SPEND_ITEMS = [1, 2] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
