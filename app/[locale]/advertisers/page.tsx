@@ -41,6 +41,7 @@ export default async function AdvertisersPage({ params }: { params: { locale: st
       {/* Hero */}
       <section
         style={{
+          background: "var(--bg)",
           paddingTop: "clamp(5rem,10vw,8rem)",
           paddingBottom: "clamp(4rem,8vw,7rem)",
           borderBottom: "1px solid var(--divider)",
