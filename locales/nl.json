@@ -646,7 +646,10 @@
     "formFund": "Fonds of bedrijf",
     "formMessage": "Bericht",
     "formSubmit": "Verzenden",
-    "formSuccess": "Dank je wel. We reageren op serieuze vragen binnen 48 uur."
+    "formSuccess": "Dank je wel. We reageren op serieuze vragen binnen 48 uur.",
+    "referralsBadge": "Aanbevelingen",
+    "referralsHeading": "We bouwen iets dat het waard is om deel van uit te maken, en dat geldt ook voor de mensen die ons helpen groeien.",
+    "referralsBody": "Ken je een investeerder of strategische partner die enthousiast zou worden van AlphaGlow? Stuur ze naar ons toe. We merken de mensen op die deuren voor ons openen en waarderen hen."
   },
   "novaPage": {
     "badge": "Nova",

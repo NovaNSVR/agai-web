@@ -646,7 +646,10 @@
     "formFund": "Fonds ou entreprise",
     "formMessage": "Message",
     "formSubmit": "Envoyer",
-    "formSuccess": "Merci. Nous répondrons aux demandes sérieuses dans les 48 heures."
+    "formSuccess": "Merci. Nous répondrons aux demandes sérieuses dans les 48 heures.",
+    "referralsBadge": "Recommandations",
+    "referralsHeading": "Nous construisons quelque chose qui mérite qu'on en fasse partie, et cela inclut les personnes qui nous aident à grandir.",
+    "referralsBody": "Vous connaissez un investisseur ou un partenaire stratégique que AlphaGlow enthousiasmerait ? Envoyez-le-nous. Nous remarquons les personnes qui nous ouvrent des portes et nous leur en sommes reconnaissants."
   },
   "novaPage": {
     "badge": "Nova",

@@ -651,7 +651,10 @@
     "formFund": "Fund or firm",
     "formMessage": "Message",
     "formSubmit": "Send",
-    "formSuccess": "Thank you. We will respond to serious enquiries within 48 hours."
+    "formSuccess": "Thank you. We will respond to serious enquiries within 48 hours.",
+    "referralsBadge": "Referrals",
+    "referralsHeading": "We're building something worth being part of, and that includes the people who help us grow.",
+    "referralsBody": "Know an investor or strategic partner who would get excited about AlphaGlow? Send them our way. We notice and appreciate the people who open doors for us."
   },
   "novaPage": {
     "badge": "Nova",

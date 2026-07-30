@@ -646,7 +646,10 @@
     "formFund": "Fonds oder Unternehmen",
     "formMessage": "Nachricht",
     "formSubmit": "Senden",
-    "formSuccess": "Vielen Dank. Wir antworten auf ernsthafte Anfragen innerhalb von 48 Stunden."
+    "formSuccess": "Vielen Dank. Wir antworten auf ernsthafte Anfragen innerhalb von 48 Stunden.",
+    "referralsBadge": "Empfehlungen",
+    "referralsHeading": "Wir bauen etwas auf, das es wert ist, Teil davon zu sein, und das gilt auch für die Menschen, die uns beim Wachsen helfen.",
+    "referralsBody": "Kennst du einen Investor oder strategischen Partner, den AlphaGlow begeistern würde? Schick ihn zu uns. Wir bemerken die Menschen, die uns Türen öffnen, und schätzen sie."
   },
   "novaPage": {
     "badge": "Nova",

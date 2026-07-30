@@ -646,7 +646,10 @@
     "formFund": "Fond alebo spoločnosť",
     "formMessage": "Správa",
     "formSubmit": "Odoslať",
-    "formSuccess": "Ďakujeme. Odpovedáme na vážne otázky do 48 hodín."
+    "formSuccess": "Ďakujeme. Odpovedáme na vážne otázky do 48 hodín.",
+    "referralsBadge": "Odporúčania",
+    "referralsHeading": "Budujeme niečo, čo stojí za to byť jeho súčasťou, a to platí aj pre ľudí, ktorí nám pomáhajú rásť.",
+    "referralsBody": "Poznáte investora alebo strategického partnera, ktorého by AlphaGlow nadchol? Pošlite nám ho. Všímame si ľudí, ktorí nám otvárajú dvere, a vážime si ich."
   },
   "novaPage": {
     "badge": "Nova",
