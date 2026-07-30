@@ -342,10 +342,10 @@
     "s4p": "Jouw gesprekken met Nova worden opgeslagen voor geheugencontinuïteit en gepersonaliseerde begeleiding. Wij verkopen deze gegevens niet aan derden. Gespreksgegevens kunnen in geaggregeerde, geanonimiseerde vorm worden gebruikt om de prestaties van het AI-model te verbeteren.",
     "s5h": "5. Gegevensdeling",
     "s5intro": "Wij delen gegevens met:",
-    "s5i1": "Supabase — onze database- en authenticatieprovider (EU-standaardcontractbepalingen van kracht)",
-    "s5i2": "Anthropic — AI-modelprovider voor Nova-reacties (gegevens verwerkt conform de API-voorwaarden van Anthropic)",
-    "s5i3": "ElevenLabs — spraaksynthese voor Digital Twin-sessies van creators",
-    "s5i4": "Betalingsverwerkers — voor abonnements- en NSVX-aankooptransacties",
+    "s5i1": "Supabase — onze database- en authenticatieprovider. Gegevens worden opgeslagen conform de Standaardcontractbepalingen.",
+    "s5i2": "Crossmint — voorziet en beheert jouw Solana-wallet voor de opslag van NSVX-tokens. Crossmint verwerkt jouw e-mailadres en walletadres.",
+    "s5i3": "ElevenLabs — levert AI-spraaksynthese voor Digital Twin-sessies van creators. Verzoeken tot audiogeneratie worden verwerkt conform de privacyvoorwaarden van ElevenLabs.",
+    "s5i4": "Moonpay — maakt de aankoop van NSVX-tokens met fiatgeld mogelijk. Moonpay is een onafhankelijke, gereguleerde betalingsverwerker die onderworpen is aan zijn eigen KYC/AML-verplichtingen.",
     "s5p": "Wij verkopen jouw persoonsgegevens niet aan adverteerders of gegevensmakelaars.",
     "s6h": "6. Gegevensbewaring",
     "s6p": "Wij bewaren accountgegevens gedurende de looptijd van je account plus 90 dagen na verwijdering. Gespreksgeschiedenis met Nova wordt 24 maanden bewaard en kan op verzoek worden verwijderd. NSVX-transactielogboeken worden 7 jaar bewaard voor financiële naleving.",
@@ -364,7 +364,12 @@
     "s10h": "10. Wijzigingen",
     "s10p": "Wezenlijke wijzigingen in dit beleid worden minimaal 14 dagen voor inwerkingtreding meegedeeld via een in-app-melding of per e-mail.",
     "s11h": "11. Contact",
-    "s11p": "Privacyvragen: privacy@alphaglowai.app."
+    "s11p": "Privacyvragen: privacy@alphaglowai.app.",
+    "s5i5": "Solana Blockchain — NSVX-tokentransacties worden vastgelegd op de openbare Solana-blockchain. Blockchaingegevens zijn openbaar zichtbaar en kunnen niet worden verwijderd.",
+    "s5i6": "Anthropic — verwerkt Nova AI-gespreksgegevens om reacties te genereren, conform de API-voorwaarden van Anthropic.",
+    "s3i7": "Om te voldoen aan toepasselijke wettelijke verplichtingen en onze Servicevoorwaarden te handhaven",
+    "s12h": "12. Neem contact met ons op",
+    "s12p": "Privacyvragen: admin@alphaglowai.com. NeuroScope Technologies LLC, 4055 Westminster Dr, Sarasota, Florida 34241."
   },
   "aiDisc": {
     "title": "AI-disclaimer",
@@ -594,7 +599,8 @@
     "budgetOpt4": "$10.000+",
     "formMessage": "Vertel ons over uw campagne",
     "formSubmit": "Verzend aanvraag",
-    "formSuccess": "Bedankt. We nemen binnen één werkdag contact met u op."
+    "formSuccess": "Bedankt. We nemen binnen één werkdag contact met u op.",
+    "statsDisclaimer": "De weergegeven voltooiingspercentages, prijsniveaus en beloningsbedragen zijn huidige schattingen op basis van vroeg testen en kunnen veranderen naarmate het platform zijn eerste advertentiepartners onboardt."
   },
   "investors": {
     "badge": "Voor Investeerders",
