@@ -16,15 +16,15 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
   return (
     <>
       {/* Hero */}
-      <section className="container-pad" style={{ paddingTop: "clamp(5rem,12vw,9rem)", paddingBottom: "clamp(4rem,8vw,6rem)", borderBottom: "1px solid var(--divider)" }}>
+      <section className="container-pad" style={{ paddingTop: "clamp(5rem,10vw,8rem)", paddingBottom: "clamp(4rem,8vw,7rem)", borderBottom: "1px solid var(--divider)" }}>
         <div className="max-w-content mx-auto" style={{ maxWidth: 720 }}>
           <p className="font-sans text-terracotta uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
             {t("ambassador.badge")}
           </p>
-          <h1 className="font-serif text-ink" style={{ fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.1, letterSpacing: "-0.02em", marginBottom: "1.25rem" }}>
+          <h1 className="font-serif text-ink" style={{ fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", marginBottom: "1.25rem" }}>
             {t("ambassador.heroHeading")}
           </h1>
-          <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.15rem)", lineHeight: 1.75, maxWidth: 580, marginBottom: "2rem" }}>
+          <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 580, marginBottom: "2rem" }}>
             {t("ambassador.heroBody")}
           </p>
           <div className="inline-block rounded" style={{ background: "var(--bg)", border: "1px solid var(--divider)", padding: "0.875rem 1.25rem" }}>
@@ -39,7 +39,7 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
       <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)" }}>
         <div className="max-w-content mx-auto">
           <div className="mb-12">
-            <h2 className="font-serif text-ink" style={{ fontSize: "clamp(1.5rem,3vw,2.25rem)", marginBottom: "0.75rem" }}>
+            <h2 className="font-serif text-ink" style={{ fontSize: "clamp(1.5rem,3vw,2rem)", marginBottom: "0.75rem" }}>
               {t("ambassador.categoriesHeading")}
             </h2>
             <p className="font-sans text-muted" style={{ fontSize: "1rem", maxWidth: 560 }}>
@@ -98,15 +98,9 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
               <h3 className="font-serif text-ink mb-3" style={{ fontSize: "1.25rem", fontWeight: 400 }}>
                 {t("ambassador.investorTitle")}
               </h3>
-              <p className="font-sans text-muted mb-4" style={{ fontSize: "0.9375rem", lineHeight: 1.7 }}>
+              <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.7 }}>
                 {t("ambassador.investorBody")}
               </p>
-              <div className="font-sans" style={{ fontSize: "0.8125rem", color: "var(--muted)", borderTop: "1px solid var(--divider)", paddingTop: "1rem" }}>
-                <div className="flex justify-between">
-                  <span>{t("ambassador.onTermSheet")}</span>
-                  <span className="font-tabular text-ink">$50</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -131,7 +125,7 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
       <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)" }}>
         <div className="max-w-content mx-auto">
           <div className="mb-12">
-            <h2 className="font-serif text-ink" style={{ fontSize: "clamp(1.5rem,3vw,2.25rem)", marginBottom: "0.75rem" }}>
+            <h2 className="font-serif text-ink" style={{ fontSize: "clamp(1.5rem,3vw,2rem)", marginBottom: "0.75rem" }}>
               {t("ambassador.howHeading")}
             </h2>
             <p className="font-sans text-muted" style={{ fontSize: "1rem", maxWidth: 520 }}>
@@ -142,7 +136,7 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
           <div className="grid gap-10 md:grid-cols-3">
             {(["1", "2", "3"] as const).map((n) => (
               <div key={n}>
-                <span className="font-sans text-muted font-tabular block mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.1em" }}>
+                <span className="font-sans font-tabular block mb-4" style={{ color: "var(--terracotta)", fontSize: "0.75rem", letterSpacing: "0.08em", fontWeight: 500 }}>
                   0{n}
                 </span>
                 <h3 className="font-serif text-ink mb-3" style={{ fontSize: "1.125rem", fontWeight: 400 }}>
@@ -160,7 +154,7 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
       {/* Apply form */}
       <section className="container-pad section-pad" id="apply">
         <div className="max-w-content mx-auto" style={{ maxWidth: 640 }}>
-          <h2 className="font-serif text-ink mb-3" style={{ fontSize: "clamp(1.5rem,3vw,2.25rem)" }}>
+          <h2 className="font-serif text-ink mb-3" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>
             {t("ambassador.applyHeading")}
           </h2>
           <p className="font-sans text-muted mb-8" style={{ fontSize: "1rem", lineHeight: 1.7 }}>

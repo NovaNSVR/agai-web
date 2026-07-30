@@ -36,6 +36,7 @@ export default function Footer() {
               { href: l("/nova"), label: t("nav.nova") },
               { href: l("/nsvx"), label: t("nav.nsvx") },
               { href: l("/pricing"), label: t("nav.pricing") },
+              { href: l("/ambassador"), label: t("ambassador.badge") },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="font-sans text-muted no-underline hover:text-ink transition-colors" style={{ fontSize: "0.8125rem" }}>
                 {item.label}

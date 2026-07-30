@@ -19,6 +19,7 @@ export default function Nav() {
     { href: l("/nova"), label: t("nav.nova") },
     { href: l("/nsvx"), label: t("nav.nsvx") },
     { href: l("/pricing"), label: t("nav.pricing") },
+    { href: l("/ambassador"), label: t("ambassador.badge") },
   ];
 
   return (
