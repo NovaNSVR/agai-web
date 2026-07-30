@@ -30,7 +30,7 @@ export default function BuyNotifyForm({ notifyLabel, notifyCta, notifySuccess }:
       <button
         type="submit"
         className="font-sans text-surface rounded"
-        style={{ backgroundColor: "var(--amber)", color: "#1A1A1A", fontSize: "0.875rem", fontWeight: 600, padding: "10px 20px", border: "none", cursor: "pointer" }}
+        style={{ backgroundColor: "var(--terracotta)", fontSize: "0.875rem", fontWeight: 600, padding: "10px 20px", border: "none", cursor: "pointer" }}
       >
         {notifyCta}
       </button>

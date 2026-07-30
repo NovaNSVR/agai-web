@@ -41,10 +41,9 @@ export default async function AdvertisersPage({ params }: { params: { locale: st
       {/* Hero — dark */}
       <section
         style={{
-          background: "var(--dark-bg)",
+          background: "linear-gradient(to bottom, var(--dark-bg) 0%, var(--dark-bg) 88%, var(--bg) 100%)",
           paddingTop: "clamp(5rem,10vw,8rem)",
           paddingBottom: "clamp(4rem,8vw,7rem)",
-          borderBottom: "1px solid var(--dark-divider)",
         }}
         className="container-pad"
       >
