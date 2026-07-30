@@ -343,12 +343,12 @@
     "s4p": "Your conversations with Nova are stored to provide memory continuity, personalized coaching, and behavioral insights. We do not sell this data to third parties. Conversation data may be used in aggregate, anonymized form to improve AI model quality. You may request deletion of your Nova conversation history at any time.",
     "s5h": "5. Third-Party Services",
     "s5intro": "We work with the following third-party service providers, each of whom processes data as necessary to deliver their services:",
-    "s5i1": "Supabase � provides our authentication system and primary database infrastructure. Data is stored under Standard Contractual Clauses.",
-    "s5i2": "Crossmint � provisions and manages your Solana smart wallet for NSVX token storage. Crossmint processes your email and wallet address.",
-    "s5i3": "ElevenLabs � provides AI voice synthesis for Creator Digital Twin sessions. Audio generation requests are processed per ElevenLabs privacy terms.",
-    "s5i4": "Moonpay � enables fiat-to-NSVX token purchases. Moonpay is an independent regulated payment processor subject to its own KYC/AML obligations.",
-    "s5i5": "Solana Blockchain � NSVX token transactions are recorded on the Solana public blockchain. Blockchain data is publicly visible and cannot be deleted.",
-    "s5i6": "Anthropic � processes Nova AI conversation data to generate responses, per Anthropic API terms.",
+    "s5i1": "Supabase — provides our authentication system and primary database infrastructure. Data is stored under Standard Contractual Clauses.",
+    "s5i2": "Crossmint — provisions and manages your Solana smart wallet for NSVX token storage. Crossmint processes your email and wallet address.",
+    "s5i3": "ElevenLabs — provides AI voice synthesis for Creator Digital Twin sessions. Audio generation requests are processed per ElevenLabs privacy terms.",
+    "s5i4": "Moonpay — enables fiat-to-NSVX token purchases. Moonpay is an independent regulated payment processor subject to its own KYC/AML obligations.",
+    "s5i5": "Solana Blockchain — NSVX token transactions are recorded on the Solana public blockchain. Blockchain data is publicly visible and cannot be deleted.",
+    "s5i6": "Anthropic — processes Nova AI conversation data to generate responses, per Anthropic API terms.",
     "s5p": "We do not sell your personal data to advertisers or data brokers.",
     "s6h": "6. Data Retention",
     "s6p": "We retain account and profile data for the duration of your active account plus 90 days following deletion. Nova AI conversation history is retained for 24 months and can be deleted on written request. NSVX transaction records and financial logs are retained for 7 years for regulatory compliance. Blockchain transaction records on Solana are permanent and cannot be removed.",
@@ -599,7 +599,8 @@
     "budgetOpt4": "$10,000+",
     "formMessage": "Tell us about your campaign",
     "formSubmit": "Send enquiry",
-    "formSuccess": "Thank you. We will be in touch within one business day."
+    "formSuccess": "Thank you. We will be in touch within one business day.",
+    "statsDisclaimer": "Completion rates, pricing tiers, and reward amounts shown are current estimates based on early testing and may change as the platform onboards its first advertiser partners."
   },
   "investors": {
     "badge": "For Investors",

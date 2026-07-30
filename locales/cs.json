@@ -342,10 +342,10 @@
     "s4p": "Vaše konverzace s Novou jsou uchovávány za účelem kontinuity paměti a personalizovaného coachingu. Tato data neprodáváme třetím stranám. Konverzační data mohou být v agregované, anonymizované podobě použita ke zlepšení výkonu AI modelu.",
     "s5h": "5. Sdílení dat",
     "s5intro": "Data sdílíme s:",
-    "s5i1": "Supabase — náš poskytovatel databáze a ověřování totožnosti (platí standardní smluvní doložky EU)",
-    "s5i2": "Anthropic — poskytovatel AI modelu pro odpovědi Novy (data zpracovávána podle podmínek API Anthropic)",
-    "s5i3": "ElevenLabs — hlasová syntéza pro lekce Digital Twin tvůrců",
-    "s5i4": "Zpracovatelé plateb — pro předplatné a nákupy NSVX",
+    "s5i1": "Supabase — náš poskytovatel databáze a ověřování totožnosti. Data jsou uchovávána v souladu se standardními smluvními doložkami.",
+    "s5i2": "Crossmint — zajišťuje a spravuje vaši Solana peněženku pro uchování tokenů NSVX. Crossmint zpracovává váš e-mail a adresu peněženky.",
+    "s5i3": "ElevenLabs — poskytuje syntézu hlasu AI pro lekce Digital Twin tvůrců. Požadavky na generování zvuku jsou zpracovávány podle zásad ochrany soukromí ElevenLabs.",
+    "s5i4": "Moonpay — umožňuje nákup tokenů NSVX za fiat měnu. Moonpay je nezávislý regulovaný zpracovatel plateb podléhající vlastním povinnostem KYC/AML.",
     "s5p": "Vaše osobní údaje neprodáváme inzerentům ani zprostředkovatelům dat.",
     "s6h": "6. Uchovávání dat",
     "s6p": "Údaje účtu uchováváme po dobu trvání vašeho účtu a 90 dní po jeho smazání. Historie konverzací s Novou je uchovávána 24 měsíců a lze ji na žádost smazat. Protokoly transakcí NSVX jsou uchovávány 7 let z důvodu finanční shody.",
@@ -364,7 +364,12 @@
     "s10h": "10. Změny",
     "s10p": "O podstatných změnách těchto zásad budeme informovat prostřednictvím oznámení v aplikaci nebo e-mailem nejméně 14 dní před jejich nabytím účinnosti.",
     "s11h": "11. Kontakt",
-    "s11p": "Dotazy k ochraně soukromí: privacy@alphaglowai.app."
+    "s11p": "Dotazy k ochraně soukromí: privacy@alphaglowai.app.",
+    "s5i5": "Solana Blockchain — transakce s tokeny NSVX jsou zaznamenávány na veřejném blockchainu Solana. Data na blockchainu jsou veřejně viditelná a nelze je smazat.",
+    "s5i6": "Anthropic — zpracovává data konverzací Nova AI za účelem generování odpovědí, v souladu s podmínkami API Anthropic.",
+    "s3i7": "Za účelem dodržování platných právních povinností a vymáhání našich Podmínek služby",
+    "s12h": "12. Kontaktujte nás",
+    "s12p": "Dotazy ohledně ochrany soukromí: admin@alphaglowai.com. NeuroScope Technologies LLC, 4055 Westminster Dr, Sarasota, Florida 34241."
   },
   "aiDisc": {
     "title": "Prohlášení o AI",
@@ -594,7 +599,8 @@
     "budgetOpt4": "$10,000+",
     "formMessage": "Řekněte nám více o vaší kampani",
     "formSubmit": "Odeslat dotaz",
-    "formSuccess": "Děkujeme. Budeme vás kontaktovat do jednoho pracovního dne."
+    "formSuccess": "Děkujeme. Budeme vás kontaktovat do jednoho pracovního dne.",
+    "statsDisclaimer": "Zobrazené míry dokončení, cenové úrovně a výše odměn jsou aktuální odhady na základě raného testování a mohou se změnit, jakmile platforma získá první inzertní partnery."
   },
   "investors": {
     "badge": "Pro investory",

@@ -342,10 +342,10 @@
     "s4p": "As tuas conversas com Nova são armazenadas para proporcionar continuidade de memória e acompanhamento personalizado. Não vendemos estes dados a terceiros. Os dados de conversas podem ser utilizados de forma agregada e anonimizada para melhorar o desempenho dos modelos de IA.",
     "s5h": "5. Partilha de Dados",
     "s5intro": "Partilhamos dados com:",
-    "s5i1": "Supabase — o nosso fornecedor de base de dados e autenticação (Cláusulas Contratuais Padrão da UE em vigor)",
-    "s5i2": "Anthropic — fornecedor de modelos de IA para as respostas de Nova (dados processados de acordo com os termos de API da Anthropic)",
-    "s5i3": "ElevenLabs — síntese de voz para sessões de Digital Twin de criadores",
-    "s5i4": "Processadores de pagamento — para transações de subscrição e compra de NSVX",
+    "s5i1": "Supabase — o nosso fornecedor de base de dados e autenticação. Os dados são armazenados ao abrigo das Cláusulas Contratuais Padrão.",
+    "s5i2": "Crossmint — cria e gere a tua carteira Solana para armazenamento de tokens NSVX. A Crossmint processa o teu e-mail e endereço de carteira.",
+    "s5i3": "ElevenLabs — fornece síntese de voz por IA para as sessões de Digital Twin dos criadores. Os pedidos de geração de áudio são processados de acordo com os termos de privacidade da ElevenLabs.",
+    "s5i4": "Moonpay — permite a compra de tokens NSVX com moeda fiduciária. A Moonpay é um processador de pagamentos regulado e independente, sujeito às suas próprias obrigações de KYC/AML.",
     "s5p": "Não vendemos os teus dados pessoais a anunciantes ou corretores de dados.",
     "s6h": "6. Retenção de Dados",
     "s6p": "Conservamos os dados da conta pelo período de duração da tua conta mais 90 dias após a eliminação. O historial de conversas com Nova é conservado durante 24 meses e pode ser eliminado mediante pedido. Os registos de transações NSVX são conservados durante 7 anos para cumprimento financeiro.",
@@ -364,7 +364,12 @@
     "s10h": "10. Alterações",
     "s10p": "Alterações materiais a esta política serão comunicadas através de notificação na aplicação ou por email com pelo menos 14 dias de antecedência antes de entrarem em vigor.",
     "s11h": "11. Contacto",
-    "s11p": "Questões de privacidade: privacy@alphaglowai.app."
+    "s11p": "Questões de privacidade: privacy@alphaglowai.app.",
+    "s5i5": "Solana Blockchain — as transações de tokens NSVX são registadas na blockchain pública Solana. Os dados da blockchain são publicamente visíveis e não podem ser eliminados.",
+    "s5i6": "Anthropic — processa os dados de conversa da Nova IA para gerar respostas, de acordo com os termos da API da Anthropic.",
+    "s3i7": "Para cumprir as obrigações legais aplicáveis e fazer cumprir os nossos Termos de Serviço",
+    "s12h": "12. Contacte-nos",
+    "s12p": "Questões de privacidade: admin@alphaglowai.com. NeuroScope Technologies LLC, 4055 Westminster Dr, Sarasota, Florida 34241."
   },
   "aiDisc": {
     "title": "Aviso sobre IA",
@@ -594,7 +599,8 @@
     "budgetOpt4": "$10.000+",
     "formMessage": "Conte-nos sobre sua campanha",
     "formSubmit": "Enviar consulta",
-    "formSuccess": "Obrigado. Entraremos em contato dentro de um dia útil."
+    "formSuccess": "Obrigado. Entraremos em contato dentro de um dia útil.",
+    "statsDisclaimer": "As taxas de conclusão, faixas de preços e valores de recompensa mostrados são estimativas atuais com base em testes iniciais e podem mudar à medida que a plataforma integra seus primeiros parceiros anunciantes."
   },
   "investors": {
     "badge": "Para Investidores",
