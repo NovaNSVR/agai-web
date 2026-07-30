@@ -71,8 +71,8 @@ export default async function ForCreatorsPage({ params }: { params: { locale: st
           <p className="font-sans text-muted uppercase mb-10" style={{ fontSize: "0.7rem", letterSpacing: "0.16em", fontWeight: 600 }}>{t("forCreators.examplesLabel")}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem", marginBottom: "4rem" }}>
             {EXAMPLE_IDS.map((n, i) => (
-              <div key={n} style={{ display: "grid", gridTemplateColumns: "140px 1fr", gap: "2.5rem", alignItems: "start", paddingBottom: "2.5rem", borderBottom: i < EXAMPLE_IDS.length - 1 ? "1px solid var(--divider)" : undefined }}>
-                <p className="font-sans text-terracotta" style={{ fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", paddingTop: "0.2rem" }}>{t(`forCreators.example${n}Label`)}</p>
+              <div key={n} className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-3 md:gap-10 items-start" style={{ paddingBottom: "2.5rem", borderBottom: i < EXAMPLE_IDS.length - 1 ? "1px solid var(--divider)" : undefined }}>
+                <p className="font-sans text-terracotta md:pt-[0.2rem]" style={{ fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>{t(`forCreators.example${n}Label`)}</p>
                 <div>
                   <h3 className="font-serif text-ink mb-2" style={{ fontSize: "1.25rem", lineHeight: 1.25, letterSpacing: "-0.01em", fontWeight: 400 }}>{t(`forCreators.example${n}Headline`)}</h3>
                   <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.7 }}>{t(`forCreators.example${n}Body`)}</p>
