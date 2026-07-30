@@ -18,7 +18,7 @@ export default async function NovaPage({ params }: { params: { locale: string } 
       {/* Hero */}
       <section
         style={{
-          background: "var(--bg)",
+          background: "#FAFAF7",
           paddingTop: "clamp(5rem,10vw,8rem)",
           paddingBottom: "clamp(4rem,8vw,7rem)",
           borderBottom: "1px solid var(--divider)",
