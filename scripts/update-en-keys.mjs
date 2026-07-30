@@ -224,7 +224,7 @@ d.investors = {
   allocPct4: "15%",
   allocLabel4: "Reserve",
   teamHeading: "Team",
-  team1Name: "Petr Bam",
+  team1Name: "Petr Kaplan",
   team1Role: "Founder & CEO",
   team1Bio:
     "Creator economy architect. Wellness technology pioneer. Building AlphaGlow from deep conviction that AI can make expert wellness accessible to everyone.",
