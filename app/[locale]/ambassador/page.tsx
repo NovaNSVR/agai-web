@@ -4,7 +4,7 @@ import { getServerT, LOCALES } from "@/utils/serverT";
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
 export const metadata = {
-  title: "Ambassador Programme",
+  title: "Ambassador Program",
   description: "Introduce creators, advertisers, or investors to AlphaGlow and earn commission on their activity.",
 };
 
