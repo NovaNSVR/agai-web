@@ -27,9 +27,9 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
           <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 580, marginBottom: "2rem" }}>
             {t("ambassador.heroBody")}
           </p>
-          <div className="inline-block rounded" style={{ background: "var(--bg)", border: "1px solid var(--divider)", padding: "0.875rem 1.25rem" }}>
-            <p className="font-sans text-ink" style={{ fontSize: "0.9rem", margin: 0 }}>
-              <strong>{t("ambassador.approvalRequired")}</strong>
+          <div className="inline-block rounded" style={{ background: "var(--surface)", border: "1px solid var(--divider)", padding: "0.875rem 1.25rem" }}>
+            <p className="font-sans text-muted" style={{ fontSize: "0.9rem", margin: 0 }}>
+              {t("ambassador.approvalRequired")}
             </p>
           </div>
         </div>
