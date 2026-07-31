@@ -90,13 +90,13 @@ export default function SignupPage() {
               className="font-serif text-ink"
               style={{ fontSize: "clamp(1.75rem,4vw,2.25rem)", lineHeight: 1.15, marginBottom: "1rem" }}
             >
-              Welcome to AlphaGlow
+              Welcome to AlphaGlow AI
             </h1>
             <p
               className="font-sans text-muted"
               style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "2rem" }}
             >
-              Your account and Solana wallet are ready. Open the AlphaGlow app
+              Your account and Solana wallet are ready. Open the AlphaGlow AI app
               to start earning NSVX tokens, explore creator sessions, and connect
               with your AI companion Nova.
             </p>
@@ -151,7 +151,7 @@ export default function SignupPage() {
             className="font-serif text-ink"
             style={{ fontSize: "clamp(2rem,5vw,2.75rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}
           >
-            Join AlphaGlow
+            Join AlphaGlow AI
           </h1>
           <p className="font-sans text-muted mt-3" style={{ fontSize: "1rem", lineHeight: 1.6 }}>
             Create your account and Solana wallet in one step.

@@ -5,7 +5,7 @@ export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 
 export const metadata = {
   title: "Ambassador Program",
-  description: "Introduce creators, advertisers, or investors to AlphaGlow and earn commission on their activity.",
+  description: "Introduce creators, advertisers, or investors to AlphaGlow AI and earn commission on their activity.",
 };
 
 export default async function AmbassadorPage({ params }: { params: { locale: string } }) {
