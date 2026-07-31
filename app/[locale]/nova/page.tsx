@@ -26,7 +26,7 @@ export default async function NovaPage({ params }: { params: { locale: string } 
         className="container-pad"
       >
         <div className="max-w-content mx-auto">
-          <p className="font-sans uppercase mb-4" style={{ color: "var(--nova-teal)", fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
+          <p className="font-sans text-terracotta uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
             {t("novaPage.badge")}
           </p>
           <h1 className="font-serif text-ink" style={{ fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", maxWidth: 680, marginBottom: "1.5rem" }}>
