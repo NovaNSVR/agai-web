@@ -131,6 +131,14 @@ export default async function InvestorsPage({ params }: { params: { locale: stri
         </div>
       </section>
 
+      {/* Built Since 2025, Not Overnight */}
+      <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)" }}>
+        <div className="max-w-content mx-auto" style={{ maxWidth: 760 }}>
+          <h2 className="font-serif text-ink mb-5" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("investors.builtHeading")}</h2>
+          <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.8 }}>{t("investors.builtBody")}</p>
+        </div>
+      </section>
+
       {/* Roadmap — untouched */}
       <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)", background: "var(--surface)" }}>
         <div className="max-w-content mx-auto">
