@@ -31,7 +31,7 @@ export default async function InvestorsPage({ params }: { params: { locale: stri
         className="container-pad"
       >
         <div className="max-w-content mx-auto">
-          <p className="font-sans uppercase mb-4" style={{ color: "var(--gold)", fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
+          <p className="font-sans text-terracotta uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
             {t("investors.badge")}
           </p>
           <h1 className="font-serif text-ink" style={{ fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", maxWidth: 780, marginBottom: "1.5rem" }}>
@@ -87,7 +87,7 @@ export default async function InvestorsPage({ params }: { params: { locale: stri
           <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", background: "var(--divider)", border: "1px solid var(--divider)" }}>
             {ALLOC_ITEMS.map((n) => (
               <div key={n} className="bg-surface" style={{ padding: "1.75rem" }}>
-                <span className="font-sans font-tabular block mb-2" style={{ color: "var(--amber)", fontSize: "1.75rem", fontWeight: 500 }}>
+                <span className="font-sans font-tabular block mb-2" style={{ color: "var(--terracotta)", fontSize: "1.75rem", fontWeight: 500 }}>
                   {t(`investors.allocPct${n}`)}
                 </span>
                 <p className="font-sans text-muted" style={{ fontSize: "0.875rem", lineHeight: 1.5 }}>{t(`investors.allocLabel${n}`)}</p>

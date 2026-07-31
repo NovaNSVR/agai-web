@@ -24,7 +24,7 @@ export default async function NsvxPage({ params }: { params: { locale: string } 
       {/* Hero */}
       <section className="container-pad" style={{ paddingTop: "clamp(5rem,10vw,8rem)", paddingBottom: "clamp(4rem,8vw,7rem)", borderBottom: "1px solid var(--divider)" }}>
         <div className="max-w-content mx-auto">
-          <p className="font-sans text-amber uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>{t("nsvxPage.badge")}</p>
+          <p className="font-sans text-terracotta uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>{t("nsvxPage.badge")}</p>
           <h1 className="font-serif text-ink" style={{ fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", maxWidth: 700, marginBottom: "1.5rem" }}>
             {t("nsvxPage.heroHeading")}
           </h1>
@@ -43,7 +43,7 @@ export default async function NsvxPage({ params }: { params: { locale: string } 
               <p className="font-sans text-muted" style={{ fontSize: "0.9375rem", lineHeight: 1.75 }}>{t("nsvxPage.whatBody")}</p>
             </div>
             <div className="border border-divider rounded bg-bg" style={{ padding: "2rem" }}>
-              <p className="font-sans uppercase mb-4" style={{ color: "var(--amber)", fontSize: "0.6875rem", letterSpacing: "0.12em", fontWeight: 500 }}>Solana blockchain</p>
+              <p className="font-sans uppercase mb-4" style={{ color: "var(--terracotta)", fontSize: "0.6875rem", letterSpacing: "0.12em", fontWeight: 500 }}>Solana blockchain</p>
               <p className="font-sans text-muted" style={{ fontSize: "0.875rem", lineHeight: 1.75 }}>{t("nsvxPage.solanaBody")}</p>
             </div>
           </div>

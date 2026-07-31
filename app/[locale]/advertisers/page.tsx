@@ -60,8 +60,8 @@ export default async function AdvertisersPage({ params }: { params: { locale: st
           </p>
           <a
             href="#contact"
-            className="font-sans no-underline rounded inline-block"
-            style={{ backgroundColor: "var(--nova-teal)", color: "#060F0F", fontSize: "0.9375rem", fontWeight: 600, padding: "14px 28px" }}
+            className="font-sans no-underline text-surface rounded inline-block"
+            style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 600, padding: "14px 28px" }}
           >
             {t("advertisers.heroCta")}
           </a>
@@ -92,7 +92,7 @@ export default async function AdvertisersPage({ params }: { params: { locale: st
           <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", background: "var(--divider)", border: "1px solid var(--divider)" }}>
             {AD_CLASSES.map((id, i) => (
               <div key={id} className="bg-surface" style={{ padding: "2rem 1.75rem" }}>
-                <span className="font-sans font-tabular block mb-3" style={{ color: "var(--nova-teal)", fontSize: "0.75rem", letterSpacing: "0.12em", fontWeight: 500 }}>
+                <span className="font-sans font-tabular block mb-3" style={{ color: "var(--terracotta)", fontSize: "0.75rem", letterSpacing: "0.12em", fontWeight: 500 }}>
                   0{i + 1}
                 </span>
                 <h3 className="font-serif text-ink mb-3" style={{ fontSize: "1.125rem", fontWeight: 400 }}>{t(`advertisers.${id}Name`)}</h3>
