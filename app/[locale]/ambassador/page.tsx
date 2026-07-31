@@ -60,10 +60,6 @@ export default async function AmbassadorPage({ params }: { params: { locale: str
                 {t("ambassador.creatorBody")}
               </p>
               <div className="font-sans" style={{ fontSize: "0.8125rem", color: "var(--muted)", borderTop: "1px solid var(--divider)", paddingTop: "1rem" }}>
-                <div className="flex justify-between mb-1.5">
-                  <span>{t("ambassador.onboarding")}</span>
-                  <span className="font-tabular text-ink">$10</span>
-                </div>
                 <div className="flex justify-between">
                   <span>{t("ambassador.ongoing12mo")}</span>
                   <span className="font-tabular text-ink">10%</span>

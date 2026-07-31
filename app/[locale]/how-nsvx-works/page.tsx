@@ -51,7 +51,7 @@ export default async function HowNsvxWorksPage({ params }: { params: { locale: s
                 {SPEND_IDS.map((id, i) => (
                   <div key={id} className="flex justify-between items-center bg-surface" style={{ padding: "1rem 1.25rem", borderBottom: i < SPEND_IDS.length - 1 ? "1px solid var(--divider)" : undefined }}>
                     <span className="font-sans text-muted" style={{ fontSize: "0.875rem" }}>{t(`howNsvx.spend${id}`)}</span>
-                    <span className="font-sans text-amber font-tabular" style={{ fontSize: "0.875rem", fontWeight: 500, whiteSpace: "nowrap" }}>{t(`howNsvx.spend${id}Val`)}</span>
+                    <span className="font-sans text-terracotta font-tabular" style={{ fontSize: "0.875rem", fontWeight: 500, whiteSpace: "nowrap" }}>{t(`howNsvx.spend${id}Val`)}</span>
                   </div>
                 ))}
               </div>

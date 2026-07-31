@@ -16,10 +16,12 @@ export default function Nav() {
     { href: l("/for-users"), label: t("nav.forUsers") },
     { href: l("/for-creators"), label: t("nav.forCreators") },
     { href: l("/advertisers"), label: t("nav.advertisers") },
+    { href: l("/investors"), label: t("investors.badge") },
     { href: l("/nova"), label: t("nav.nova") },
     { href: l("/nsvx"), label: t("nav.nsvx") },
     { href: l("/pricing"), label: t("nav.pricing") },
     { href: l("/ambassador"), label: t("ambassador.badge") },
+    { href: l("/press"), label: t("pressPage.badge") },
   ];
 
   return (

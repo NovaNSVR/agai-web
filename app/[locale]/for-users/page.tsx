@@ -66,7 +66,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
             </div>
             <div className="flex flex-col gap-6">
               {(["novaFeature1", "novaFeature2", "novaFeature3"] as const).map((id) => (
-                <div key={id} className="border-l-2 border-amber" style={{ paddingLeft: "1.25rem" }}>
+                <div key={id} className="border-l-2 border-terracotta" style={{ paddingLeft: "1.25rem" }}>
                   <h3 className="font-serif text-ink mb-2" style={{ fontSize: "1rem", fontWeight: 400 }}>{t(`forUsers.${id}Title`)}</h3>
                   <p className="font-sans text-muted" style={{ fontSize: "0.875rem", lineHeight: 1.65 }}>{t(`forUsers.${id}Body`)}</p>
                 </div>
