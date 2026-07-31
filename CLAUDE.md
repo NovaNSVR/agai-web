@@ -19,7 +19,8 @@ npm run lint         # TypeScript + lint check
 ```
 
 ## Deploy
-- Git push to main → Netlify auto-deploys (GitHub integration required — link in Netlify dashboard)
+- Two branches: `staging` (auto-deploys to `staging--agai-web.netlify.app`) and `main` (auto-deploys to `alphaglowai.com` production)
+- Standard flow: branch off `staging` → build/verify → merge `--no-ff` into `staging` → push `staging` → verify live on staging URL → only on Petr's explicit "push" (to main) → merge `staging` into `main` → push → verify live on production
 - Build command: `npm run build`
 - Publish dir: `out`
 - Netlify auth token (env): `nfc_jeF9Yyi3fJHaiyc1SgDzyY3dvdkhTX16f3c0`
@@ -28,9 +29,10 @@ npm run lint         # TypeScript + lint check
 1. **Playwright at 390px** — verify every new page visually before any push
 2. **code-review-graph** — run detect_changes + get_review_context on diff before committing
 3. **frontend-design skill** — use for any visual/UI decisions
-4. **NEVER push without Petr's explicit "push" approval**
+4. **NEVER push without Petr's explicit "push" approval** — this applies separately to staging and to main; main additionally requires Petr's own review/tap-test of staging first
 5. **npm run build must pass** — zero errors before any commit
 6. **Batch all changes** — one commit per feature, never incremental pushes
+7. **After every merge to main, update this file and note the current state** — per the standing cross-repo rule in NEW-AGAI-Base's CLAUDE.md, do this automatically, without being asked
 
 ## Architecture
 
@@ -83,11 +85,12 @@ npm run lint         # TypeScript + lint check
 | `/[locale]/advertisers/` | `app/[locale]/advertisers/page.tsx` | Live (2026-05-20) |
 | `/[locale]/nova/` | `app/[locale]/nova/page.tsx` | Live (2026-05-20) |
 | `/[locale]/nsvx/` | `app/[locale]/nsvx/page.tsx` | Live (2026-05-20) |
-| `/[locale]/investors/` | `app/[locale]/investors/page.tsx` | Live (2026-05-20) |
+| `/[locale]/investors/` | `app/[locale]/investors/page.tsx` | Live — fully rebuilt 2026-07-31, see Incident Log |
 | `/[locale]/press/` | `app/[locale]/press/page.tsx` | Live (2026-05-20) |
 | `/[locale]/blog/` | `app/[locale]/blog/page.tsx` | Live (2026-05-20) |
 | `/[locale]/blog/[slug]/` | `app/[locale]/blog/[slug]/page.tsx` | Live (2026-05-20) |
 | `/[locale]/pricing/` | `app/[locale]/pricing/page.tsx` | Live |
+| `/[locale]/ambassador/` | `app/[locale]/ambassador/page.tsx` | Live — commission economics corrected 2026-07-31, see Incident Log |
 | `/[locale]/how-nsvx-works/` | `app/[locale]/how-nsvx-works/page.tsx` | Legacy (kept) |
 | `/[locale]/for-listeners/` | `app/[locale]/for-listeners/page.tsx` | Legacy (kept) |
 | `/[locale]/legal/...` | `app/[locale]/legal/` | Live |
@@ -97,7 +100,7 @@ npm run lint         # TypeScript + lint check
 
 | File | Purpose |
 |------|---------|
-| `components/Nav.tsx` | Sticky top nav — 6 primary links (For Users, For Creators, Advertisers, Nova, NSVX, Pricing) |
+| `components/Nav.tsx` | Sticky top nav — 9 links: For Users, For Creators, Advertisers, Investors, Nova, NSVX, Pricing, Ambassador Program, Press (Investors/Press added 2026-07-31) |
 | `components/Footer.tsx` | 5-column footer (Brand, Platform, Company, Legal, Get Started) |
 | `components/FAQ.tsx` | Accordion FAQ — takes `items: {q, a}[]` |
 | `components/ContactForm.tsx` | Netlify Forms wrapper — takes fields + formName |
@@ -106,19 +109,13 @@ npm run lint         # TypeScript + lint check
 
 ## Design System
 
-### Light sections (default)
+### Colors
 - `--bg: #FAFAF7` (cream page background)
 - `--surface: #FFFFFF` (card/box background)
 - `--ink: #1A1A1A`, `--muted: #5C5C5A`, `--divider: #E8E6E0`
-- `--terracotta: #D88B5C` (primary CTA, badges)
-- `--amber: #C9A84C` = `--gold: #C9A84C` (NSVX accent)
-- `--moss: #3F7A5C` (positive/earn values)
-
-### Dark sections
-- `--dark-bg: #060F0F` (hero backgrounds for Advertisers, Investors, Nova)
-- `--dark-ink: #F5F5F2`, `--dark-muted`, `--dark-divider`
-- `--nova-teal: #00B4B4` (Nova brand accent, teal CTAs on dark)
-- Apply via inline `background: "var(--dark-bg)"` — no Tailwind dark class
+- `--terracotta: #D88B5C` — the ONE accent color sitewide (CTAs, badges, stat numbers, links). As of 2026-07-31, `--amber`, `--gold`, `--nova-teal`, `--nova-teal-dim` have been removed entirely (from both `globals.css` and the Tailwind `amber` color) — every former teal/gold/amber usage was converted to terracotta. Do not reintroduce a second accent color without an explicit decision from Petr.
+- `--moss: #3F7A5C` (positive/earn values, e.g. How NSVX Works) and `--brick: #B0463A` remain — unrelated to the teal/gold removal, still valid
+- Dark sections (`--dark-bg: #060F0F`, `--dark-ink`, `--dark-muted`, `--dark-divider`) still exist in `globals.css` but as of 2026-07-31 no page hero uses them — Advertisers/Investors/Nova hero sections are all light (`#FAFAF7`)
 
 ### Typography
 - Headings: Lora (serif), `font-serif`
@@ -142,7 +139,8 @@ All web-site-specific namespaces in `locales/en.json`:
 - `advertisers.*` — Advertisers page
 - `novaPage.*` — Nova page
 - `nsvxPage.*` — NSVX page
-- `investors.*` — Investors page
+- `investors.*` — Investors page (rebuilt 2026-07-31 — 12 narrative sections + "Built Since 2025" + Roadmap + contact form, see Incident Log)
+- `ambassador.*` — Ambassador Program page
 - `pressPage.*` — Press page
 - `blog.*` — Blog UI labels
 - `howNsvx.*` — legacy How NSVX Works page
@@ -168,6 +166,19 @@ All web-site-specific namespaces in `locales/en.json`:
 
 ## Incident Log
 
+### 2026-07-31 — Terracotta color sweep, NSVR removal, brand-name sweep, Ambassador economics fix, nav reorg, full Investors page rebuild — all merged to main
+Large multi-part session, all items verified live on staging before merging to `main` (commit `f64f7c0`, merged from `staging`):
+- **Color consistency:** every remaining `--nova-teal`/`--gold`/`--amber` usage (Advertisers CTA + stat numbers, Investors badge + tokenomics stat, NSVX badge + Solana callout, How NSVX Works spend value, For Users feature border) converted to `--terracotta`. Dead CSS vars and the Tailwind `amber` color removed. See "Colors" above.
+- **Tipping content removed:** For Creators payout copy said "...tipping after a journey..." as an NSVX spend example — not a real feature. Replaced with "licensing your music" across all 10 locales.
+- **NSVR fully removed from public content:** the Investors page roadmap's 2027 entry directly named "NSVR", "NeuroScope VR", "spatial computing", and "AlphaGlow AI becomes the identity layer for the metaverse" — all confirmed as the only public NSVR reference sitewide (NSVR is meant to stay unnamed publicly per standing decision). Replaced with the approved "Villages and the AG Games" roadmap entry across all 10 locales.
+- **"AlphaGlow AI" brand-name sweep:** 632 instances of bare "AlphaGlow" (not followed by "AI") corrected to "AlphaGlow AI" across all 10 locale files plus hardcoded strings in `signup/page.tsx` and the Ambassador page's meta description. One JSX code comment intentionally left untouched (never rendered to users). `ambassador.investorBody`'s bare "AlphaGlow?" mention was deliberately left as-is per the standing instruction that the investor-referral section of the Ambassador page stays completely untouched.
+- **Ambassador page commission economics corrected:** creator/advertiser referral commissions are 10% of the referred party's **gross revenue** (not AlphaGlow's platform fee), paid as an **NSVX equivalent**, for **12 months from the date of the referral** — not indefinitely, no flat $10 onboarding bonus. The "what 10% commission means" example now uses a realistic $200/month case. Investor referral section (personal, discretionary, no formula) is untouched by design.
+- **Nav reorganized:** added Investors and Press links (previously missing from the hamburger/desktop nav entirely) — see "Components" above.
+- **Investors page fully rebuilt:** replaced the old Vision/Mission, Tokenomics/allocation, Team (bio), Whitepaper/Press-kit, and Referrals sections with 12 new narrative sections (Why This Works Differently, Meet Nova, Nova Whisper, Nova Local, Privacy Commerce [flagged as planned 2027, not live], Proof of Attention, One Currency One Economy, Proof of Vote, Patent Pending Technology, Governance Built to Last, A Fee Structure Built to Last, and "Built Since 2025, Not Overnight"), new hero headline/subline. Roadmap section and the investor-enquiry contact form deliberately left untouched. The 2027 Villages/AG Games roadmap entry got an appended explainer (seasons, category vs. Grand Championship, Proof of Vote mechanics) — appended, not replacing the original text.
+- **Pre-existing bug also fixed by this merge (was already fixed on `staging` earlier this session, just never reached `main` before now):** the For Creators page's six-example cards and closing "Building something else?" invite were rendering raw i18n keys (`forCreators.example1Headline` etc.) instead of content — this was the specific defect Petr saw live on production before the merge. Confirmed fixed and verified live post-deploy.
+- **Full site audit before the main merge:** static-export scan across all 263 pages × 10 locales × 23 content namespaces confirmed zero raw i18n key leaks anywhere on the site, plus manual verification of For Creators (content + mobile card stacking) and the homepage nav.
+- All content changes applied across all 10 locales throughout.
+
 ### 2026-06-01 — Netlify GitHub Connection Lost and Restored
 - **What happened:** Netlify lost GitHub SSH access to NovaNSVR/agai-web. All branch-triggered deploys failed with `Host key verification failed`. Build settings showed `installation_id: null` and `deploy_key_id: null`.
 - **Resolution:** Petr reconnected the GitHub integration via the Netlify dashboard (Site settings → Build & deploy → Link repository). Production deployed successfully at 20:45 local time.
@@ -180,8 +191,9 @@ All web-site-specific namespaces in `locales/en.json`:
 - **Contact:** admin@alphaglowai.com | NeuroScope Technologies LLC
 
 ## Git / Deploy Flow
-1. Make changes in `C:\ai-tools\agai-web`
+1. Make changes in `C:\ai-tools\agai-web`, on a branch off freshly-pulled `staging`
 2. Run `npm run build` — must pass with zero errors
-3. Run Playwright at 390px on every changed page
-4. Commit with descriptive message
-5. Petr says "push" → push to origin main → Netlify auto-deploys
+3. Verify visually (Playwright/browser at 390px) on every changed page
+4. Commit with descriptive message, merge `--no-ff` into `staging`, push `staging` (Claudia can push to staging without asking — confirmed standing permission)
+5. Verify live on `staging--agai-web.netlify.app`
+6. Only on Petr's explicit "push" (to main): merge `staging` into `main`, push `main`, verify live on `alphaglowai.com`, then update this file per the Toolchain Rules item above
