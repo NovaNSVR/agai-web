@@ -6,9 +6,9 @@ import { getDictionary } from "@/utils/getDictionary";
 import { flatten } from "@/utils/flattenDict";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { BASE_URL, buildOpenGraph, buildTwitter } from "@/utils/seo";
 
 const SUPPORTED: readonly string[] = SUPPORTED_LOCALES;
-const BASE_URL = "https://alphaglowai.com";
 
 interface Props {
   children: React.ReactNode;
@@ -28,11 +28,15 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
   }
   languages["x-default"] = `${BASE_URL}/en/`;
 
+  const canonicalUrl = `${BASE_URL}/${locale}/`;
+
   return {
     alternates: {
-      canonical: `${BASE_URL}/${locale}/`,
+      canonical: canonicalUrl,
       languages,
     },
+    openGraph: buildOpenGraph(canonicalUrl),
+    twitter: buildTwitter(),
   };
 }
 
