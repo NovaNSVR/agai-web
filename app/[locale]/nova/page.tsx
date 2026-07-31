@@ -15,24 +15,24 @@ export default async function NovaPage({ params }: { params: { locale: string } 
 
   return (
     <>
-      {/* Hero — dark with teal accent */}
+      {/* Hero */}
       <section
         style={{
-          background: "var(--dark-bg)",
+          background: "#FAFAF7",
           paddingTop: "clamp(5rem,10vw,8rem)",
           paddingBottom: "clamp(4rem,8vw,7rem)",
-          borderBottom: "1px solid var(--dark-divider)",
+          borderBottom: "1px solid var(--divider)",
         }}
         className="container-pad"
       >
         <div className="max-w-content mx-auto">
-          <p className="font-sans uppercase mb-4" style={{ color: "var(--nova-teal)", fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
+          <p className="font-sans text-terracotta uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
             {t("novaPage.badge")}
           </p>
-          <h1 className="font-serif" style={{ color: "var(--dark-ink)", fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", maxWidth: 680, marginBottom: "1.5rem" }}>
+          <h1 className="font-serif text-ink" style={{ fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", maxWidth: 680, marginBottom: "1.5rem" }}>
             {t("novaPage.heroHeading")}
           </h1>
-          <p className="font-sans" style={{ color: "var(--dark-muted)", fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 540 }}>
+          <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 540 }}>
             {t("novaPage.heroBody")}
           </p>
         </div>

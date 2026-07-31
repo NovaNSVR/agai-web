@@ -10,9 +10,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-divider bg-bg container-pad" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
+    <footer className="border-t border-divider bg-bg container-pad pt-6 pb-12 md:pt-12">
       <div className="max-w-content mx-auto">
-        <div className="grid gap-10 md:gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
+        <div className="grid grid-cols-1 gap-10 md:gap-6 md:grid-cols-[repeat(auto-fit,minmax(140px,1fr))]">
           {/* Brand */}
           <div className="flex flex-col gap-3 md:col-span-2">
             <span className="font-serif text-ink" style={{ fontSize: "1.05rem" }}>AlphaGlow AI</span>
@@ -36,6 +36,7 @@ export default function Footer() {
               { href: l("/nova"), label: t("nav.nova") },
               { href: l("/nsvx"), label: t("nav.nsvx") },
               { href: l("/pricing"), label: t("nav.pricing") },
+              { href: l("/ambassador"), label: t("ambassador.badge") },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="font-sans text-muted no-underline hover:text-ink transition-colors" style={{ fontSize: "0.8125rem" }}>
                 {item.label}

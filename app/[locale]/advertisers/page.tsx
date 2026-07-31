@@ -38,30 +38,30 @@ export default async function AdvertisersPage({ params }: { params: { locale: st
 
   return (
     <>
-      {/* Hero — dark */}
+      {/* Hero */}
       <section
         style={{
-          background: "var(--dark-bg)",
+          background: "#FAFAF7",
           paddingTop: "clamp(5rem,10vw,8rem)",
           paddingBottom: "clamp(4rem,8vw,7rem)",
-          borderBottom: "1px solid var(--dark-divider)",
+          borderBottom: "1px solid var(--divider)",
         }}
         className="container-pad"
       >
         <div className="max-w-content mx-auto">
-          <p className="font-sans uppercase mb-4" style={{ color: "var(--nova-teal)", fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
+          <p className="font-sans text-terracotta uppercase mb-4" style={{ fontSize: "0.75rem", letterSpacing: "0.14em", fontWeight: 500 }}>
             {t("advertisers.badge")}
           </p>
-          <h1 className="font-serif" style={{ color: "var(--dark-ink)", fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", maxWidth: 740, marginBottom: "1.5rem" }}>
+          <h1 className="font-serif text-ink" style={{ fontSize: "clamp(2.25rem,5vw,3.5rem)", lineHeight: 1.12, letterSpacing: "-0.018em", maxWidth: 740, marginBottom: "1.5rem" }}>
             {t("advertisers.heroHeading")}
           </h1>
-          <p className="font-sans" style={{ color: "var(--dark-muted)", fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 560, marginBottom: "2.5rem" }}>
+          <p className="font-sans text-muted" style={{ fontSize: "clamp(1rem,2vw,1.125rem)", lineHeight: 1.7, maxWidth: 560, marginBottom: "2.5rem" }}>
             {t("advertisers.heroBody")}
           </p>
           <a
             href="#contact"
-            className="font-sans no-underline rounded inline-block"
-            style={{ backgroundColor: "var(--nova-teal)", color: "#060F0F", fontSize: "0.9375rem", fontWeight: 600, padding: "14px 28px" }}
+            className="font-sans no-underline text-surface rounded inline-block"
+            style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 600, padding: "14px 28px" }}
           >
             {t("advertisers.heroCta")}
           </a>
@@ -92,7 +92,7 @@ export default async function AdvertisersPage({ params }: { params: { locale: st
           <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", background: "var(--divider)", border: "1px solid var(--divider)" }}>
             {AD_CLASSES.map((id, i) => (
               <div key={id} className="bg-surface" style={{ padding: "2rem 1.75rem" }}>
-                <span className="font-sans font-tabular block mb-3" style={{ color: "var(--nova-teal)", fontSize: "0.75rem", letterSpacing: "0.12em", fontWeight: 500 }}>
+                <span className="font-sans font-tabular block mb-3" style={{ color: "var(--terracotta)", fontSize: "0.75rem", letterSpacing: "0.12em", fontWeight: 500 }}>
                   0{i + 1}
                 </span>
                 <h3 className="font-serif text-ink mb-3" style={{ fontSize: "1.125rem", fontWeight: 400 }}>{t(`advertisers.${id}Name`)}</h3>

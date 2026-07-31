@@ -16,9 +16,12 @@ export default function Nav() {
     { href: l("/for-users"), label: t("nav.forUsers") },
     { href: l("/for-creators"), label: t("nav.forCreators") },
     { href: l("/advertisers"), label: t("nav.advertisers") },
+    { href: l("/investors"), label: t("investors.badge") },
     { href: l("/nova"), label: t("nav.nova") },
     { href: l("/nsvx"), label: t("nav.nsvx") },
     { href: l("/pricing"), label: t("nav.pricing") },
+    { href: l("/ambassador"), label: t("ambassador.badge") },
+    { href: l("/press"), label: t("pressPage.badge") },
   ];
 
   return (
@@ -77,22 +80,28 @@ export default function Nav() {
         </div>
 
         {/* Mobile: language switcher always visible + hamburger */}
-        <div className="lg:hidden flex items-center gap-2 -mr-2">
+        <div className="lg:hidden flex items-center gap-2 flex-shrink-0">
           <LanguageSwitcher />
           <button
-            className="flex flex-col justify-center gap-1.5 p-2"
+            className="flex items-center justify-center flex-shrink-0"
+            style={{ width: 36, height: 36 }}
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
           >
-            <span
-              className="block w-5 h-px bg-ink transition-transform origin-center"
-              style={{ transform: open ? "translateY(4px) rotate(45deg)" : undefined }}
-            />
-            <span className="block w-5 h-px bg-ink" style={{ opacity: open ? 0 : 1 }} />
-            <span
-              className="block w-5 h-px bg-ink transition-transform origin-center"
-              style={{ transform: open ? "translateY(-4px) rotate(-45deg)" : undefined }}
-            />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-ink">
+              {open ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </>
+              )}
+            </svg>
           </button>
         </div>
       </div>

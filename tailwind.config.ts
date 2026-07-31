@@ -16,7 +16,6 @@ const config: Config = {
         terracotta: "#D88B5C",
         moss: "#3F7A5C",
         brick: "#B0463A",
-        amber: "#C9A84C",
       },
       fontFamily: {
         serif: ["var(--font-lora)", "Georgia", "serif"],
