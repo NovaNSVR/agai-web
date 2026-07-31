@@ -160,11 +160,21 @@ All web-site-specific namespaces in `locales/en.json`:
 - `next@14.2.35`, `react@18`, TypeScript, Tailwind CSS 3
 
 ## SEO
-- Root layout (`app/layout.tsx`): global title template + meta description
-- Locale layout (`app/[locale]/layout.tsx`): hreflang alternates for all 10 locales
+- Root layout (`app/layout.tsx`): global title template + meta description + `openGraph`/`twitter` defaults (see below)
+- Locale layout (`app/[locale]/layout.tsx`): hreflang alternates for all 10 locales, plus its own `openGraph`/`twitter` (with the per-locale canonical `url`) via `generateMetadata`
 - Per-page metadata: add `generateMetadata` to each page TSX as needed
+- **`utils/seo.ts`** — single source of truth for `SITE_NAME`, `BASE_URL`, `DEFAULT_TITLE`, `DEFAULT_DESCRIPTION`, `OG_IMAGE` (1200×630, `public/og-image.png`), and the `buildOpenGraph(url)` / `buildTwitter()` helpers. **Important Next.js quirk:** nested metadata objects like `openGraph`/`twitter` are REPLACED, not deep-merged, when a child layout/page defines its own — so any segment that sets `openGraph` must build the *complete* object (title/description/siteName/type/images), not just the field it wants to change. That's why the locale layout re-declares the full `openGraph` object via `buildOpenGraph(canonicalUrl)` rather than trying to override just `url`.
+- `public/og-image.png` — the branded 1200×630 social/iMessage preview image (AlphaGlow AI logo on a dark background with a terracotta glow). Regenerate via `python scripts/generate-og-image.py` (requires Pillow) if the logo or brand palette ever changes — do not hand-edit the PNG.
+- `og:image`/`og:url`/`twitter:image` are always absolute production URLs (`https://alphaglowai.com/...`), by design, even when the page is served from the staging domain — this is correct OG/canonical practice, but it means a staging-URL iMessage/link-preview tap-test can show a broken image until the referenced file actually exists on `main` (production).
 
 ## Incident Log
+
+### 2026-07-31 — Open Graph and Twitter Card metadata added (fixes broken iMessage/social link previews)
+Petr reported the alphaglowai.com iMessage/social link preview showed no logo — just the raw page title and a generic placeholder. Diagnosed first (no changes) before fixing:
+- **Root cause:** `app/layout.tsx`'s `metadata` export had no `openGraph` or `twitter` key at all — confirmed via live HTML fetch that zero `og:`/`twitter:` meta tags existed anywhere on the site, on any page or locale. No dedicated OG image asset existed either (only the 512×512 square app-icon logo, below the 1200×630 recommended minimum).
+- **Fix:** added `utils/seo.ts` as a shared source of truth (see "SEO" above), wired `openGraph`/`twitter` into both `app/layout.tsx` and `app/[locale]/layout.tsx` (the latter with the correct per-locale canonical `url`), and generated `public/og-image.png` (1200×630) via `scripts/generate-og-image.py` — the AlphaGlow AI Flower of Life logo composited on a dark on-brand background with a terracotta glow, wordmark, and tagline.
+- **Verified live on production** (commit `202d7ce`, merged `staging` → `main`): all of `og:title`, `og:description`, `og:url`, `og:site_name`, `og:image` (+ `width`/`height`/`alt`), `og:type`, `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image` present and correct on `https://alphaglowai.com/en/`. `og:image` URL (`https://alphaglowai.com/og-image.png`) confirmed 200 OK, `image/png`, and the downloaded bytes independently verified as exactly 1200×630 (not just trusting the HTTP header). `og:url` spot-checked on `/cs/`, `/de/`, `/fr/` and confirmed to correctly resolve to each locale's own canonical path.
+- Branch `feat/og-social-preview-image` → merged to `staging` → tap-tested → merged to `main` on Petr's explicit authorization.
 
 ### 2026-07-31 — Terracotta color sweep, NSVR removal, brand-name sweep, Ambassador economics fix, nav reorg, full Investors page rebuild — all merged to main
 Large multi-part session, all items verified live on staging before merging to `main` (commit `f64f7c0`, merged from `staging`):
