@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
+import { BASE_URL, DEFAULT_TITLE, DEFAULT_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/utils/seo";
 
 const lora = Lora({
   subsets: ["latin", "latin-ext"],
@@ -15,14 +16,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alphaglowai.com"),
+  metadataBase: new URL(BASE_URL),
   title: {
-    default: "AlphaGlow AI — The Creator Economy Platform",
+    default: DEFAULT_TITLE,
     template: "%s | AlphaGlow AI",
   },
-  description:
-    "AlphaGlow AI is the creator economy platform where creators publish AI-powered sessions, build a Digital Twin with Nova, and earn NSVX when their audience grows.",
+  description: DEFAULT_DESCRIPTION,
   robots: { index: true, follow: true },
+  openGraph: buildOpenGraph(BASE_URL),
+  twitter: buildTwitter(),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
