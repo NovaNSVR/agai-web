@@ -1,11 +1,17 @@
 import Link from "next/link";
 import FAQ from "@/components/FAQ";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 const FEATURES = ["memory", "programs", "nsvxFeature", "noNoise", "modalities", "offline"] as const;
 const EARN_ITEMS = [1, 2, 3] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "for-users");
+}
+
 
 export default async function ForUsersPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

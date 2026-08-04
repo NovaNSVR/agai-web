@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "child-safety");
+}
+
 
 export default async function ChildSafetyPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

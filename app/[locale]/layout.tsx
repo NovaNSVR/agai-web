@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { I18nProvider } from "@/utils/i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/utils/locales";
@@ -6,7 +5,6 @@ import { getDictionary } from "@/utils/getDictionary";
 import { flatten } from "@/utils/flattenDict";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { BASE_URL, buildOpenGraph, buildTwitter } from "@/utils/seo";
 
 const SUPPORTED: readonly string[] = SUPPORTED_LOCALES;
 
@@ -19,26 +17,15 @@ export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
-  if (!SUPPORTED.includes(locale)) return {};
-
-  const languages: Record<string, string> = {};
-  for (const l of SUPPORTED_LOCALES) {
-    languages[l] = `${BASE_URL}/${l}/`;
-  }
-  languages["x-default"] = `${BASE_URL}/en/`;
-
-  const canonicalUrl = `${BASE_URL}/${locale}/`;
-
-  return {
-    alternates: {
-      canonical: canonicalUrl,
-      languages,
-    },
-    openGraph: buildOpenGraph(canonicalUrl),
-    twitter: buildTwitter(),
-  };
-}
+// No generateMetadata here on purpose. Canonical/hreflang/openGraph are
+// page-specific (they must point at the actual page, not the locale root),
+// so every real content page under this layout calls
+// utils/seo.ts:buildPageMetadata() itself with its own path. A layout-level
+// default here previously computed canonical from the locale alone, which
+// meant every page silently inherited "canonical = my locale's homepage"
+// unless it explicitly overrode it — nothing did, so every inner page on
+// the site was telling search engines its canonical version was the
+// homepage. See CLAUDE.md for the full incident writeup.
 
 // Server component — loads locale messages at SSG time so the static HTML
 // contains real text instead of raw translation keys.

@@ -4,6 +4,7 @@ import { getBlogPost, getBlogSlugs } from "@/utils/getBlogPosts";
 import { getDictionary } from "@/utils/getDictionary";
 import { SUPPORTED_LOCALES } from "@/utils/locales";
 import { marked } from "marked";
+import { buildPageMetadata } from "@/utils/seo";
 import BlogPostClient from "./BlogPostClient";
 
 interface Props {
@@ -21,13 +22,21 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata({ params: { slug } }: Props) {
+// skipHreflang: true unconditionally, on every locale including "en" --
+// there is only one real translation (English, content/blog/en/), so
+// there is no genuine cross-locale equivalence to assert anywhere. The 9
+// non-English URLs currently serve that same English text verbatim; see
+// the sitemap/robots writeup for how those URLs are handled until real
+// translations exist. Canonical still points at the exact URL being
+// served, locale included, so each of the 10 URLs is self-referential.
+export async function generateMetadata({ params: { locale, slug } }: Props) {
   const post = getBlogPost(slug);
   if (!post) return {};
-  return {
+  return buildPageMetadata(locale, `blog/${slug}`, {
     title: post.title,
     description: post.excerpt,
-  };
+    skipHreflang: true,
+  });
 }
 
 export default async function BlogPostPage({ params: { locale, slug } }: Props) {

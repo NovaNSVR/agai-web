@@ -2,6 +2,10 @@ import Link from "next/link";
 
 export const generateStaticParams = () => [{ locale: "en" }];
 
+// Internal design-preview page, not real site content -- excluded from
+// the sitemap and kept out of search results.
+export const metadata = { robots: { index: false, follow: false } };
+
 const EXAMPLES = [
   {
     label: "Musician",

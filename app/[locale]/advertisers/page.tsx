@@ -3,11 +3,17 @@ import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import type { FormField } from "@/components/ContactForm";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 const AD_CLASSES = ["preSess", "whisper", "pulse"] as const;
 const PRICING_TIERS = ["selfServe", "managed", "enterprise"] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "advertisers");
+}
+
 
 export default async function AdvertisersPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

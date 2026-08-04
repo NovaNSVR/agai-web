@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 const ARCHETYPE_IDS = [
   "yoga", "trainer", "musician", "podcaster", "nutritionist", "meditationGuide",
@@ -9,6 +10,11 @@ const COMPARISON_IDS = ["patreon", "substack", "insightTimer"] as const;
 const COMPARISON_LABELS = { patreon: "Patreon", substack: "Substack", insightTimer: "Insight Timer" };
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "");
+}
+
 
 export default async function HomePage({ params }: { params: { locale: string } }) {
   const { locale } = params;

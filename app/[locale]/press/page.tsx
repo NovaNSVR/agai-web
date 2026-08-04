@@ -1,6 +1,12 @@
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "press");
+}
+
 
 export default async function PressPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
