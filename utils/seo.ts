@@ -57,32 +57,46 @@ export function pageUrl(locale: string, pagePath: string): string {
 export function buildPageMetadata(
   locale: string,
   pagePath: string,
-  overrides?: { title?: string; description?: string; skipHreflang?: boolean }
+  overrides?: {
+    title?: string;
+    description?: string;
+    // Restricts hreflang to a specific subset of locales instead of the
+    // full SUPPORTED_LOCALES list -- for the small set of pages that exist
+    // at all 10 locale URLs but don't yet have real translated content at
+    // every one of them (the blog posts -- see content/blog/en/ and
+    // getBlogPosts.ts:hasTranslatedBlogPost). Asserting hreflang
+    // equivalence between pages that serve identical English text would
+    // tell Google these are translations of each other when they aren't --
+    // worse than a narrower hreflang set. Pass an empty array to omit
+    // hreflang entirely (canonical still points at itself either way).
+    // Omit this option for ordinary pages that are genuinely translated
+    // at all 10 locales.
+    hreflangLocales?: readonly string[];
+    // Duplicate/placeholder content not yet fit to index -- e.g. a blog
+    // post locale variant with no real translation yet, still serving the
+    // English fallback text at its own URL.
+    noindex?: boolean;
+  }
 ): Metadata {
   const canonicalUrl = pageUrl(locale, pagePath);
+  const hreflangLocales = overrides?.hreflangLocales ?? SUPPORTED_LOCALES;
 
-  // skipHreflang: for the small set of pages that exist at all 10 locale
-  // URLs but don't yet have real translated content at 9 of them (the blog
-  // posts — see content/blog/en/, no other locale directory exists yet).
-  // Asserting hreflang equivalence between pages that serve identical
-  // English text would tell Google these are translations of each other
-  // when they aren't — worse than omitting hreflang entirely. Canonical
-  // still points at itself either way; only the cross-locale linking is
-  // suppressed.
-  const alternates: Metadata["alternates"] = overrides?.skipHreflang
-    ? { canonical: canonicalUrl }
-    : {
-        canonical: canonicalUrl,
-        languages: {
-          ...Object.fromEntries(SUPPORTED_LOCALES.map((l) => [l, pageUrl(l, pagePath)])),
-          "x-default": pageUrl("en", pagePath),
-        },
-      };
+  const alternates: Metadata["alternates"] =
+    hreflangLocales.length === 0
+      ? { canonical: canonicalUrl }
+      : {
+          canonical: canonicalUrl,
+          languages: {
+            ...Object.fromEntries(hreflangLocales.map((l) => [l, pageUrl(l, pagePath)])),
+            ...(hreflangLocales.includes("en") ? { "x-default": pageUrl("en", pagePath) } : {}),
+          },
+        };
 
   return {
     ...(overrides?.title ? { title: overrides.title } : {}),
     ...(overrides?.description ? { description: overrides.description } : {}),
     alternates,
+    ...(overrides?.noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: buildOpenGraph(canonicalUrl),
     twitter: buildTwitter(),
   };

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBlogPost, getBlogSlugs } from "@/utils/getBlogPosts";
+import { getBlogPost, getBlogSlugs, hasTranslatedBlogPost } from "@/utils/getBlogPosts";
 import { getDictionary } from "@/utils/getDictionary";
 import { SUPPORTED_LOCALES } from "@/utils/locales";
 import { marked } from "marked";
@@ -22,20 +22,24 @@ export async function generateStaticParams() {
   return paths;
 }
 
-// skipHreflang: true unconditionally, on every locale including "en" --
-// there is only one real translation (English, content/blog/en/), so
-// there is no genuine cross-locale equivalence to assert anywhere. The 9
-// non-English URLs currently serve that same English text verbatim; see
-// the sitemap/robots writeup for how those URLs are handled until real
-// translations exist. Canonical still points at the exact URL being
-// served, locale included, so each of the 10 URLs is self-referential.
+// Self-healing: hreflang only ever includes locales that actually have a
+// translated content/blog/{locale}/{slug}.md file (today that's just
+// "en"), and any locale WITHOUT one gets noindex,follow -- it's still
+// serving the English fallback text at its own URL, not a real
+// translation, so it shouldn't be indexed as if it were one. Dropping a
+// real translated .md file into content/blog/{locale}/ is the entire
+// "publish" step: hasTranslatedBlogPost() picks it up automatically, the
+// noindex lifts and that locale joins the hreflang set on the next build
+// -- no code change needed here or in sitemap.ts.
 export async function generateMetadata({ params: { locale, slug } }: Props) {
   const post = getBlogPost(slug);
   if (!post) return {};
+  const translatedLocales = SUPPORTED_LOCALES.filter((l) => hasTranslatedBlogPost(l, slug));
   return buildPageMetadata(locale, `blog/${slug}`, {
     title: post.title,
     description: post.excerpt,
-    skipHreflang: true,
+    hreflangLocales: translatedLocales,
+    noindex: !hasTranslatedBlogPost(locale, slug),
   });
 }
 

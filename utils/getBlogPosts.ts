@@ -13,7 +13,20 @@ export interface BlogPost {
 }
 
 // Blog posts are English-first; all locales show EN content initially.
-const BLOG_DIR = path.join(process.cwd(), "content/blog/en");
+const BLOG_ROOT = path.join(process.cwd(), "content/blog");
+const BLOG_DIR = path.join(BLOG_ROOT, "en");
+
+// True once a real translated file exists at content/blog/{locale}/{slug}.md
+// -- English always counts as translated (it's the source). Nothing else
+// reads this except sitemap.ts and blog/[slug]/page.tsx's generateMetadata,
+// both of which use it to decide indexability and hreflang membership per
+// locale, so dropping a real translated .md file into place is the entire
+// "publish" step -- no other code change is needed to lift the noindex or
+// add the page to the sitemap/hreflang set for that locale.
+export function hasTranslatedBlogPost(locale: string, slug: string): boolean {
+  if (locale === "en") return true;
+  return fs.existsSync(path.join(BLOG_ROOT, locale, `${slug}.md`));
+}
 
 export function getBlogPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return [];

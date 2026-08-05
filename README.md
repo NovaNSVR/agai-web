@@ -45,10 +45,9 @@ No shadows, no parallax, no animations, no AI shimmer, no glow, no purple/cyan.
 10 launch locales: **en, cs, sk, de, es, fr, pt, nl, pl, it** — matching the alphaglowai.app architecture.
 
 - URL-based routing: `/{locale}/path` (e.g. `/de/for-creators`)
-- First-visit language detection from `Accept-Language` header via middleware
-- Cookie-based persistence (`ag-locale`, 1-year), overrides auto-detection on return visits
-- Minimalist language switcher dropdown in nav (globe icon + locale code)
-- hreflang alternates on every page for all 10 locales + `x-default`
+- Root (`/`) redirects to `/en/` via a static Netlify `_redirects` rule (302), unconditionally — this is a static export (`output: "export"` in next.config.mjs), so there is no server to run middleware-based `Accept-Language` detection on. `middleware.ts` existed at one point implementing that detection but never actually ran in production; it was deleted rather than left as misleading dead code (see git history if this is ever revisited for a non-static deployment).
+- Minimalist language switcher dropdown in nav (globe icon + locale code) — sets the `ag-locale` cookie and navigates client-side; the cookie is otherwise unread since its only consumer was the removed middleware
+- hreflang alternates on every page for all 10 locales + `x-default`, except blog posts, which only include locales with a real translated `content/blog/{locale}/{slug}.md` file (today: English only — see `utils/getBlogPosts.ts:hasTranslatedBlogPost`)
 - 418 translation keys per locale, full parity verified across all 10 files
 - Brand terms never translated: AlphaGlow, NSVX, Nova, Digital Twin, Nova Studio
 - Nova always feminine in all gendered languages (Rule A)

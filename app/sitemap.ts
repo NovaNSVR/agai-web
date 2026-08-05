@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SUPPORTED_LOCALES } from "@/utils/locales";
 import { pageUrl } from "@/utils/seo";
-import { getBlogSlugs } from "@/utils/getBlogPosts";
+import { getBlogSlugs, hasTranslatedBlogPost } from "@/utils/getBlogPosts";
 
 // Compiles to a static sitemap.xml at build time (output: "export" in
 // next.config.mjs supports app/sitemap.ts since Next 13.3+) -- this list
@@ -18,7 +18,8 @@ import { getBlogSlugs } from "@/utils/getBlogPosts";
 //   should list the destination, not the redirect (already included).
 // - "preview-creators-a/b/c" -- internal design previews, noindex'd
 //   directly on those pages (see their generateMetadata).
-// - The 9 non-English blog post URLs -- see the blog section below.
+// - Untranslated blog post locale variants -- self-healing, see the blog
+//   section below.
 const PAGES = [
   "",
   "advertisers",
@@ -60,15 +61,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Blog posts: English only. The other 9 locale URLs currently serve
-  // identical English text (no translated content exists yet -- see
-  // content/blog/en/ and utils/getBlogPosts.ts) -- including them here,
-  // or cross-linking them via hreflang, would assert a translation
-  // relationship that isn't real. Once real per-locale blog content
-  // exists, add those locales back into this loop the same way the
-  // PAGES loop above works.
+  // Blog posts: self-healing, same check that drives noindex in
+  // blog/[slug]/page.tsx's generateMetadata. Only locales with a real
+  // content/blog/{locale}/{slug}.md are included (today that's just
+  // "en" for all three posts) -- including an untranslated duplicate
+  // here, or cross-linking it via hreflang, would assert a translation
+  // relationship that isn't real. Dropping in a real translated file is
+  // the entire "publish" step; this loop and the noindex check both pick
+  // it up automatically on the next build, no code change needed here.
   for (const slug of getBlogSlugs()) {
-    entries.push({ url: pageUrl("en", `blog/${slug}`) });
+    const translatedLocales = SUPPORTED_LOCALES.filter((l) => hasTranslatedBlogPost(l, slug));
+    for (const locale of translatedLocales) {
+      entries.push({
+        url: pageUrl(locale, `blog/${slug}`),
+        alternates: {
+          languages: Object.fromEntries(translatedLocales.map((l) => [l, pageUrl(l, `blog/${slug}`)])),
+        },
+      });
+    }
   }
 
   return entries;
