@@ -2,11 +2,17 @@ import Link from "next/link";
 import FAQ from "@/components/FAQ";
 import { getServerT, LOCALES } from "@/utils/serverT";
 import BuyNotifyForm from "@/components/BuyNotifyForm";
+import { buildPageMetadata } from "@/utils/seo";
 
 const EARN_ITEMS = [6] as const;
 const SPEND_ITEMS = [1, 2] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "nsvx");
+}
+
 
 export default async function NsvxPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

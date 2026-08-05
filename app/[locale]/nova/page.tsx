@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 const HOW_ITEMS = [1, 2, 3] as const;
 const LEARNS_ITEMS = [1, 2, 3, 4, 5] as const;
 const PRIVACY_ITEMS = [1, 2, 3, 4] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "nova");
+}
+
 
 export default async function NovaPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

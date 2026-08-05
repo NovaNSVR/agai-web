@@ -1,7 +1,13 @@
 import LegalLayout from "@/components/LegalLayout";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "legal/health-disclaimer");
+}
+
 
 export default async function HealthDisclaimerPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

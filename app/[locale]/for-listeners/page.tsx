@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 const FEATURE_IDS = ["memory", "experts", "nsvx", "noNoise", "modalities", "offline"] as const;
 const STEP_IDS = [1, 2, 3, 4] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "for-listeners");
+}
+
 
 export default async function ForListenersPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

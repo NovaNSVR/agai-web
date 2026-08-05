@@ -1,10 +1,16 @@
 import ContactForm from "@/components/ContactForm";
 import type { FormField } from "@/components/ContactForm";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 const ROADMAP_ITEMS = [1, 2, 3, 4] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "investors");
+}
+
 
 export default async function InvestorsPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

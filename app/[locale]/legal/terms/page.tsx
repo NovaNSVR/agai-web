@@ -1,7 +1,13 @@
 import LegalLayout from "@/components/LegalLayout";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "legal/terms");
+}
+
 
 export default async function TermsPage({ params }: { params: { locale: string } }) {
   const { locale } = params;

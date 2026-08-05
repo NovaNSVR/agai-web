@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { getServerT, LOCALES } from "@/utils/serverT";
+import { buildPageMetadata } from "@/utils/seo";
 
 const EARN_IDS = ["CompleteSession", "Streak7", "Streak30", "FinishProgram", "ReferListener", "FirstCheckin"] as const;
 const SPEND_IDS = ["PremiumProgram", "DigitalTwin", "Soundscape", "NovaTier"] as const;
 const FAQ_IDS = [1, 2, 3, 4, 5] as const;
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  return buildPageMetadata(locale, "how-nsvx-works");
+}
+
 
 export default async function HowNsvxWorksPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
