@@ -27,6 +27,24 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Scoped theme tokens for the advertiser dashboard's ported Card /
+   SegmentedControl / LevelStepper components (see components/ui/ — verbatim
+   copies of NEW-AGAI-Base's components, which read these var names). Scoped
+   to .ag-dashboard-theme rather than :root so the marketing site's own
+   terracotta/moss palette above is untouched. Values are the main app's
+   light-mode tokens (styles/globals.css), since this site has no dark-mode
+   toggle. */
+.ag-dashboard-theme {
+  --bg-card: #F2EDE4;
+  --bg-input: #F2EDE4;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #8A8478;
+  --border-primary: #E8E0D4;
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --accent-primary: #0D9488;
+}
+
 body {
   background-color: var(--bg);
   color: var(--ink);
