@@ -20,11 +20,20 @@
  * automatically. Check this file whenever walletProvisioning.ts changes.
  *
  * Env vars required on THIS Netlify site (agai-web), matching the main app's
- * variable names so the same secret values can be reused without renaming:
+ * variable names so the same secret values can be reused without renaming.
+ * Confirmed live and working (2026-08-23) on the staging branch-deploy
+ * context, real signup + real KMS-encrypted wallet verified end-to-end
+ * against the deployed function, not just locally:
  *   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY (already used by signup.js)
- *   KMS_KEY_ARN, AWS_REGION
+ *   KMS_KEY_ARN
  *   LAMBDA_INVOKER_ACCESS_KEY_ID / AWS_ACCESS_KEY_ID (fallback pair)
  *   LAMBDA_INVOKER_SECRET_ACCESS_KEY / AWS_SECRET_ACCESS_KEY (fallback pair)
+ * AWS_REGION is NOT set as a Netlify env var here — attempts to set it
+ * silently no-op (confirmed via two upsert calls + a re-read, neither took),
+ * almost certainly because it's an AWS Lambda-reserved key name (Netlify
+ * Functions run on Lambda under the hood, which auto-injects AWS_REGION
+ * itself). Not a problem in practice: kmsClient() below already falls back
+ * to "us-east-2" — the real region the KMS key lives in — when unset.
  *
  * Scope note (2026-08-23 build): wallets are created and left fully inactive.
  * on_chain_settlement_enabled stays false; no real or devnet transfer happens
