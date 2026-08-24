@@ -242,10 +242,20 @@ export default function AdvertiserDashboardClient() {
               onChange={(e) => setCompanyName(e.target.value)} className="rounded-lg p-3" style={inputStyle} />
             <input required type="text" placeholder="Category (e.g. fitness, finance)" value={category}
               onChange={(e) => setCategory(e.target.value)} className="rounded-lg p-3" style={inputStyle} />
-            <input required type="email" placeholder="Contact email" value={contactEmail}
-              onChange={(e) => setContactEmail(e.target.value)} className="rounded-lg p-3" style={inputStyle} />
-            <input required type="email" placeholder="Login email" value={email}
-              onChange={(e) => setEmail(e.target.value)} className="rounded-lg p-3" style={inputStyle} />
+            <div>
+              <input required type="email" placeholder="Contact email" value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)} className="rounded-lg p-3 w-full" style={inputStyle} />
+              <p className="mt-1 text-xs text-muted">
+                Where we&apos;ll reach your business — can be a shared team inbox, doesn&apos;t have to match the login email below.
+              </p>
+            </div>
+            <div>
+              <input required type="email" placeholder="Login email" value={email}
+                onChange={(e) => setEmail(e.target.value)} className="rounded-lg p-3 w-full" style={inputStyle} />
+              <p className="mt-1 text-xs text-muted">
+                The email you&apos;ll actually sign in with — this is your account credential, paired with the password below.
+              </p>
+            </div>
             <input required type="password" placeholder="Password (min 6 characters)" value={password}
               onChange={(e) => setPassword(e.target.value)} className="rounded-lg p-3" style={inputStyle} />
             <button type="submit" disabled={submitting} className="rounded-lg p-3 mt-2 font-semibold text-white"

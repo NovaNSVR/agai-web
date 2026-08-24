@@ -220,7 +220,15 @@ exports.handler = async (event) => {
   const userData = await createSupabaseUser(email, password);
 
   if (!userData.id) {
+    // Real bug found 2026-08-24 via a live reproduction against Supabase's
+    // actual admin create-user API: a duplicate-email rejection comes back
+    // as {"code":422,"error_code":"email_exists","msg":"A user with this
+    // email address has already been registered"} — the real field is
+    // `msg`, not `message`/`error_description`/`error`. None of the old
+    // checks matched, so the genuinely useful Supabase error was silently
+    // discarded and replaced by the generic fallback below, every time.
     const msg =
+      userData.msg ||
       userData.message ||
       userData.error_description ||
       userData.error ||
