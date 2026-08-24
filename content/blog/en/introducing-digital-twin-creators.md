@@ -19,7 +19,7 @@ The difference from a FAQ or a chatbot is depth. A Digital Twin has absorbed the
 Digital Twins are built in Nova Studio using a combination of:
 
 - **Creator content** — sessions, scripts, and written material the creator has produced
-- **Voice synthesis** — the creator's actual voice, recreated by ElevenLabs
+- **Voice synthesis** — the creator's actual voice, recreated by Cartesia
 - **Structured knowledge** — the creator's approach, methodology, and key frameworks
 
 The process takes a few hours, not weeks. Creators set boundaries on what their Digital Twin will and won't discuss. The AI stays in scope.

@@ -6,8 +6,8 @@ const ARCHETYPE_IDS = [
   "yoga", "trainer", "musician", "podcaster", "nutritionist", "meditationGuide",
 ] as const;
 
-const COMPARISON_IDS = ["patreon", "substack", "insightTimer"] as const;
-const COMPARISON_LABELS = { patreon: "Patreon", substack: "Substack", insightTimer: "Insight Timer" };
+const COMPARISON_IDS = ["patreon", "substack"] as const;
+const COMPARISON_LABELS = { patreon: "Patreon", substack: "Substack" };
 
 export const generateStaticParams = () => LOCALES.map((locale) => ({ locale }));
 

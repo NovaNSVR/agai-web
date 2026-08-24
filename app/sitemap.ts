@@ -27,7 +27,6 @@ const PAGES = [
   "blog",
   "child-safety",
   "for-creators",
-  "for-listeners",
   "for-users",
   "how-nsvx-works",
   "investors",
@@ -41,7 +40,6 @@ const PAGES = [
   "nsvx",
   "press",
   "pricing",
-  "privacy",
   "signup",
 ];
 

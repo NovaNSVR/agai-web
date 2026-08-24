@@ -47,7 +47,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
         <div className="max-w-content mx-auto">
           <h2 className="font-serif text-ink mb-12" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("forUsers.whatHeading")}</h2>
           <div className="grid gap-px" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", background: "var(--divider)", border: "1px solid var(--divider)" }}>
-            {(["sessions", "journeys", "dt"] as const).map((id) => (
+            {(["sessions", "journeys", "dt", "pulse"] as const).map((id) => (
               <div key={id} className="bg-surface" style={{ padding: "2rem 1.75rem" }}>
                 <h3 className="font-serif text-ink mb-3" style={{ fontSize: "1.125rem", fontWeight: 400 }}>{t(`forUsers.${id}Title`)}</h3>
                 <p className="font-sans text-muted" style={{ fontSize: "0.875rem", lineHeight: 1.7 }}>{t(`forUsers.${id}Body`)}</p>

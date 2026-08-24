@@ -20,7 +20,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: [
           "/*/preview-creators-a",
-          "/*/preview-creators-b",
           "/*/preview-creators-c",
         ],
       },
