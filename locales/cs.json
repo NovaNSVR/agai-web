@@ -18,7 +18,7 @@
     "label": "Jazyk"
   },
   "footer": {
-    "tagline": "Platforma tvůrčí ekonomiky, která vás zná.",
+    "tagline": "Platforma tvůrčí ekonomiky a sociální síť, která vás zná.",
     "copyright": "© {year} AlphaGlow AI. Všechna práva vyhrazena.",
     "platform": "Platforma",
     "legal": "Právní informace",
@@ -275,7 +275,7 @@
     "s1h": "1. Přijetí podmínek",
     "s1p": "Přístupem na platformu AlphaGlow AI na adrese alphaglowai.app (\"Platforma\") nebo jejím používáním souhlasíš s těmito Podmínkami služby (\"Podmínky\"). Pokud nesouhlasíš, platformu nesmíš používat.",
     "s2h": "2. Popis služby",
-    "s2p": "AlphaGlow AI poskytuje AI-powered creator economy platformu zahrnující mimo jiné řízené meditační lekce, cesty tvůrců, programy tvůrců, Nova AI a systém platformového utility tokenu NSVX.",
+    "s2p": "AlphaGlow AI poskytuje AI-powered creator economy a sociální platformu zahrnující mimo jiné řízené meditační lekce, cesty tvůrců, programy tvůrců, Nova AI a systém platformového utility tokenu NSVX.",
     "s3h": "3. Způsobilost",
     "s3p": "Pro používání platformy musíte být alespoň 18 let. Vytvořením účtu prohlašujete, že splňujete tento požadavek a máte právní způsobilost k uzavření této smlouvy.",
     "s4h": "4. Uživatelské účty",
@@ -748,7 +748,7 @@
     "guidelinesDesc": "Úplné pokyny pro značku včetně typologie, barev a pravidel používání.",
     "guidelinesCta": "Stáhnout (brzy dostupné)",
     "boilerplateHeading": "O službě AlphaGlow AI",
-    "boilerplateBody": "AlphaGlow AI je platforma tvůrčí ekonomiky, kde tvůrci vydávají relace s podporou AI, budují Digital Twin s Nova a získávají NSVX, když jejich publikum roste. Založena v roce 2026, AlphaGlow AI kombinuje odborně navržené creator programy s Nova — AI průvodcem, který se učí zvyky každého uživatele a doručuje správný obsah v pravou chvíli. Platforma funguje na modelu utility tokenu, kde engagement vytváří hodnotu pro tvůrce i uživatele. AlphaGlow AI je dostupná na alphaglowai.app.",
+    "boilerplateBody": "AlphaGlow AI je platforma tvůrčí ekonomiky a sociální síť, kde tvůrci vydávají relace s podporou AI, budují Digital Twin s Nova, sdílejí a spojují se se svým publikem na Pulse a získávají NSVX, když jejich publikum roste. Založena v roce 2026, AlphaGlow AI kombinuje odborně navržené creator programy s Nova — AI průvodcem, který se učí zvyky každého uživatele a doručuje správný obsah v pravou chvíli. Platforma funguje na modelu utility tokenu, kde engagement vytváří hodnotu pro tvůrce i uživatele. AlphaGlow AI je dostupná na alphaglowai.app.",
     "contactHeading": "Kontakt pro média",
     "contactBody": "Máte dotazy pro tisk, žádosti o rozhovory nebo potřebujete přístup ke médií? Kontaktujte nás na adrese níže. Odpovídáme do 24 hodin.",
     "contactEmail": "press@alphaglowai.com",

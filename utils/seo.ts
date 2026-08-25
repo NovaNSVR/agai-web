@@ -3,15 +3,15 @@ import { SUPPORTED_LOCALES } from "./locales";
 
 export const SITE_NAME = "AlphaGlow AI";
 export const BASE_URL = "https://alphaglowai.com";
-export const DEFAULT_TITLE = "AlphaGlow AI — The Creator Economy Platform";
+export const DEFAULT_TITLE = "AlphaGlow AI — The Creator Economy and Social Platform";
 export const DEFAULT_DESCRIPTION =
-  "AlphaGlow AI is the creator economy platform where creators publish AI-powered sessions, build a Digital Twin with Nova, and earn NSVX when their audience grows.";
+  "AlphaGlow AI is the creator economy and social platform where creators publish AI-powered sessions, build a Digital Twin with Nova, share and connect with their audience on Pulse, and earn NSVX when their audience grows.";
 
 export const OG_IMAGE = {
   url: `${BASE_URL}/og-image.png`,
   width: 1200,
   height: 630,
-  alt: "AlphaGlow AI — The Creator Economy Platform",
+  alt: "AlphaGlow AI — The Creator Economy and Social Platform",
 };
 
 export function buildOpenGraph(url: string) {

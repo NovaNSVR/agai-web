@@ -18,7 +18,7 @@
     "label": "Langue"
   },
   "footer": {
-    "tagline": "La plateforme d'économie créative qui vous connaît.",
+    "tagline": "La plateforme d'économie créative et sociale qui vous connaît.",
     "copyright": "© {year} AlphaGlow AI. Tous droits réservés.",
     "platform": "Plateforme",
     "legal": "Mentions légales",
@@ -275,7 +275,7 @@
     "s1h": "1. Acceptation des conditions",
     "s1p": "En accédant à la plateforme AlphaGlow AI sur alphaglowai.app (la « Plateforme ») ou en l'utilisant, vous acceptez d'être lié par les présentes Conditions d'utilisation (les « Conditions »). Si vous n'acceptez pas ces Conditions, vous n'êtes pas autorisé à utiliser la Plateforme.",
     "s2h": "2. Description du service",
-    "s2p": "AlphaGlow AI propose une plateforme d'économie des créateurs propulsée par l'IA comprenant, sans s'y limiter, des séances de méditation guidée, des parcours créateurs, des programmes créateurs, la compagne IA Nova et le système de tokens utilitaires NSVX.",
+    "s2p": "AlphaGlow AI propose une plateforme d'économie des créateurs et sociale propulsée par l'IA comprenant, sans s'y limiter, des séances de méditation guidée, des parcours créateurs, des programmes créateurs, la compagne IA Nova et le système de tokens utilitaires NSVX.",
     "s3h": "3. Conditions d'accès",
     "s3p": "Vous devez avoir au moins 18 ans pour utiliser la Plateforme. En créant un compte, vous déclarez remplir cette condition et avoir la capacité juridique de conclure le présent accord.",
     "s4h": "4. Comptes utilisateurs",
@@ -748,7 +748,7 @@
     "guidelinesDesc": "Directives de marque complètes incluant la typographie, les couleurs et les règles d'utilisation.",
     "guidelinesCta": "Télécharger (bientôt disponible)",
     "boilerplateHeading": "À propos d'AlphaGlow AI",
-    "boilerplateBody": "AlphaGlow AI est la plateforme de l'économie des créateurs où les créateurs publient des sessions alimentées par l'IA, construisent un Digital Twin avec Nova, et gagnent du NSVX lorsque leur audience se développe. Fondée en 2026, AlphaGlow AI combine des programmes conçus par des experts avec Nova — un compagnon IA qui apprend les habitudes de chaque utilisateur et propose le contenu approprié au moment opportun. La plateforme fonctionne selon un modèle de token utilitaire où l'engagement crée de la valeur pour les créateurs et les utilisateurs. AlphaGlow AI est disponible sur alphaglowai.app.",
+    "boilerplateBody": "AlphaGlow AI est la plateforme de l'économie des créateurs et sociale où les créateurs publient des sessions alimentées par l'IA, construisent un Digital Twin avec Nova, partagent et se connectent avec leur audience sur Pulse, et gagnent du NSVX lorsque leur audience se développe. Fondée en 2026, AlphaGlow AI combine des programmes conçus par des experts avec Nova — un compagnon IA qui apprend les habitudes de chaque utilisateur et propose le contenu approprié au moment opportun. La plateforme fonctionne selon un modèle de token utilitaire où l'engagement crée de la valeur pour les créateurs et les utilisateurs. AlphaGlow AI est disponible sur alphaglowai.app.",
     "contactHeading": "Contact presse",
     "contactBody": "Pour les demandes de presse, les demandes d'interviews et l'accès aux médias, contactez-nous à l'adresse ci-dessous. Nous nous efforçons de répondre dans les 24 heures.",
     "contactEmail": "press@alphaglowai.com",
