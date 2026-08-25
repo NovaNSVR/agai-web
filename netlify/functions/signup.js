@@ -1,12 +1,13 @@
 /**
  * Netlify Function: signup
- * Handles server-side account creation + Crossmint Solana smart wallet setup.
+ * Handles server-side account creation. Wallet creation is handled separately
+ * via the AWS KMS wallet-create webhook on alphaglowai.app once the account exists.
  *
  * POST /.netlify/functions/signup
  * Body: { email: string, password: string, username: string }
  *
- * This function runs entirely server-side — the Crossmint API key and
- * Supabase service role key are NEVER exposed to the client.
+ * This function runs entirely server-side — the Supabase service role key
+ * is NEVER exposed to the client.
  *
  * Architecture note: All crypto/wallet operations live on alphaglowai.com
  * (the website) and never inside the mobile app — required for App Store
@@ -16,7 +17,6 @@
 const SUPABASE_URL =
   process.env.SUPABASE_URL || 'https://ykyiylphnpainoquefic.supabase.co';
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const CROSSMINT_API_KEY = process.env.CROSSMINT_API_KEY;
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -54,40 +54,6 @@ async function setUsername(userId, username) {
       Prefer: 'return=minimal',
     },
     body: JSON.stringify({ username }),
-  });
-}
-
-/** POST to Crossmint 2025-06-09 API to create a Solana smart wallet */
-async function createCrossmintWallet(email, userId) {
-  const res = await fetch('https://www.crossmint.com/api/2025-06-09/wallets', {
-    method: 'POST',
-    headers: {
-      'X-API-KEY': CROSSMINT_API_KEY,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      chainType: 'solana',
-      type: 'smart',
-      config: {
-        adminSigner: { type: 'email', email },
-      },
-      owner: `userId:${userId}`,
-    }),
-  });
-  return res.json();
-}
-
-/** Store the wallet address in profiles.wallet_address */
-async function storeWalletAddress(userId, walletAddress) {
-  await fetch(`${SUPABASE_URL}/rest/v1/profiles?user_id=eq.${userId}`, {
-    method: 'PATCH',
-    headers: {
-      apikey: SUPABASE_SERVICE_KEY,
-      Authorization: `Bearer ${SUPABASE_SERVICE_KEY}`,
-      'Content-Type': 'application/json',
-      Prefer: 'return=minimal',
-    },
-    body: JSON.stringify({ wallet_address: walletAddress }),
   });
 }
 
@@ -154,7 +120,9 @@ exports.handler = async (event) => {
   const userData = await createSupabaseUser(email, password, username);
 
   if (!userData.id) {
+    // Supabase admin API returns errors in "msg" (not "message")
     const msg =
+      userData.msg ||
       userData.message ||
       userData.error_description ||
       userData.error ||
@@ -177,26 +145,7 @@ exports.handler = async (event) => {
   await setUsername(userId, username);
   console.log(`[signup] Username set: ${username}`);
 
-  // 4. Create Crossmint Solana smart wallet (server-side — API key stays here)
-  let walletAddress = null;
-  try {
-    console.log(`[signup] Creating Crossmint wallet for userId:${userId}`);
-    const walletData = await createCrossmintWallet(email, userId);
-    walletAddress = walletData.address || null;
-
-    if (walletAddress) {
-      // 5. Persist wallet address to profiles
-      await storeWalletAddress(userId, walletAddress);
-      console.log(`[signup] Wallet stored: ${walletAddress}`);
-    } else {
-      console.warn('[signup] Crossmint returned no address:', JSON.stringify(walletData));
-    }
-  } catch (err) {
-    // Wallet creation failure is non-fatal — account exists, wallet retry later
-    console.error('[signup] Crossmint error:', err.message);
-  }
-
-  // 6. Sign in to get session tokens for the cross-domain redirect
+  // 4. Sign in to get session tokens for the cross-domain redirect
   // The app's /auth/callback will consume these to create a Supabase session.
   let access_token = null;
   let refresh_token = null;
