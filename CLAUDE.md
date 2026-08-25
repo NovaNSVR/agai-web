@@ -92,10 +92,14 @@ npm run lint         # TypeScript + lint check
 | `/[locale]/blog/[slug]/` | `app/[locale]/blog/[slug]/page.tsx` | Live (2026-05-20) |
 | `/[locale]/pricing/` | `app/[locale]/pricing/page.tsx` | Live |
 | `/[locale]/ambassador/` | `app/[locale]/ambassador/page.tsx` | Live — commission economics corrected 2026-07-31, see Incident Log |
-| `/[locale]/how-nsvx-works/` | `app/[locale]/how-nsvx-works/page.tsx` | Legacy (kept) |
-| `/[locale]/for-listeners/` | `app/[locale]/for-listeners/page.tsx` | Legacy (kept) |
+| `/[locale]/how-nsvx-works/` | `app/[locale]/how-nsvx-works/page.tsx` | Legacy (kept) — earn-methods list corrected 2026-08-24, see Incident Log |
 | `/[locale]/legal/...` | `app/[locale]/legal/` | Live |
-| `/[locale]/privacy/` | `app/[locale]/privacy/page.tsx` | Live (2026-06-01) — standalone dark-theme privacy page |
+| `/[locale]/advertisers/dashboard/` | `app/[locale]/advertisers/dashboard/page.tsx` | Live (2026-08-25) — advertiser wallet foundation dashboard, `AdvertiserDashboardClient.tsx` |
+
+**Deleted 2026-08-24, do not recreate without a fresh decision:**
+- `/[locale]/for-listeners/` — real, unlinked, orphaned page with a fabricated NSVX earning-model claim.
+- `/[locale]/privacy/` — a second, fully duplicate standalone privacy page (separate from `/[locale]/legal/privacy/`, not a redirect between them). Everything the 2026-06-01 entry below describes as "live" here no longer exists as its own route — `/[locale]/legal/privacy/` is now the only Privacy Policy page.
+- `/[locale]/preview-creators-b/` — internal design-preview page, contained a false "streams live video" Digital Twin claim. `preview-creators-a`/`-c` are unaffected and still exist (noindex'd, see SEO section).
 
 ## Components
 
@@ -107,6 +111,18 @@ npm run lint         # TypeScript + lint check
 | `components/ContactForm.tsx` | Netlify Forms wrapper — takes fields + formName |
 | `components/LanguageSwitcher.tsx` | Locale dropdown |
 | `components/LegalLayout.tsx` | Wrapper for legal prose pages |
+| `components/ui/Card.tsx` | Shared card shell (added 2026-08-25, ported from advertiser dashboard build) |
+| `components/ui/SegmentedControl.tsx` | Shared segmented toggle control (added 2026-08-25) |
+| `components/ui/LevelStepper.tsx` | Shared numeric level stepper (added 2026-08-25) |
+| `components/advertiser-dashboard/AdvertiserDashboardClient.tsx` | Advertiser wallet-foundation dashboard — balance, campaign status. Client component behind `app/[locale]/advertisers/dashboard/page.tsx` |
+
+## Netlify Functions
+- `netlify/functions/signup.js` — existing site signup form handler
+- `netlify/functions/advertiser-signup.js` — added 2026-08-25, part of the advertiser wallet foundation work (built on `feature/advertiser-wallet-foundation` in both this repo and `NEW-AGAI-Base`, see that repo's CLAUDE.md for the wallet/settlement side). Handles advertiser signup + wallet provisioning kickoff. Returns real Supabase error messages to the client rather than a generic failure (fixed 2026-08-24 — see Incident Log).
+
+## Public Assets Added 2026-08-25
+- `public/badges/google-play-badge-{locale}.png` — official Google-hosted Play Store badge, one per locale (all 10), downloaded directly from Google's CDN. Linked to `https://play.google.com/store/apps/details?id=com.alphaglowai.mobile` on the homepage hero and the For Users closing CTA. **No Apple App Store badge yet** — iOS isn't approved/live.
+- `public/documents/AlphaGlow-AI-Whitepaper.pdf` and `public/documents/AlphaGlow-AI-Investor-Pitch.pdf` — real downloadable documents, linked from a new Documents section on the Investors page (`investors.documentsHeading`/`documentsBody`/`downloadWhitepaper`/`downloadPitch` keys, all 10 locales). Built from exact, Petr-approved text via the `docx` npm package; converted to PDF via Microsoft Word COM automation (this machine has no LibreOffice/pandoc/Poppler, so the docx skill's usual `soffice.py`/`pdftoppm` verification path doesn't work here — verified instead by unzipping the `.docx` and diffing the extracted `word/document.xml` text against source). Both carry the real AlphaGlow AI logo (`public/icons/icon-512.png`) on the cover and in a running header. **English-only** — not localized across the other 9 locales; this is a scope decision made given the "exact text, no edits" framing of the request, not yet explicitly confirmed as acceptable by Petr.
 
 ## Design System
 
@@ -145,7 +161,8 @@ All web-site-specific namespaces in `locales/en.json`:
 - `pressPage.*` — Press page
 - `blog.*` — Blog UI labels
 - `howNsvx.*` — legacy How NSVX Works page
-- `forListeners.*` — legacy For Listeners page
+- `forListeners.*` — dead keys, `/[locale]/for-listeners/` page deleted 2026-08-24 (see Page Routes above) — not yet pruned from the locale files
+- **Naming, final as of 2026-08-25: "Creator App"** — the real, correct name for the tool creators use to build sessions/journeys/Digital Twin, confirmed by its use in the approved Investor Pitch text and corrected on `forCreators.step2Body`/`dtCreatorBody` across all 10 locales through three passes: ~~Nova Studio~~ → ~~Creator Dashboard~~ → ~~Creator Hub~~ → **Creator App**. "Creator Studio" (a different, correct, pre-existing user-facing term for the Digital-Twin-facing surface) was never touched and should not be. **Not yet checked:** `forCreators.novaStudioBadge`/`novaStudioHeading` (a small section badge + "Nova grows your studio" heading, same page) still say "Nova Studio" — flagged live on 2026-08-25 as a possible fourth instance the sweep missed, or a genuinely distinct feature reference; no decision made yet either way.
 - `pricing.*` — Pricing page
 - `legalHub.*` — Legal hub and pages
 - `legal*.*` — Individual legal pages
@@ -171,6 +188,40 @@ All web-site-specific namespaces in `locales/en.json`:
 - `og:image`/`og:url`/`twitter:image` are always absolute production URLs (`https://alphaglowai.com/...`), by design, even when the page is served from the staging domain — this is correct OG/canonical practice, but it means a staging-URL iMessage/link-preview tap-test can show a broken image until the referenced file actually exists on `main` (production).
 
 ## Incident Log
+
+### 2026-08-24/25 — Full content-accuracy pass, terminology corrections, two new investor documents — merged to `main`
+Largest content session on this site to date, run across many small authorized passes, all merged to `main` in one push (commit `c4086d9`, 2026-08-25T03:41 UTC) after Petr's explicit "push." Verified live directly against `https://alphaglowai.com` afterward (not just the Netlify deploy record — see below).
+
+**Content-accuracy fixes (10 items, all 10 locales unless noted):**
+- Fabricated NSVX earning model on How NSVX Works replaced — `EARN_IDS` cut from a 6-item invented list (`CompleteSession`/`Streak7`/`Streak30`/`FinishProgram`/`ReferListener`/`FirstCheckin`) down to the 3 real mechanisms (`AdCompletion`, `Promo`, `ReferListener`).
+- Ad-completion-rate claim corrected 78% → 100% (`advertisers.whisperStat`/`attentionBody`, `investors.whisperBody`/`attentionBody`).
+- Positioning broadened to "creator economy **and social** platform" + a real Pulse mention added (see sitewide sweep below and the new `home.pulseTitle`/`pulseBody` + For Users' 4th explainer card).
+- **NSVX transferability language deliberately made confident, not cautious** — `nsvxDisc.s2i4` deleted, `s4h`/`s4p` rewritten from "Non-Transferable" to "Transferability." This was flagged as a real, verified contradiction before being made (live Supabase check confirmed `platform_settings.on_chain_settlement_enabled = false` in production) — Petr's explicit, informed decision was to proceed with the confident language as the target reality anyway, on the basis that settlement will genuinely be live before this matters externally. **This is still not true today** — treat any future edit to this language as needing the same check, not as settled.
+- Vendor names corrected to what's actually integrated: Moonpay → Transak, ElevenLabs/Crossmint → Cartesia/AWS-KMS (`privacy.s5i2/s5i3/s5i4`, `nsvxPage.buyBody`/`buyNote`, blog post `introducing-digital-twin-creators.md`).
+- Confirmed via direct code read (not assumption) that the Digital Twin cannot stream live video — no false claim found to fix, but this was checked, not skipped.
+- Pulse explainer card added to For Users (`(["sessions","journeys","dt","pulse"] as const)`).
+- Investors roadmap rewritten (`investors.roadmap1/2/3Body`).
+- Insight Timer dropped from the homepage comparison table (`COMPARISON_IDS` cut from 3 rows to 2 — Patreon/Substack only) and from the "What NSVX Is Not" list on the NSVX Disclaimer page (4 items → 3).
+- `nsvxPage.withdrawComingSoon` updated from "a planned feature" to "Live now" — see the transferability note above, same underlying decision.
+
+**Structural cleanup, same pass:**
+- 3 rogue pages deleted outright (see Page Routes above): `for-listeners`, the orphaned duplicate `privacy`, `preview-creators-b`. `sitemap.ts`/`robots.ts` updated to match.
+- All English fixes above machine-translated across the other 9 locales in one pass, explicitly including legal/financial pages, per Petr's authorization — first-pass MT, not yet human-reviewed. A self-caused JSON-minification bug in the translation script (missing `null, 2` indent args) was caught via an oversized diff before committing and fixed before push — es/fr/pt files are correctly formatted in what actually shipped.
+- Sitewide "creator economy platform" → "**creator economy and social** platform" consistency sweep — homepage hero, footer tagline, `terms.s2p`, `pressPage.boilerplateBody`, `privacy.s1p`, and `utils/seo.ts`'s `DEFAULT_TITLE`/`DEFAULT_DESCRIPTION`/`OG_IMAGE.alt` (the shared site-wide SEO/OG fallback — English-only file, no locale variants).
+- Privacy Policy §1 legal-entity-identification clause (NeuroScope Technologies LLC, Sarasota FL address) was found **entirely absent**, not just untranslated, from all 9 non-English `privacy.s1p` translations — added.
+- "creative economy" → "creator economy" mistranslation fixed in Spanish/French/Portuguese, sitewide (`footer.tagline` + fr/pt's unused alternate-homepage-variant keys `v2HeroHeading`/`v2CardInvestorsBody`).
+- Terminology chain Nova Studio → Creator Dashboard → Creator Hub → **Creator App** — see Locale Keys Structure above for the final state and the one open flag (`novaStudioBadge`/`novaStudioHeading`).
+- Real Google Play badge added, official Google asset, all 10 locales — see Public Assets above.
+
+**Two new investor documents (English-only, see Public Assets above):** AlphaGlow AI Whitepaper (16 sections, 3 tables) and AlphaGlow AI Investor Pitch (Full Version), both built from exact Petr-approved text via `docx` + Word-COM-to-PDF (no edits except formatting, with one disclosed exception: Whitepaper §11/12/15 settlement language was rewritten per Petr's explicit instruction — see the transferability note above, same underlying tension). Investors page got a new Documents section with working download links, all 10 locales.
+
+**Verification method for the final push tonight, worth recording since it differs from the usual Playwright-at-390px flow:** this was a static-content/documents push with no interactive UI to click-test, so verification was `npm run build` (clean) + direct `curl` against the live production domain post-deploy — confirmed the actual page HTML changed (not just that a Netlify deploy record said "ready"), confirmed both PDFs return real 200s with correct content, and confirmed all three deleted pages now 404 live. The project's documented Netlify webhook flakiness did not recur this time — the `main` deploy for commit `c4086d9` appeared automatically within ~15 minutes of the push, no manual-trigger fallback needed.
+
+**Still open, not part of tonight's authorization, no action taken:**
+- The NSVX Disclaimer page's remaining cautious language is now inconsistent with the marketing page's and Whitepaper's confident transferability framing (flagged twice this session).
+- `forCreators.novaStudioBadge`/`novaStudioHeading` still say "Nova Studio" (see Locale Keys Structure above).
+- Whether the two PDF documents should eventually be localized across all 10 languages, consistent with this project's standing i18n rule, or stay English-only as a deliberate exception for investor-facing documents.
+- **Security note, pre-existing, not caused by tonight's work:** this file's own "Deploy" section (line 26 below) has a live Netlify auth token committed in plaintext. Not touched or rotated as part of this session — flagging since it was noticed while updating this file, not because anything about tonight's change relates to it.
 
 ### 2026-08-04 — Canonical/hreflang bug fixed sitewide, sitemap.xml + robots.txt added, dead middleware.ts removed
 Google Search Console reported "no referring sitemaps detected." Investigated before changing anything:
