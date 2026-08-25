@@ -132,7 +132,7 @@
     "step1Body": "Povedz nám o svojej odbornosti a publiku. Nova posúdi tvoju žiadosť a odpoveď dostaneš do pár minút.",
     "step2Num": "02",
     "step2Title": "Vytvor svoj program",
-    "step2Body": "Použi Creator Hub na návrh sedení, nahratie obsahu a nastavenie NSVX cien.",
+    "step2Body": "Použi Creator App na návrh sedení, nahratie obsahu a nastavenie NSVX cien.",
     "step3Num": "03",
     "step3Title": "Nova ho doručí",
     "step3Body": "Nova personalizuje a plánuje tvoj program pre každého používateľa na základe jeho cieľov a signálov.",
@@ -148,7 +148,7 @@
     "payoutStat": "zo všetkých NSVX minútych vo vašom programe sa vracia priamo vám",
     "dtCreatorBadge": "Digital Twin",
     "dtCreatorHeading": "Váš Digital Twin",
-    "dtCreatorBody": "Digital Twin je interaktívna verzia vás poháňaná AI — vyškolená na vašom obsahu, dodávaná vašim hlasom, dostupná vašim používateľom 24 hodín denne. Používateľi vám môžu klásť otázky, riešiť výzvy a dostávať vedenie, ktoré znie a myslí ako vy. Váš Digital Twin je vytvorený v Creator Hub. Zarába NSVX aj keď spíte.",
+    "dtCreatorBody": "Digital Twin je interaktívna verzia vás poháňaná AI — vyškolená na vašom obsahu, dodávaná vašim hlasom, dostupná vašim používateľom 24 hodín denne. Používateľi vám môžu klásť otázky, riešiť výzvy a dostávať vedenie, ktoré znie a myslí ako vy. Váš Digital Twin je vytvorený v Creator App. Zarába NSVX aj keď spíte.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova rozvíja vašu stanicu",
     "novaStudioBody": "Nova sa učí ciele, vzory a reakcie každého používateľa. Odporúča vášmu programu používateľom, ktorí z neho budú najviac profitovať — a plánuje vaše sedenia na chvíle, keď sa s nimi budete s najväčšou pravdepodobnosťou aktívne zapojiť. Program vytvoríte raz. Nova sa postará o dodávku, časovanie a zlaďovanie.",
@@ -646,7 +646,11 @@
     "formFund": "Fond alebo spoločnosť",
     "formMessage": "Správa",
     "formSubmit": "Odoslať",
-    "formSuccess": "Ďakujeme. Odpovedáme na vážne otázky do 48 hodín."
+    "formSuccess": "Ďakujeme. Odpovedáme na vážne otázky do 48 hodín.",
+    "documentsHeading": "Dokumenty",
+    "documentsBody": "Prečítajte si úplné technické a ekonomické podrobnosti o AlphaGlow AI, alebo kompletný investorský pitch.",
+    "downloadWhitepaper": "Stiahnuť Whitepaper",
+    "downloadPitch": "Stiahnuť Pitch Deck"
   },
   "novaPage": {
     "badge": "Nova",

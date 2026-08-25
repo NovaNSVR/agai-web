@@ -132,7 +132,7 @@
     "step1Body": "Raccontaci della tua competenza e del tuo pubblico. Nova esamina la tua candidatura e ricevi risposta in pochi minuti.",
     "step2Num": "02",
     "step2Title": "Costruisci il tuo programma",
-    "step2Body": "Usa Creator Hub per progettare le sessioni, caricare i contenuti e impostare i tuoi prezzi in NSVX.",
+    "step2Body": "Usa Creator App per progettare le sessioni, caricare i contenuti e impostare i tuoi prezzi in NSVX.",
     "step3Num": "03",
     "step3Title": "Nova lo distribuisce",
     "step3Body": "Nova personalizza e pianifica il tuo programma per ogni utente in base ai suoi obiettivi e segnali.",
@@ -148,7 +148,7 @@
     "payoutStat": "di tutti gli NSVX spesi nel tuo programma ritorna direttamente a te",
     "dtCreatorBadge": "Digital Twin",
     "dtCreatorHeading": "Il tuo Digital Twin",
-    "dtCreatorBody": "Un Digital Twin è una versione interattiva di te alimentata dall'IA — addestrata sui tuoi contenuti, erogata con la tua voce, disponibile al tuo pubblico 24 ore al giorno. Gli utenti possono fargli domande, affrontare sfide e ricevere una guida che suona e pensa come te. Il tuo Digital Twin è costruito in Creator Hub. Genera NSVX mentre dormi.",
+    "dtCreatorBody": "Un Digital Twin è una versione interattiva di te alimentata dall'IA — addestrata sui tuoi contenuti, erogata con la tua voce, disponibile al tuo pubblico 24 ore al giorno. Gli utenti possono fargli domande, affrontare sfide e ricevere una guida che suona e pensa come te. Il tuo Digital Twin è costruito in Creator App. Genera NSVX mentre dormi.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova fa crescere il tuo studio",
     "novaStudioBody": "Nova conosce gli obiettivi, i pattern e le risposte di ogni utente. Consiglia il tuo programma agli utenti che ne trarranno maggior beneficio — e pianifica le tue sessioni nei momenti in cui è più probabile che si impegnino. Costruisci il programma una volta. Nova gestisce l'erogazione, i tempi e l'abbinamento.",
@@ -646,7 +646,11 @@
     "formFund": "Fondo o società",
     "formMessage": "Messaggio",
     "formSubmit": "Invia",
-    "formSuccess": "Grazie. Risponderemo alle richieste serie entro 48 ore."
+    "formSuccess": "Grazie. Risponderemo alle richieste serie entro 48 ore.",
+    "documentsHeading": "Documenti",
+    "documentsBody": "Leggi tutti i dettagli tecnici ed economici di AlphaGlow AI, oppure il pitch completo per investitori.",
+    "downloadWhitepaper": "Scarica il Whitepaper",
+    "downloadPitch": "Scarica il Pitch Deck"
   },
   "novaPage": {
     "badge": "Nova",

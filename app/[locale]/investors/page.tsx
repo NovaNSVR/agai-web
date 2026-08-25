@@ -163,6 +163,32 @@ export default async function InvestorsPage({ params }: { params: { locale: stri
         </div>
       </section>
 
+      {/* Documents */}
+      <section className="container-pad section-pad" style={{ borderBottom: "1px solid var(--divider)", background: "var(--surface)" }}>
+        <div className="max-w-content mx-auto">
+          <h2 className="font-serif text-ink mb-4" style={{ fontSize: "clamp(1.5rem,3vw,2rem)" }}>{t("investors.documentsHeading")}</h2>
+          <p className="font-sans text-muted mb-10" style={{ fontSize: "0.9375rem", lineHeight: 1.7, maxWidth: 600 }}>{t("investors.documentsBody")}</p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="/documents/AlphaGlow-AI-Whitepaper.pdf"
+              download
+              className="font-sans no-underline text-surface rounded inline-block"
+              style={{ backgroundColor: "var(--terracotta)", fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}
+            >
+              {t("investors.downloadWhitepaper")}
+            </a>
+            <a
+              href="/documents/AlphaGlow-AI-Investor-Pitch.pdf"
+              download
+              className="font-sans no-underline text-ink rounded border border-divider inline-block"
+              style={{ fontSize: "0.9375rem", fontWeight: 500, padding: "14px 28px" }}
+            >
+              {t("investors.downloadPitch")}
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Contact form — untouched */}
       <section className="container-pad section-pad">
         <div className="max-w-content mx-auto">

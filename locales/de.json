@@ -132,7 +132,7 @@
     "step1Body": "Erzähl uns von deinem Fachwissen und deinem Publikum. Nova überprüft deine Bewerbung und du erhältst innerhalb von Minuten eine Antwort.",
     "step2Num": "02",
     "step2Title": "Dein Programm erstellen",
-    "step2Body": "Nutze Creator Hub, um Sessions zu gestalten, Inhalte hochzuladen und deine NSVX-Preise festzulegen.",
+    "step2Body": "Nutze Creator App, um Sessions zu gestalten, Inhalte hochzuladen und deine NSVX-Preise festzulegen.",
     "step3Num": "03",
     "step3Title": "Nova liefert es aus",
     "step3Body": "Nova personalisiert und plant dein Programm für jeden Nutzer auf Basis seiner Ziele und Signale.",
@@ -148,7 +148,7 @@
     "payoutStat": "aller NSVX, die in deinem Programm ausgegeben werden, fließen direkt zu dir zurück",
     "dtCreatorBadge": "Digital Twin",
     "dtCreatorHeading": "Dein Digital Twin",
-    "dtCreatorBody": "Ein Digital Twin ist eine KI-gestützte, interaktive Version von dir — trainiert auf deinen Inhalten, in deiner Stimme, 24 Stunden am Tag für dein Publikum verfügbar. Nutzer können ihm Fragen stellen, Herausforderungen bewältigen und Orientierung erhalten, die wie du klingt und denkt. Dein Digital Twin wird in Creator Hub erstellt. Er verdient NSVX, während du schläfst.",
+    "dtCreatorBody": "Ein Digital Twin ist eine KI-gestützte, interaktive Version von dir — trainiert auf deinen Inhalten, in deiner Stimme, 24 Stunden am Tag für dein Publikum verfügbar. Nutzer können ihm Fragen stellen, Herausforderungen bewältigen und Orientierung erhalten, die wie du klingt und denkt. Dein Digital Twin wird in Creator App erstellt. Er verdient NSVX, während du schläfst.",
     "novaStudioBadge": "Nova Studio",
     "novaStudioHeading": "Nova lässt dein Studio wachsen",
     "novaStudioBody": "Nova lernt die Ziele, Muster und Reaktionen jedes Nutzers. Sie empfiehlt dein Programm den Nutzern, die am meisten davon profitieren — und plant deine Sitzungen zu den Momenten ein, in denen sie am ehesten teilnehmen werden. Du erstellst das Programm einmal. Nova übernimmt Delivery, Timing und Matching.",
@@ -646,7 +646,11 @@
     "formFund": "Fonds oder Unternehmen",
     "formMessage": "Nachricht",
     "formSubmit": "Senden",
-    "formSuccess": "Vielen Dank. Wir antworten auf ernsthafte Anfragen innerhalb von 48 Stunden."
+    "formSuccess": "Vielen Dank. Wir antworten auf ernsthafte Anfragen innerhalb von 48 Stunden.",
+    "documentsHeading": "Dokumente",
+    "documentsBody": "Lies die vollständigen technischen und wirtschaftlichen Details zu AlphaGlow AI oder das komplette Investoren-Pitch.",
+    "downloadWhitepaper": "Whitepaper herunterladen",
+    "downloadPitch": "Pitch Deck herunterladen"
   },
   "novaPage": {
     "badge": "Nova",
