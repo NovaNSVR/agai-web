@@ -105,7 +105,8 @@
     "v2CardInvestorsBody": "Costruiamo l'infrastruttura per l'economia AI dei creator.",
     "v2CardInvestorsLink": "Panoramica investitori",
     "v2BrandPrimary": "Non chi vince. Chi cresce.",
-    "v2BrandSecondary": "AlphaGlow AI è l'unica piattaforma dove la tua pratica costruisce un'economia — per creator, utenti e il futuro."
+    "v2BrandSecondary": "AlphaGlow AI è l'unica piattaforma dove la tua pratica costruisce un'economia — per creator, utenti e il futuro.",
+    "googlePlayAlt": "Disponibile su Google Play"
   },
   "forCreators": {
     "badge": "Per i Creator",
@@ -542,7 +543,8 @@
     "ctaBody": "Iscriviti gratuitamente. Conosci Nova. Inizia a guadagnare NSVX per il lavoro che stai già facendo.",
     "ctaButton": "Apri l'app",
     "pulseTitle": "Pulse",
-    "pulseBody": "Condividi i tuoi progressi, segui i creator e scopri su cosa sta lavorando la tua community — il feed social di AlphaGlow AI, integrato in ogni account."
+    "pulseBody": "Condividi i tuoi progressi, segui i creator e scopri su cosa sta lavorando la tua community — il feed social di AlphaGlow AI, integrato in ogni account.",
+    "googlePlayAlt": "Disponibile su Google Play"
   },
   "advertisers": {
     "badge": "Per inserzionisti",

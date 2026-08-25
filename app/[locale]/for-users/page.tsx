@@ -150,6 +150,20 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
           <Link href={l("/signup")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
             {t("forUsers.ctaButton")}
           </Link>
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.alphaglowai.mobile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("forUsers.googlePlayAlt")}
+            >
+              <img
+                src={`/badges/google-play-badge-${locale}.png`}
+                alt={t("forUsers.googlePlayAlt")}
+                style={{ height: 56, width: "auto" }}
+              />
+            </a>
+          </div>
         </div>
       </section>
     </>

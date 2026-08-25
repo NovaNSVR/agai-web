@@ -105,7 +105,8 @@
     "v2CardInvestorsBody": "Budujeme infrastrukturu ekonomiky tvůrců s umělou inteligencí.",
     "v2CardInvestorsLink": "Přehled pro investory",
     "v2BrandPrimary": "Ne kdo vyhraje. Kdo roste.",
-    "v2BrandSecondary": "AlphaGlow AI je jediná platforma, kde vaše praxe buduje ekonomiku — pro tvůrce, uživatele i budoucnost."
+    "v2BrandSecondary": "AlphaGlow AI je jediná platforma, kde vaše praxe buduje ekonomiku — pro tvůrce, uživatele i budoucnost.",
+    "googlePlayAlt": "Získejte na Google Play"
   },
   "forCreators": {
     "badge": "Pro tvůrce",
@@ -542,7 +543,8 @@
     "ctaBody": "Připojte se zdarma. Setkejte se s Novou. Začněte získávat NSVX za práci, kterou již děláte.",
     "ctaButton": "Otevřete aplikaci",
     "pulseTitle": "Pulse",
-    "pulseBody": "Sdílejte svůj pokrok, sledujte tvůrce a zjistěte, na čem pracuje vaše komunita — sociální kanál AlphaGlow AI, který je součástí každého účtu."
+    "pulseBody": "Sdílejte svůj pokrok, sledujte tvůrce a zjistěte, na čem pracuje vaše komunita — sociální kanál AlphaGlow AI, který je součástí každého účtu.",
+    "googlePlayAlt": "Získejte na Google Play"
   },
   "advertisers": {
     "badge": "Pro inzerenty",

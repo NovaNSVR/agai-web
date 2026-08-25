@@ -105,7 +105,8 @@
     "v2CardInvestorsBody": "Building infrastructure for the AI creator economy.",
     "v2CardInvestorsLink": "Investor overview",
     "v2BrandPrimary": "Not who wins. Who grows.",
-    "v2BrandSecondary": "AlphaGlow AI is the only platform where your practice builds an economy — for creators, for users, for the future."
+    "v2BrandSecondary": "AlphaGlow AI is the only platform where your practice builds an economy — for creators, for users, for the future.",
+    "googlePlayAlt": "Get it on Google Play"
   },
   "forCreators": {
     "badge": "For Creators",
@@ -542,7 +543,8 @@
     "faq5A": "Nova learns from what you share with her. Your data is never sold to advertisers. You can see everything Nova knows about you in your account dashboard, and delete it at any time.",
     "ctaHeading": "Ready to begin?",
     "ctaBody": "Join free. Meet Nova. Start earning NSVX for the work you are already doing.",
-    "ctaButton": "Open the app"
+    "ctaButton": "Open the app",
+    "googlePlayAlt": "Get it on Google Play"
   },
   "advertisers": {
     "badge": "For Advertisers",
