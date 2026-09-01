@@ -172,7 +172,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
               <img
                 src={`/badges/google-play-badge-${locale}.png`}
                 alt={t("forUsers.googlePlayAlt")}
-                style={{ height: 48, width: 132 }}
+                style={{ height: 71.43, width: 164.94 }}
               />
             </a>
           </div>
