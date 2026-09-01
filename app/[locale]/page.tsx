@@ -165,7 +165,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
               <img
                 src={`/badges/app-store-badge-${locale}.svg`}
                 alt={t("home.appStoreAlt")}
-                style={{ height: 48, width: "auto" }}
+                style={{ height: 44, width: 132 }}
               />
             </a>
             <a
@@ -177,7 +177,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
               <img
                 src={`/badges/google-play-badge-${locale}.png`}
                 alt={t("home.googlePlayAlt")}
-                style={{ height: 71.43, width: 164.94 }}
+                style={{ height: 44, width: 132 }}
               />
             </a>
           </div>
