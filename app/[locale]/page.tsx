@@ -45,7 +45,19 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 {t("home.heroCtaCreators")}
               </Link>
             </div>
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <a
+                href="https://apps.apple.com/us/app/alphaglow-ai/id6775204313"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("home.appStoreAlt")}
+              >
+                <img
+                  src={`/badges/app-store-badge-${locale}.svg`}
+                  alt={t("home.appStoreAlt")}
+                  style={{ height: 56, width: "auto" }}
+                />
+              </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.alphaglowai.mobile"
                 target="_blank"

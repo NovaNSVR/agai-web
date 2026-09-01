@@ -106,6 +106,7 @@
     "v2CardInvestorsLink": "Investor overview",
     "v2BrandPrimary": "Not who wins. Who grows.",
     "v2BrandSecondary": "AlphaGlow AI is the only platform where your practice builds an economy — for creators, for users, for the future.",
+    "appStoreAlt": "Download on the App Store",
     "googlePlayAlt": "Get it on Google Play"
   },
   "forCreators": {
@@ -544,6 +545,7 @@
     "ctaHeading": "Ready to begin?",
     "ctaBody": "Join free. Meet Nova. Start earning NSVX for the work you are already doing.",
     "ctaButton": "Open the app",
+    "appStoreAlt": "Download on the App Store",
     "googlePlayAlt": "Get it on Google Play"
   },
   "advertisers": {

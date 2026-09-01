@@ -106,6 +106,7 @@
     "v2CardInvestorsLink": "Visão geral para investidores",
     "v2BrandPrimary": "Não quem vence. Quem cresce.",
     "v2BrandSecondary": "AlphaGlow AI é a única plataforma onde sua prática constrói uma economia — para criadores, usuários e o futuro.",
+    "appStoreAlt": "Disponível na App Store",
     "googlePlayAlt": "Disponível no Google Play"
   },
   "forCreators": {
@@ -544,6 +545,7 @@
     "ctaButton": "Abra o app",
     "pulseTitle": "Pulse",
     "pulseBody": "Partilhe o seu progresso, siga criadores e veja no que a sua comunidade está a trabalhar — o feed social da AlphaGlow AI, integrado em cada conta.",
+    "appStoreAlt": "Disponível na App Store",
     "googlePlayAlt": "Disponível no Google Play"
   },
   "advertisers": {
