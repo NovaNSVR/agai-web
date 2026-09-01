@@ -160,7 +160,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
               <img
                 src={`/badges/app-store-badge-${locale}.svg`}
                 alt={t("forUsers.appStoreAlt")}
-                style={{ width: 160, height: "auto" }}
+                style={{ height: 48, width: "auto" }}
               />
             </a>
             <a
@@ -172,7 +172,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
               <img
                 src={`/badges/google-play-badge-${locale}.png`}
                 alt={t("forUsers.googlePlayAlt")}
-                style={{ width: 160, height: "auto" }}
+                style={{ height: 48, width: 132 }}
               />
             </a>
           </div>

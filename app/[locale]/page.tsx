@@ -45,32 +45,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 {t("home.heroCtaCreators")}
               </Link>
             </div>
-            <div className="mt-5 flex flex-col items-start gap-2">
-              <a
-                href="https://apps.apple.com/us/app/alphaglow-ai/id6775204313"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t("home.appStoreAlt")}
-              >
-                <img
-                  src={`/badges/app-store-badge-${locale}.svg`}
-                  alt={t("home.appStoreAlt")}
-                  style={{ width: 160, height: "auto" }}
-                />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.alphaglowai.mobile"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t("home.googlePlayAlt")}
-              >
-                <img
-                  src={`/badges/google-play-badge-${locale}.png`}
-                  alt={t("home.googlePlayAlt")}
-                  style={{ width: 160, height: "auto" }}
-                />
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -181,6 +155,32 @@ export default async function HomePage({ params }: { params: { locale: string } 
           <a href={app()} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
             {t("home.ctaButton")}
           </a>
+          <div className="mt-6 flex flex-col items-center gap-2">
+            <a
+              href="https://apps.apple.com/us/app/alphaglow-ai/id6775204313"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("home.appStoreAlt")}
+            >
+              <img
+                src={`/badges/app-store-badge-${locale}.svg`}
+                alt={t("home.appStoreAlt")}
+                style={{ height: 48, width: "auto" }}
+              />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.alphaglowai.mobile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("home.googlePlayAlt")}
+            >
+              <img
+                src={`/badges/google-play-badge-${locale}.png`}
+                alt={t("home.googlePlayAlt")}
+                style={{ height: 48, width: 132 }}
+              />
+            </a>
+          </div>
         </div>
       </section>
     </>
