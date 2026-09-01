@@ -150,7 +150,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
           <Link href={l("/signup")} className="font-sans no-underline text-surface rounded inline-block" style={{ backgroundColor: "var(--terracotta)", fontSize: "1rem", fontWeight: 500, padding: "16px 36px" }}>
             {t("forUsers.ctaButton")}
           </Link>
-          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
+          <div className="mt-6 flex flex-col items-center gap-2">
             <a
               href="https://apps.apple.com/us/app/alphaglow-ai/id6775204313"
               target="_blank"
@@ -160,7 +160,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
               <img
                 src={`/badges/app-store-badge-${locale}.svg`}
                 alt={t("forUsers.appStoreAlt")}
-                style={{ height: 56, width: "auto" }}
+                style={{ width: 160, height: "auto" }}
               />
             </a>
             <a
@@ -172,7 +172,7 @@ export default async function ForUsersPage({ params }: { params: { locale: strin
               <img
                 src={`/badges/google-play-badge-${locale}.png`}
                 alt={t("forUsers.googlePlayAlt")}
-                style={{ height: 56, width: "auto" }}
+                style={{ width: 160, height: "auto" }}
               />
             </a>
           </div>
