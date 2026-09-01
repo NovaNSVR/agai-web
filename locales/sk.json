@@ -106,6 +106,7 @@
     "v2CardInvestorsLink": "Prehľad pre investorov",
     "v2BrandPrimary": "Nie kto vyhráva. Kto rastie.",
     "v2BrandSecondary": "AlphaGlow AI je jediná platforma, kde vaša prax buduje ekonomiku — pre tvorcov, používateľov aj budúcnosť.",
+    "appStoreAlt": "Stiahnuť v App Store",
     "googlePlayAlt": "Získajte na Google Play"
   },
   "forCreators": {
@@ -544,6 +545,7 @@
     "ctaButton": "Otvorte aplikáciu",
     "pulseTitle": "Pulse",
     "pulseBody": "Zdieľajte svoj pokrok, sledujte tvorcov a zistite, na čom pracuje vaša komunita — sociálny kanál AlphaGlow AI, ktorý je súčasťou každého účtu.",
+    "appStoreAlt": "Stiahnuť v App Store",
     "googlePlayAlt": "Získajte na Google Play"
   },
   "advertisers": {
