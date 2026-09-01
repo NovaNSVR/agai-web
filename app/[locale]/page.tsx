@@ -45,7 +45,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 {t("home.heroCtaCreators")}
               </Link>
             </div>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
+            <div className="mt-5 flex flex-col items-start gap-2">
               <a
                 href="https://apps.apple.com/us/app/alphaglow-ai/id6775204313"
                 target="_blank"
@@ -55,7 +55,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 <img
                   src={`/badges/app-store-badge-${locale}.svg`}
                   alt={t("home.appStoreAlt")}
-                  style={{ height: 56, width: "auto" }}
+                  style={{ width: 160, height: "auto" }}
                 />
               </a>
               <a
@@ -67,7 +67,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 <img
                   src={`/badges/google-play-badge-${locale}.png`}
                   alt={t("home.googlePlayAlt")}
-                  style={{ height: 56, width: "auto" }}
+                  style={{ width: 160, height: "auto" }}
                 />
               </a>
             </div>
