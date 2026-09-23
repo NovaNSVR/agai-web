@@ -120,7 +120,9 @@ exports.handler = async (event) => {
   const userData = await createSupabaseUser(email, password, username);
 
   if (!userData.id) {
-    // Supabase admin API returns errors in "msg" (not "message")
+    // Supabase admin API returns errors in "msg" (not "message") — without this,
+    // every real rejection (breached password, duplicate email, etc.) silently
+    // fell through to the generic fallback below.
     const msg =
       userData.msg ||
       userData.message ||
