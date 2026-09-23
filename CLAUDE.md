@@ -189,6 +189,21 @@ All web-site-specific namespaces in `locales/en.json`:
 
 ## Incident Log
 
+### 2026-09-23 — Signup breached-password error copy fixed, real staging-only bug found and fixed along the way — merged to `main`
+Petr got real production error `"Password is known to be weak and easy to guess, please choose a different one"` on a genuinely strong password. Root-caused before touching anything: Supabase Auth's `password_hibp_enabled` leaked-password check (deliberately enabled 2026-08-18, a real working security protection, explicitly kept on per Petr's decision) rejects any password found in a real breach corpus regardless of complexity — the message reads like a complexity complaint but isn't one.
+
+**Fix, two connected parts:**
+1. `app/[locale]/signup/SignupClient.tsx` — detects that specific rejection and replaces it with copy explaining the real reason (appeared in a data breach, not "weak") and a concrete next step (use a password manager).
+2. `netlify/functions/signup.js` — while testing fix #1 on staging, discovered the raw Supabase message never reached the client on staging at all: the server's error-extraction was missing the `userData.msg` field (Supabase's admin API returns errors there, not `.message`) — every real rejection silently fell through to a generic "Failed to create account". This exact fix already existed on `main` (commit `e78ee4e`, 2026-08-25) but was never carried over to `staging`'s own parallel Crossmint-removal edit of the same file — a real, pre-existing branch-divergence bug on this one file, unrelated to anything Petr reported, found only because testing the real message-matching logic required the real message to actually arrive.
+
+**Verified real, multiple times, not just once:** three different well-documented real breach-corpus passwords (`P@ssw0rd123!`, `Tr0ub4dor&3`, `Qwerty123!@#`) submitted back to back via `netlify dev` (real Netlify Function + real linked Supabase service role key, not `next dev` alone) — all three correctly rejected, all three displayed the new copy, each confirmed against the real `POST /.netlify/functions/signup` response body, not just the rendered DOM. Re-verified live on `staging--agai-web.netlify.app` at 390px after confirming a real deploy existed for that exact commit. Re-verified a fourth time live on production `alphaglowai.com` after the `main` merge, same method. Confirmed **zero real accounts were created** by any of the ~6 test attempts across all three environments — a HIBP rejection never reaches user creation — via a direct `auth.users` query returning empty every time.
+
+**Merge conflict on `main`, resolved correctly:** `staging`'s ported `userData.msg` fix and `main`'s own pre-existing `e78ee4e` fix for the same field produced a real textual merge conflict (both sides independently added the same line with different surrounding comments) — resolved by keeping the working logic (identical on both sides) and merging the comments into one accurate version; re-verified the resolved file live post-merge, not just assumed correct from the diff.
+
+**Pushed to `staging` first** (commit `b39593d`), verified live there, **then to `main`** (merge commit `7222b10`) on Petr's explicit "push" — per this repo's standard flow, that merge also carried `staging`'s other already-verified pending work (App Store badge addition + badge sizing corrections, commits `67b3bb3`–`1d650ce`) that predated this session, since `staging`→`main` is documented here as one merge, not a cherry-pick.
+
+**Tools note:** `code-review-graph` was not connected in this session (confirmed via tool search) — reviewed both diffs manually instead.
+
 ### 2026-08-24/25 — Full content-accuracy pass, terminology corrections, two new investor documents — merged to `main`
 Largest content session on this site to date, run across many small authorized passes, all merged to `main` in one push (commit `c4086d9`, 2026-08-25T03:41 UTC) after Petr's explicit "push." Verified live directly against `https://alphaglowai.com` afterward (not just the Netlify deploy record — see below).
 
